@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.176
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "leet", "leet\leet.csproj", "{4A37F9D1-EA26-4627-B473-78CA10F8F3F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "leet_test", "leet_test\leet_test.csproj", "{4738B2BC-C996-446E-BC0C-DA8CD3712AA1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A37F9D1-EA26-4627-B473-78CA10F8F3F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A37F9D1-EA26-4627-B473-78CA10F8F3F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A37F9D1-EA26-4627-B473-78CA10F8F3F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A37F9D1-EA26-4627-B473-78CA10F8F3F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4738B2BC-C996-446E-BC0C-DA8CD3712AA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4738B2BC-C996-446E-BC0C-DA8CD3712AA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4738B2BC-C996-446E-BC0C-DA8CD3712AA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4738B2BC-C996-446E-BC0C-DA8CD3712AA1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3A536145-222C-49BA-9DBC-F7260C8BD034}
+	EndGlobalSection
+EndGlobal

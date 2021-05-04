@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "leet", "leet\leet.csproj", "{4A37F9D1-EA26-4627-B473-78CA10F8F3F8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "leet_test", "leet_test\leet_test.csproj", "{4738B2BC-C996-446E-BC0C-DA8CD3712AA1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4A37F9D1-EA26-4627-B473-78CA10F8F3F8} = {4A37F9D1-EA26-4627-B473-78CA10F8F3F8}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,5 +1,6 @@
 ﻿using leet.Cormen.Chapter2;
 using leet.LeetCode.Models;
+using leet_test.Helpers;
 using LeetCode.AddTwoNumbers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -11,22 +12,12 @@ namespace leet_test.LeetCode
         [TestMethod]
         public void Can_answer_easy_question()
         {
-            //List 1
-            var node1 = new ListNode(1);
-            var node2 = new ListNode(1, node1);
-            var node3 = new ListNode(1, node2);
+            var helper = new LinkedListHelper();
+            var head1 = helper.CreateSinglyLinkedList(new int[] { 2, 2, 2 });
+            var head2 = helper.CreateSinglyLinkedList(new int[] { 1, 1, 1 });
+            var expected =helper.CreateSinglyLinkedList(new int[] { 3, 3, 3 });
 
-            //List 2
-            var node4 = new ListNode(2);
-            var node5 = new ListNode(2, node4);
-            var node6 = new ListNode(2, node5);
-
-            //Answer
-            var node7 = new ListNode(3);
-            var node8 = new ListNode(3, node7);
-            var expected = new ListNode(3, node8);
-
-            var actual = new Solution().AddTwoNumbers(node3, node6);
+            var actual = new Solution().AddTwoNumbers(head1, head2);
 
             while(expected !=null || actual != null)
             {
@@ -39,22 +30,50 @@ namespace leet_test.LeetCode
         [TestMethod]
         public void Can_answer_example_question()
         {
-            //List 1
-            var node1 = new ListNode(3);
-            var node2 = new ListNode(4, node1);
-            var node3 = new ListNode(2, node2);
+            var helper = new LinkedListHelper();
+            var head1 = helper.CreateSinglyLinkedList(new int[] { 2, 2, 2 });
+            var head2 = helper.CreateSinglyLinkedList(new int[] { 1, 1, 1 });
+            var expected = helper.CreateSinglyLinkedList(new int[] { 3, 3, 3 });
 
-            //List 2
-            var node4 = new ListNode(4);
-            var node5 = new ListNode(6, node4);
-            var node6 = new ListNode(5, node5);
+            var actual = new Solution().AddTwoNumbers(head1, head2);
 
-            //Answer
-            var node7 = new ListNode(8);
-            var node8 = new ListNode(0, node7);
-            var expected = new ListNode(7, node8);
+            while (expected != null || actual != null)
+            {
+                Assert.AreEqual(expected.val, actual.val);
+                expected = expected.next;
+                actual = actual.next;
+            }
+        }
 
-            var actual = new Solution().AddTwoNumbers(node3, node6);
+        [TestMethod]
+        public void Can_handle_different_lenght_lists_and_carry_one_for_list_node()
+        {
+            var helper = new LinkedListHelper();
+            var head1 = helper.CreateSinglyLinkedList(new int[] { 9, 9, 9 });
+            var head2 = helper.CreateSinglyLinkedList(new int[] { 9, 9, 9, 9, 9, 9, 9 });
+            var expected = helper.CreateSinglyLinkedList(new int[] { 8, 9, 9, 0, 0, 0, 0, 1 });
+
+            var actual = new Solution().AddTwoNumbers(head1, head2);
+
+            while (expected != null || actual != null)
+            {
+                Assert.AreEqual(expected.val, actual.val);
+                expected = expected.next;
+                actual = actual.next;
+            }
+        }
+
+        public void Can_do_operations_on_long_list()
+        {
+            var helper = new LinkedListHelper();
+            var arr1 = new int[] { 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 };
+            var arr2 = new int[] { 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 };
+            var arr3 = new int[] { 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4 };
+            var head1 = helper.CreateSinglyLinkedList(arr1);
+            var head2 = helper.CreateSinglyLinkedList(arr2);
+            var expected = helper.CreateSinglyLinkedList(arr3);
+
+            var actual = new Solution().AddTwoNumbers(head1, head2);
 
             while (expected != null || actual != null)
             {

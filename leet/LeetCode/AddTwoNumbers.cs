@@ -20,15 +20,15 @@ namespace LeetCode.AddTwoNumbers
         {
             ListNode head = null;
             ListNode tail = null;
-            int carry = 0; 
+            int carry = 0;
 
             while (l1 != null || l2 != null)
             {
                 var val1 = 0;
                 var val2 = 0;
 
-                // Get total value and probress lists.
-                if(l1 != null)
+                // Get value and and progress list by one if needed.
+                if (l1 != null)
                 {
                     val1 = l1.val;
                     l1 = l1.next;
@@ -50,35 +50,25 @@ namespace LeetCode.AddTwoNumbers
                     carry = 1;
                 }
 
-                // Create node with value
+                // Create new node with the total value
                 if (head == null)
                 {
-                     tail = head = new ListNode(total);
+                    tail = head = new ListNode(total);
                 }
                 else
                 {
                     tail = tail.next = new ListNode(total);
                 }
 
+                //Lists are empty but there is still a carry, add one.
                 if (l1 == null && l2 == null && carry == 1)
                 {
-                    tail = tail.next = new ListNode(1);
+                    tail.next = new ListNode(1);
+                    //Loop should also be broken
                 }
             }
 
             return head;
-        }
-
-        private int GetListLength(ListNode list)
-        {
-            var length = 0;
-            while (list != null)
-            {
-                length++;
-                list = list.next;
-            }
-
-            return length;
         }
     }
 }

@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Runtime.InteropServices;
+using System.Xml.Linq;
 using System.Xml.Schema;
 
 namespace LeetCode.AddTwoNumbers
@@ -16,48 +18,55 @@ namespace LeetCode.AddTwoNumbers
     {
         public ListNode AddTwoNumbers(ListNode l1, ListNode l2)
         {
-            var length1 = GetListLength(l1);
-            var length2 = GetListLength(l2);
-            var longest = Math.Max(length1, length2);
-            ListNode currNode = null; 
+            ListNode head = null;
+            ListNode tail = null;
+            int carry = 0; 
 
-            for(var i = longest; i > 0; i--)
+            while (l1 != null || l2 != null)
             {
-                var place1 = 0;
-                var place2 = 0;
+                var val1 = 0;
+                var val2 = 0;
 
-                if(i <= length1)
+                // Get total value and probress lists.
+                if(l1 != null)
                 {
-                    place1 = l1.val;
+                    val1 = l1.val;
                     l1 = l1.next;
                 }
 
-                if (i <= length2)
+                if (l2 != null)
                 {
-                    place2 = l2.val;
+                    val2 = l2.val;
                     l2 = l2.next;
                 }
 
-                var total = place1 + place2;
+                var total = val1 + val2 + carry;
+                carry = 0;
 
+                // Set up carry
                 if (total > 9)
                 {
-                    if (currNode == null)
-                    {
-                        currNode = new ListNode(1, null);
-                    }
-                    else
-                    {
-                        currNode.val++;
-                    }
+                    total = total - 10;
+                    carry = 1;
                 }
 
-                var next = new ListNode(total);
-                currNode.next = next;
-                currNode = next;
+                // Create node with value
+                if (head == null)
+                {
+                     tail = head = new ListNode(total);
+                }
+                else
+                {
+                    tail = tail.next = new ListNode(total);
+                }
+
+                if (l1 == null && l2 == null && carry == 1)
+                {
+                    tail = tail.next = new ListNode(1);
+                }
             }
 
-            return currNode;
+            return head;
         }
 
         private int GetListLength(ListNode list)

@@ -55,7 +55,6 @@ namespace leet_test.LeetCode.Modules.LinkedList
         [TestMethod]
         public void AddAtIndex_Can_Add()
         {
-            
             var head = new LinkedListHelper().CreateSinglyLinkedList(new int[] { 1, 2, 3, 4 });
             var sut = new MyLinkedList(head);
 
@@ -63,6 +62,18 @@ namespace leet_test.LeetCode.Modules.LinkedList
             var result = sut.Get(3);
 
             Assert.AreEqual(10, result);
+        }
+
+        [TestMethod]
+        public void Can_Delete_At_Index()
+        {
+            var head = new LinkedListHelper().CreateSinglyLinkedList(new int[] { 1, 2, 3, 4 });
+            var sut = new MyLinkedList(head);
+
+            sut.DeleteAtIndex(3);
+            var result = sut.Get(3);
+
+            Assert.AreEqual(4, result);
         }
     }
 }

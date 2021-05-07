@@ -6,12 +6,12 @@ namespace leet.LeetCode.Models
 {
     public class ListNode
     {
-        public int val;
-        public ListNode next;
+        public int Val { get; set; }
+        public ListNode Next;
         public ListNode(int val = 0, ListNode next = null)
         {
-            this.val = val;
-            this.next = next;
+            this.Val = val;
+            this.Next = next;
         }
     }
 }

@@ -7,10 +7,14 @@ namespace leet_test.Helpers
 {
     public class LinkedListHelper
     {
-        public ListNode CreateSinglyLinkedList(int[] list)
+        public ListNode CreateSinglyLinkedList(int[] list) => CreateList(list, out _);
+
+        public ListNode CreateSinglyLinkedList(int[] list, out ListNode tail) => CreateList(list, out tail);
+
+        private ListNode CreateList(int[] list, out ListNode tail)
         {
             ListNode head = null;
-            ListNode tail = null;
+            tail = null;
 
             if (list.Length > 0) tail = head = new ListNode(list[0]);
 
@@ -18,7 +22,7 @@ namespace leet_test.Helpers
             {
                 for (var i = 1; i < list.Length; i++)
                 {
-                    tail = tail.next = new ListNode(list[i]);
+                    tail = tail.Next = new ListNode(list[i]);
                 }
             }
 

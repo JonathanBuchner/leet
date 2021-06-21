@@ -14,16 +14,15 @@ namespace leet.LeetCode.ValidPalindrome
     {
         public bool IsPalindrome(string s)
         {
-            if (s.Length < 2) return false;
+            if (s.Length == 0) return false;
 
             //Prepare string for onsidering only alphanumeric characters and ignoring cases.
-            var arr = s.ToLower().ToCharArray();
             var sb = new StringBuilder();
-            for (var i = 0; i < arr.Length; i++)
+            for (var i = 0; i < s.Length; i++)
             {
-                if (Char.IsLetter(arr[i])) sb.Append(arr[i]);
+                if (Char.IsLetterOrDigit(s[i])) sb.Append(s[i]);
             }
-            var str = sb.ToString();
+            var str = sb.ToString().ToLower(); ;
 
             var left = 0;
             var right = str.Length - 1;

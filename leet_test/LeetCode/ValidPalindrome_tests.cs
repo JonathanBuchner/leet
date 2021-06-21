@@ -22,6 +22,18 @@ namespace leet_test.LeetCode
         }
 
         [TestMethod]
+        public void Example1_Can_indentify_palindrom_and_test_digit()
+        {
+            var input = "A man, a plan, a canal Panama";
+            var expected = true;
+            var sut = new Solution();
+
+            var result = sut.IsPalindrome(input);
+
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
         public void Example2_Can_indentify_not_a_palindrom()
         {
             var input = "race a car";
@@ -70,15 +82,26 @@ namespace leet_test.LeetCode
         }
 
         [TestMethod]
-        public void Palindrom_cant_be_one_length()
+        public void Palindrom_cant_be_one_non_alphanumeric_length()
         {
-            var input = "a";
-            var expected = false;
+            var input = " ";
+            var expected = true;
             var sut = new Solution();
 
             var result = sut.IsPalindrome(input);
 
             Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void Palindrom_cant_be_one_length()
+        {
+            var input = "a";
+            var expected = true;
+            var sut = new Solution();
+
+            var result = sut.IsPalindrome(input);
+
         }
 
         [TestMethod]

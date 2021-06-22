@@ -1,0 +1,95 @@
+[33mcommit 5732839e02a0d18a3bcaff9ec850dfc6226934f9[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31mjb/master[m[33m)[m
+Author: Jonathan Buchner <v-jobuch@microsoft.com>
+Date:   Tue Jun 22 15:55:00 2021 -0700
+
+    Prettify
+
+[33mcommit 2c3334b548ee7d5f5d6f931b9c9c23028a65cf84[m
+Author: Jonathan Buchner <v-jobuch@microsoft.com>
+Date:   Tue Jun 22 15:53:08 2021 -0700
+
+    Looked up solution for storing array value as ditionary key and array key as dictionary value
+
+[33mcommit 0eaff5af45aa5ba89e59e0648b6e23224bb03a7c[m
+Author: Jonathan Buchner <v-jobuch@microsoft.com>
+Date:   Tue Jun 22 14:57:38 2021 -0700
+
+    Initial Answer for Two Sum
+
+[33mcommit 04f6d58aa3a19ef991e075cb43b9d355350ede53[m
+Author: Jonathan Buchner <v-jobuch@microsoft.com>
+Date:   Mon Jun 21 09:14:09 2021 -0700
+
+    Removed char array.
+
+[33mcommit 3af2009ccaf547c7464482caece788dac27db9a0[m
+Author: Jonathan Buchner <v-jobuch@microsoft.com>
+Date:   Mon Jun 21 08:53:42 2021 -0700
+
+    My first submission.
+
+[33mcommit 3e6b47c40f86d93b051590cdb4303f36c22de4bd[m
+Author: Jonathan Buchner <v-jobuch@microsoft.com>
+Date:   Mon Jun 21 08:25:37 2021 -0700
+
+    Add tests for ValidPalindrome.
+
+[33mcommit b9a25b9bfeca7cc7a052c61232ad1ad9146f84ad[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Jonathan Buchner <me@jonathanbuchner.com>
+Date:   Sun Jun 20 11:23:20 2021 -0700
+
+    Add LeetCode problem Longest Substring Without Repeating Characters
+
+[33mcommit 395f5b8abe9136e7f56a4839a4c8e8cea82b66a4[m
+Author: Jonathan Buchner <v-jobuch@microsoft.com>
+Date:   Sun Jun 20 09:24:32 2021 -0700
+
+    Add problem REmove Vowels From A String
+
+[33mcommit abd769f6e7bd91d13046f6ea4074a393dc6a94d8[m
+Author: Jonathan Buchner <v-jobuch@microsoft.com>
+Date:   Mon May 10 09:29:20 2021 -0700
+
+    Complete definitions for chapter 2.1 & chapter 2.2 & ReverseSort and implement Selection sort.
+
+[33mcommit 13dcb56a2de9654b6cb00b55286019f8ac73b829[m
+Author: Jonathan Buchner <v-jobuch@microsoft.com>
+Date:   Fri May 7 08:55:46 2021 -0700
+
+    Finished My Linked Lists
+
+[33mcommit da9c18f5424f73aeda4e6103f473f3203f409dbc[m
+Author: Jonathan Buchner <v-jobuch@microsoft.com>
+Date:   Fri May 7 08:36:19 2021 -0700
+
+    midpoint for SinglyLinkedList Excercise
+
+[33mcommit 440a9c4e29ebe41a0202a782ab885d4d4527e2d0[m
+Author: Jonathan Buchner <v-jobuch@microsoft.com>
+Date:   Wed May 5 13:22:57 2021 -0700
+
+    For Add two numbers: improve tests, small code refactor
+
+[33mcommit a78d4081d7d6a9546394cd32c7d8411214d518ee[m
+Author: Jonathan Buchner <v-jobuch@microsoft.com>
+Date:   Wed May 5 12:34:25 2021 -0700
+
+    Complete Add Two Numbers
+
+[33mcommit 5ef384fdc0d992011b49e9b281434124c86eb410[m
+Author: Jonathan Buchner <v-jobuch@microsoft.com>
+Date:   Tue May 4 17:56:49 2021 -0700
+
+    Midepoint for AddTwoNumbers problem
+
+[33mcommit 1c7e659acaae348acc80fb351004891074642f9a[m
+Author: Jonathan Buchner <v-jobuch@microsoft.com>
+Date:   Tue May 4 16:05:37 2021 -0700
+
+    Add Insertion Sort - Chapter 2.1
+
+[33mcommit ef8d05bdc8b9a665b83a6d96ce2e509738032d87[m
+Author: Jonathan Buchner <v-jobuch@microsoft.com>
+Date:   Tue May 4 14:10:49 2021 -0700
+
+    Initial

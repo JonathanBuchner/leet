@@ -36,11 +36,24 @@ namespace leet_test.LeetCode
         }
 
         [TestMethod]
-        public void Example4_can_find_two_numbers_that_add_to_target_if_numbers_are_the_same()
+        public void Example3_can_find_two_numbers_that_add_to_target_if_numbers_are_the_same()
         {
             var arr = new int[] { 3, 3};
             var target = 6;
             var expected = new int[] { 0, 1 };
+            var sut = new Solution();
+
+            var result = sut.TwoSum(arr, target);
+
+            CollectionAssert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void Test_can_find_two_numbers_that_add_to_target_if_numbers_are_negative()
+        {
+            var arr = new int[] { -1, -2, -3, -4, -5 };
+            var target = -8;
+            var expected = new int[] { 2, 4 };
             var sut = new Solution();
 
             var result = sut.TwoSum(arr, target);

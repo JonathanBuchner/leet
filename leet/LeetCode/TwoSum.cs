@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace leet.LeetCode.TwoSum
@@ -15,15 +16,24 @@ namespace leet.LeetCode.TwoSum
          */
         public int[] TwoSum(int[] nums, int target)
         {
-            for (var i = 0; i < nums.Length - 1; i++)
-            {
-                if (nums[i] > target) continue;
 
-                for (var j = i + 1; j < nums.Length; j++)
+            var dictionary = new Dictionary<int, int>();
+            
+            for (var i = 0; i < nums.Length; i++)
+            {
+                var diff = target - nums[i];
+
+                if (dictionary.ContainsKey(diff))
                 {
-                    if (nums[i] + nums[j] == target) return new int[] { i, j };
+                    return new int[] { dictionary[diff], i };
                 }
+                else
+                {
+                    dictionary.Add(nums[i], i);
+                }
+
             }
+
 
             throw new Exception("No answer");
         }

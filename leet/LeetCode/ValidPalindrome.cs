@@ -22,6 +22,7 @@ namespace leet.LeetCode.ValidPalindrome
             {
                 if (Char.IsLetterOrDigit(s[i])) sb.Append(s[i]);
             }
+
             var str = sb.ToString().ToLower(); ;
 
             var left = 0;

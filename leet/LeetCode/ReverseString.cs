@@ -13,17 +13,16 @@ namespace leet.LeetCode.ReverseString
     {
         public void ReverseString(char[] s)
         {
-            var left = 0;
-            var right = s.Length-1;
+            var start = 0;
+            var length = s.Length - 1;
 
-            while (left < right)
+            while (2 * start < length)
             {
-                var temp = s[left];
-                s[left] = s[right];
-                s[right] = temp;
+                var temp = s[start];
+                s[start] = s[length - start];
+                s[length - start] = temp;
 
-                left++;
-                right--;
+                start++;
             }
         }
     }

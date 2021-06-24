@@ -17,17 +17,33 @@ namespace leet.LeetCode.ReverseWordsInaString
     {
         public string ReverseWords(string s)
         {
+            var stack = new Stack<String>();
             var sb = new StringBuilder();
-            
+
             s.Trim();
-            var arr = s.Split(" ");
 
-            if (arr.Length < 2) return s;
-
-            for(var i = arr.Length - 1; i >= 0; i--)
+            for(var i = 0; i < s.Length; i++)
             {
-                if (arr[i] == "") continue;
-                sb.Append(String.Concat(arr[i], " "));
+                if (s[i] == ' ')
+                {
+                    if (sb.Length > 0)
+                    {
+                        stack.Push(String.Concat(" ", sb.ToString()));
+                        sb.Clear();
+                    }
+                }
+                else
+                {
+                    sb.Append(s[i]);
+                }
+            }
+
+            stack.Push(sb.ToString());
+            sb.Clear();
+
+            while (stack.Count > 0)
+            {
+                sb.Append(stack.Pop());
             }
 
             return sb.ToString().Trim();

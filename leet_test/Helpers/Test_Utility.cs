@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Text;
 
-namespace algorithms_test.sort_tests.Helpers
+namespace leet_test.sort_tests.Helpers
 {
     public class Test_Utility
     {

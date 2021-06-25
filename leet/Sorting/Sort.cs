@@ -5,7 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 
-namespace algorithms.sort
+namespace leet.sort
 {
     public static class Sort
     {

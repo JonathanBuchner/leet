@@ -1,9 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using algorithms.sort;
-using algorithms_test.sort_tests.Helpers;
+using leet.sort;
+using leet_test.sort_tests.Helpers;
 
 
-namespace algorithms_test.sort_tests
+namespace leet_test.sort_tests
 {
     [TestClass]
     public class Selection_tests

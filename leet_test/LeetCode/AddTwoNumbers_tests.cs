@@ -1,7 +1,7 @@
 ﻿using leet.Cormen.Chapter2;
 using leet.LeetCode.Models;
 using leet_test.Helpers;
-using LeetCode.AddTwoNumbers;
+using leet.LeetCode.AddTwoNumbers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace leet_test.LeetCode

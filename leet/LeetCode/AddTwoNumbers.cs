@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 using System.Xml.Linq;
 using System.Xml.Schema;
 
-namespace LeetCode.AddTwoNumbers
+namespace leet.LeetCode.AddTwoNumbers
 {
     #region Problem
     //https://leetcode.com/problems/add-two-numbers/

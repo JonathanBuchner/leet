@@ -1,5 +1,5 @@
 using System;
-using LeetCode.LongestSubstringWithoutRepeatingCharacters;
+using leet.LeetCode.LongestSubstringWithoutRepeatingCharacters;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace leet_test.LeetCode

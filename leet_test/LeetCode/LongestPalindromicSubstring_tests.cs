@@ -25,7 +25,7 @@ namespace leet_test.LeetCode
         [TestMethod]
         public void Example2_back_to_back_letters_is_palendromic()
         {
-            var input = "cbbc";
+            var input = "cbbd";
             var expected = "bb";
             var sut = new Solution();
 
@@ -47,7 +47,7 @@ namespace leet_test.LeetCode
         }
 
         [TestMethod]
-        public void Example1_two_different_letter_string_returns_answer()
+        public void Example4_two_different_letter_string_returns_answer()
         {
             var input = "ac";
             var possibleResults = new String[] { "a", "c" };
@@ -55,7 +55,7 @@ namespace leet_test.LeetCode
 
             var result = sut.LongestPalindrome(input);
 
-            Assert.IsTrue(possibleResults.Contains(result));
+            Assert.IsTrue(possibleResults.Contains(result) && result.Length == 1);
         }
     }
 }

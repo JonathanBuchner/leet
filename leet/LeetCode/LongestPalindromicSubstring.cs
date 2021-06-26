@@ -8,44 +8,39 @@ namespace leet.LeetCode.LongestPalindromicSubstring
     {
         public string LongestPalindrome(string s)
         {
-            var str = "";
-            
-            for(var i = 0; i < s.Length; i++)
-            {
-                if (s.Length - i <= str.Length) break;
+           
 
-                var sb = new StringBuilder();
-                for (var k = i; k < s.Length; k++)
+            for(var i = s.Length; i > 0; i--)
+            {
+                if (i == 1) return s[0].ToString();
+
+                var left = 0;
+                var right = i;
+
+                while (left + right <= s.Length)
                 {
-                    sb.Append(s[k]);
-                    if (sb.Length > str.Length)
+                    var test = s.Substring(left, right);
+                    
+                    if (IsPalindrom(test))
                     {
-                        if (IsPalindrome(sb.ToString())) str = sb.ToString();
+                        return test;
                     }
+
+                    left++;
                 }
             }
 
-            return str;
+            throw new NotSupportedException();
         }
-        private bool IsPalindrome(string s)
+
+        private bool IsPalindrom(string test)
         {
-            if (s.Length == 0) return false;
-
-            //Prepare string for onsidering only alphanumeric characters and ignoring cases.
-            var sb = new StringBuilder();
-            for (var i = 0; i < s.Length; i++)
-            {
-                if (Char.IsLetterOrDigit(s[i])) sb.Append(s[i]);
-            }
-
-            var str = sb.ToString().ToLower(); ;
-
             var left = 0;
-            var right = str.Length - 1;
+            var right = test.Length - 1;
 
             while (right > left)
             {
-                if (str[right] != str[left]) return false;
+                if (test[right] != test[left]) return false;
 
                 left++;
                 right--;

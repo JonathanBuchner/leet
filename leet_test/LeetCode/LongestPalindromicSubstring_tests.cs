@@ -57,5 +57,41 @@ namespace leet_test.LeetCode
 
             Assert.IsTrue(possibleResults.Contains(result) && result.Length == 1);
         }
+
+        [TestMethod]
+        public void Test_All_Same_Character_and_is_odd()
+        {
+            var input = "aaaaa";
+            var expected = "aaaaa";
+            var sut = new Solution();
+
+            var actual = sut.LongestPalindrome(input);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Test_All_Same_Character_and_is_even()
+        {
+            var input = "abaaba";
+            var expected = "abaaba";
+            var sut = new Solution();
+
+            var actual = sut.LongestPalindrome(input);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Test_can_do_palendrome_length_of_three_repeating()
+        {
+            var input = "ccc";
+            var expected = "ccc";
+            var sut = new Solution();
+
+            var actual = sut.LongestPalindrome(input);
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

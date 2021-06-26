@@ -8,45 +8,62 @@ namespace leet.LeetCode.LongestPalindromicSubstring
     {
         public string LongestPalindrome(string s)
         {
-           
+            if (String.IsNullOrEmpty(s)) throw new ArgumentException();
+            if (s.Length == 1) return s;
 
-            for(var i = s.Length; i > 0; i--)
+            var substringStartIndex = 0;
+            var length = 0;
+
+            for (var i = 0; i < s.Length; i++)
             {
-                if (i == 1) return s[0].ToString();
+                int index;
+                int longest = GetLongestEvenAndOdd(s, i, out index);
 
-                var left = 0;
-                var right = i;
-
-                while (left + right <= s.Length)
+                if (longest > length)
                 {
-                    var test = s.Substring(left, right);
-                    
-                    if (IsPalindrom(test))
-                    {
-                        return test;
-                    }
-
-                    left++;
+                    substringStartIndex = index;
+                    length = longest;
                 }
             }
 
-            throw new NotSupportedException();
+            return s.Substring(substringStartIndex, length);
         }
 
-        private bool IsPalindrom(string test)
+        private int GetLongestEvenAndOdd(string str, int position, out int index)
         {
-            var left = 0;
-            var right = test.Length - 1;
+            int indexOdd;
+            int indexEven;
+            var longestOdd = GetPalendromeLength(str, position, true, out indexOdd);
+            var longestEven = GetPalendromeLength(str, position, false, out indexEven);
 
-            while (right > left)
+            if (longestEven > longestOdd)
             {
-                if (test[right] != test[left]) return false;
-
-                left++;
-                right--;
+                index = indexEven;
+                return longestEven;
             }
+            else
+            {
+                index = indexOdd;
+                return longestOdd;
+            }
+        }
 
-            return true;
+        private int GetPalendromeLength(string str, int position, bool TestForOddPalendrome, out int left)
+        {
+            left = position;
+            var right = TestForOddPalendrome ? position : position + 1;
+            
+            while (left >= 0 && right < str.Length)
+            {
+                if (str[left] != str[right]) break;
+
+                left--;
+                right++;
+            }
+            // One is added below because it's inclusive and get correct index
+            left++;
+            
+            return right - left;
         }
     }
 }

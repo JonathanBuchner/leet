@@ -7,7 +7,7 @@ using leet.LeetCode.TrappingRainWater;
 namespace leet_test.LeetCode
 {
     [TestClass]
-    public class TrappingRainwaterTests
+    public class TrappingRainwater_tests
     {
         [TestMethod]
         public void Example1_can_compute_water_trapped()

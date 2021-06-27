@@ -1,5 +1,3 @@
-using System;
-
 namespace leet.LeetCode.TrappingRainWater
 {
     /*
@@ -18,7 +16,58 @@ namespace leet.LeetCode.TrappingRainWater
     {
         public int Trap(int[] height)
         {
-            throw new NotImplementedException();
+            if (height.Length < 3) return 0;
+
+            var higheshRightestIndex = 0;
+            
+            for (var i = 0; i < height.Length; i++)
+            {
+                if(height[i] >= height[higheshRightestIndex]) higheshRightestIndex = i;
+            }
+  
+            // Calculating from left to highest right index
+            var total = 0;
+            var left = 0;
+            var right = 1;
+            
+            while(right <= higheshRightestIndex)
+            {
+                var curr = height[left];
+                var next = height[right];
+
+                if (curr <= next)
+                {
+                    left = right;
+                    right++;
+                }
+                else    
+                {
+                    total += curr - next;
+                    right++;
+                }
+            }
+
+            // Calculating for right to highest right index;
+            right = height.Length - 1;
+            left = height.Length - 2;
+            while (left >= higheshRightestIndex)
+            {
+                var curr = height[right];
+                var next = height[left];
+
+                if (curr < next)
+                {
+                    right = left;
+                    left--;
+                }
+                else
+                {
+                    total += curr - next;
+                    left--;
+                }
+            }
+
+            return total;
         }
     }
 }

@@ -30,7 +30,7 @@ namespace leet.LeetCode.TrappingRainWater
             var left = 0;
             var right = 1;
             
-            while(right <= higheshRightestIndex)
+            while(right < higheshRightestIndex)
             {
                 var curr = height[left];
                 var next = height[right];
@@ -50,7 +50,7 @@ namespace leet.LeetCode.TrappingRainWater
             // Calculating for right to highest right index;
             right = height.Length - 1;
             left = height.Length - 2;
-            while (left >= higheshRightestIndex)
+            while (left > higheshRightestIndex)
             {
                 var curr = height[right];
                 var next = height[left];

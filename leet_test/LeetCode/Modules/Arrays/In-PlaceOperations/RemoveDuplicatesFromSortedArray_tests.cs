@@ -26,5 +26,23 @@ namespace leet_test.LeetCode.Modules.Arrays.In_PlaceOperations
                 Assert.AreEqual(expected[i], input[i]);
             }
         }
+
+        [TestMethod]
+        public void Example2_can_return_complex_list_correctly()
+        {
+            var input = new int[] { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 };
+            var expected = new int[] { 0, 1, 2, 3 , 4 };
+            var expectedLength = 5;
+            var sut = new Solution();
+
+            var actual = sut.RemoveDuplicates(input);
+
+            Assert.AreEqual(expectedLength, actual);
+
+            for (var i = 0; i < expected.Length; i++)
+            {
+                Assert.AreEqual(expected[i], input[i]);
+            }
+        }
     }
 }

@@ -16,7 +16,25 @@ namespace leet.LeetCode.Modules.Arrays.Inserting.MergeSortedArrays
     {
         public void Merge(int[] nums1, int m, int[] nums2, int n)
         {
-            throw new NotImplementedException();
+            var insertion = nums1.Length - 1;
+            var index1 = m - 1;
+            var index2 = n - 1;
+
+            while (index2 >= 0 && insertion >= 0)
+            {
+                if (index1 >= 0 && nums1[index1] > nums2[index2])
+                {
+                    nums1[insertion] = nums1[index1];
+                    index1--;
+                }
+                else
+                {
+                    nums1[insertion] = nums2[index2];
+                    index2--;
+                }
+
+                insertion--;
+            }
         }
     }
 }

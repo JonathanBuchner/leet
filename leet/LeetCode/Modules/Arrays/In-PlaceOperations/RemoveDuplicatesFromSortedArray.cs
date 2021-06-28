@@ -20,7 +20,24 @@ namespace leet.LeetCode.Modules.Arrays.In_PlaceOperations.RemoveDuplicatesFromSo
     {
         public int RemoveDuplicates(int[] nums)
         {
-            throw new NotImplementedException;
+            var left = 0;
+            var right = 1;
+
+            while (right < nums.Length)
+            {
+                if (nums[left] == nums[right])
+                {
+                    right++;
+                }
+                else
+                {
+                    left++;
+                    nums[left] = nums[right];
+                    right++;
+                }
+            }
+
+            return left + 1;
         }
     }
 }

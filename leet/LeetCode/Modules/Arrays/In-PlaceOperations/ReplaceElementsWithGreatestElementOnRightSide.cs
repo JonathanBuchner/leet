@@ -15,7 +15,17 @@ namespace leet.LeetCode.Modules.Arrays.In_PlaceOperations.ReplaceElementsWithGre
     {
         public int[] ReplaceElements(int[] arr)
         {
-            throw new NotImplementedException();
+            var highest = -1;
+
+            for(var i = arr.Length - 1; i >= 0; i--)
+            {
+                var temp = arr[i];
+                arr[i] = highest;
+                
+                highest = Math.Max(highest, temp);
+            }
+
+            return arr;
         }
     }
 }

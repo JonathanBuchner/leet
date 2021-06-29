@@ -42,5 +42,23 @@ namespace leet_test.LeetCode.Modules.Arrays.Delete
                 Assert.AreEqual(expectedArray[i], input[i]);
             }
         }
+
+        [TestMethod]
+        public void Can_return_correct_length_and_will_not_delete_if_no_duplicates()
+        {
+            var input = new int[] { 1, 2, 3, 4, 5, 6 };
+            var expected = 6;
+            var expectedArray = new int[] { 1, 2, 3, 4, 5 , 6 };
+            var sut = new Solution();
+
+            var actual = sut.RemoveDuplicates(input);
+
+            Assert.AreEqual(expected, actual);
+
+            for (var i = 0; i < expectedArray.Length; i++)
+            {
+                Assert.AreEqual(expectedArray[i], input[i]);
+            }
+        }
     }
 }

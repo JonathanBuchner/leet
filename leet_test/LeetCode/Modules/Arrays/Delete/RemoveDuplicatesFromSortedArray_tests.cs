@@ -60,5 +60,18 @@ namespace leet_test.LeetCode.Modules.Arrays.Delete
                 Assert.AreEqual(expectedArray[i], input[i]);
             }
         }
+
+        [TestMethod]
+        public void Will_return_zero_if_array_is_empty()
+        {
+            var input = new int[] { };
+            var expected = 0;
+            var expectedArray = new int[] { };
+            var sut = new Solution();
+
+            var actual = sut.RemoveDuplicates(input);
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

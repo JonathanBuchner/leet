@@ -32,5 +32,29 @@ namespace leet_test.LeetCode.Modules.Arrays.In_PlaceOperations
 
             CollectionAssert.AreEqual(expected, input);
         }
+
+        [TestMethod]
+        public void Can_move_zeros_to_end_for_longer_array()
+        {
+            var input = new int[] { 1, 1, 0, 3, 4, 5, 0, 0, 6, 12 };
+            var expected = new int[] { 1, 1, 3, 4, 5, 6, 12, 0, 0, 0 };
+            var sut = new Solution();
+
+            sut.MoveZeroes(input);
+
+            CollectionAssert.AreEqual(expected, input);
+        }
+
+        [TestMethod]
+        public void Can_calculate_if_there_are_no_zeros()
+        {
+            var input = new int[] { 2, 1 };
+            var expected = new int[] { 2, 1 };
+            var sut = new Solution();
+
+            sut.MoveZeroes(input);
+
+            CollectionAssert.AreEqual(expected, input);
+        }
     }
 }

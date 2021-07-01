@@ -13,7 +13,7 @@ namespace leet_test.LeetCode.Modules.Arrays.In_PlaceOperations
         public void Examplel1_Can_sort_by_even_odd_parity()
         {
             var input = new int[] { 3, 1, 2, 4 };
-            var expected = new int[] { 2, 4, 1, 3 };
+            var expected = new int[] { 2, 4, 3, 1 };
             var sut = new Solution();
 
             var actual = sut.SortArrayByParity(input);

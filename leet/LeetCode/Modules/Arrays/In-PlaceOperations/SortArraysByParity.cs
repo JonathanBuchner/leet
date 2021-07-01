@@ -17,25 +17,27 @@ namespace leet.LeetCode.Modules.Arrays.In_PlaceOperations.SortArraysByParity
     {
         public int[] SortArrayByParity(int[] nums)
         {
-            var arr = new int[nums.Length];
-            var front = 0;
-            var back = arr.Length - 1;
+            var odds = 0;
+            var evens = 0;
 
-            for (var i = 0; i < nums.Length; i++)
+            while(evens < nums.Length)
             {
-                if (nums[i] % 2 == 0)
+                if (nums[odds] % 2 == 1 && nums[evens] % 2 == 0)
                 {
-                    arr[front] = nums[i];
-                    front++;
-                }
-                else
+                    var temp = nums[evens];
+                    nums[evens] = nums[odds];
+                    nums[odds] = temp;
+                    odds++;
+                } 
+                else if (nums[odds] % 2 == 0)
                 {
-                    arr[back] = nums[i];
-                    back--;
+                    odds++;
                 }
+
+                evens++;
             }
 
-            return arr;
+            return nums;
         }
     }
 }

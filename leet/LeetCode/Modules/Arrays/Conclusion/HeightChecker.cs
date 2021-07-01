@@ -19,7 +19,64 @@ namespace leet.LeetCode.Modules.Arrays.Conclusion.HeightChecker
     {
         public int HeightChecker(int[] heights)
         {
-            throw new NotImplementedException();
+            var sorted = new int[heights.Length];
+            heights.CopyTo(sorted, 0);
+
+            mergeSort(sorted, 0, sorted.Length - 1);
+
+            var count = 0;
+            for(var i = 0; i < heights.Length; i++)
+            {
+                if (heights[i] != sorted[i]) count++;
+            }
+
+            return count;
+        }
+
+        public void mergeSort(int[] arr, int begin, int end)
+        {
+            if (end - begin < 1)
+            {
+                return;
+            }
+            else if (end - begin < 2)
+            {
+                if (arr[begin] > arr[end])
+                {
+                    var temp = arr[end];
+                    arr[end] = arr[begin];
+                    arr[begin] = temp;
+                }
+            } 
+            else
+            {
+                var middle = ((end - begin) / 2);
+                mergeSort(arr, begin, middle);
+                mergeSort(arr, middle + 1, end);
+
+                var bot = new int[middle - begin + 1];
+                var top = new int[end - middle];
+                Array.Copy(arr, begin, bot, 0, middle - begin);
+                Array.Copy(arr, begin, top, 0, end - (middle + 1));
+
+                var b = 0;
+                var t = 0;
+
+                while(b < bot.Length && t < top.Length)
+                {
+                    if (t >= top.Length || bot[b] > top[t])
+                    {
+                        arr[begin] = top[t];
+                        t++;
+                    }
+                    else
+                    {
+                        arr[begin] = bot[b];
+                        b++;
+                    }
+                    begin++;
+                }
+            }
         }
     }
 }

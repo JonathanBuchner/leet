@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace leet.LeetCode.GroupAnagrams
 {
@@ -17,7 +18,30 @@ namespace leet.LeetCode.GroupAnagrams
     {
         public IList<IList<string>> GroupAnagrams(string[] strs)
         {
-            throw new NotImplementedException();
+            var dict = new Dictionary<string, IList<string>>();
+
+            for(var i = 0; i < strs.Length; i++)
+            {
+                var sorted = String.Concat(strs[i].OrderBy(c => c));
+
+                if (dict.ContainsKey(sorted))
+                {
+                    dict[sorted].Add(strs[i]);
+                }
+                else
+                {
+                    dict.Add(sorted, new List<string>() { strs[i] });
+                }
+            }
+
+            var list = new List<IList<string>>();
+            
+            foreach (var item in dict)
+            {
+                list.Add(item.Value);
+            }
+
+            return list;
         }
     }
 }

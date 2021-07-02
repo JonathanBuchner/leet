@@ -18,27 +18,24 @@ namespace leet.LeetCode.GroupAnagrams
     {
         public IList<IList<string>> GroupAnagrams(string[] strs)
         {
-            var dict = new Dictionary<string, IList<string>>();
+            var dict = new Dictionary<string, int>();
+            var list = new List<IList<string>>();
 
-            for(var i = 0; i < strs.Length; i++)
+            for (var i = 0; i < strs.Length; i++)
             {
-                var sorted = String.Concat(strs[i].OrderBy(c => c));
+                var chars = strs[i].ToCharArray();
+                Array.Sort(chars);
+                var sorted = new String(chars);
 
                 if (dict.ContainsKey(sorted))
                 {
-                    dict[sorted].Add(strs[i]);
+                    list[dict[sorted]].Add(strs[i]);
                 }
                 else
-                {
-                    dict.Add(sorted, new List<string>() { strs[i] });
+                { 
+                    dict.Add(sorted, list.Count());
+                    list.Add(new List<string>() { strs[i] });
                 }
-            }
-
-            var list = new List<IList<string>>();
-            
-            foreach (var item in dict)
-            {
-                list.Add(item.Value);
             }
 
             return list;

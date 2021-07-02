@@ -17,15 +17,7 @@ namespace leet.LeetCode.GroupAnagrams
     {
         public IList<IList<string>> GroupAnagrams(string[] strs)
         {
-            var list = new List<IList<string>>()  
-            {
-                
-                new List<string>() { "nat", "tan" },
-                new List<string>() { "ate", "eat", "tea" },
-                new List<string>() { "bat", "nat" },
-            };
-
-            return list;
+            throw new NotImplementedException();
         }
     }
 }

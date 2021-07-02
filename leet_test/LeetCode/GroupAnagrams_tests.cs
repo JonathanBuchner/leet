@@ -28,5 +28,35 @@ namespace leet_test.LeetCode
 
             AssertTwoDementionalLists.AreMatch(expected, actual);
         }
+
+        [TestMethod]
+        public void Example2_Empty_string_returns_empty_list_nested_in_list()
+        {
+            var input = new string[] { "" };
+            var expected = new List<IList<string>>()
+           {
+                new List<string>(){ "" }
+            };
+            var sut = new Solution();
+
+            var actual = sut.GroupAnagrams(input);
+
+            AssertTwoDementionalLists.AreMatch(expected, actual);
+        }
+
+        [TestMethod]
+        public void Example3_Can_solve_if_only_one_letter_in_array()
+        {
+            var input = new string[] { "a" };
+            var expected = new List<IList<string>>()
+            {
+                new List<string>(){ "a" }
+            };
+            var sut = new Solution();
+
+            var actual = sut.GroupAnagrams(input);
+
+            AssertTwoDementionalLists.AreMatch(expected, actual);
+        }
     }
 }

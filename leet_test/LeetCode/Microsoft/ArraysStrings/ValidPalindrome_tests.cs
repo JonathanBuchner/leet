@@ -102,6 +102,7 @@ namespace leet_test.Microsoft.ArrayStrings.LeetCode
 
             var result = sut.IsPalindrome(input);
 
+            Assert.AreEqual(expected, result);
         }
 
         [TestMethod]

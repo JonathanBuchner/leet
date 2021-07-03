@@ -11,7 +11,7 @@ using System.Text;
  * https://leetcode.com/explore/interview/card/microsoft/30/array-and-strings/166/
  */
 
-namespace leet.LeetCode.ReverseWordsInaString
+namespace leet.LeetCode.Microsoft.ArrayStrings.ReverseWordsInaString
 {
     public class Solution
     {

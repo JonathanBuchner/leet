@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using leet.LeetCode.LongestPalindromicSubstring;
+using leet.LeetCode.Microsoft.ArrayStrings.LongestPalindromicSubstring;
 using System.Linq;
 
-namespace leet_test.LeetCode
+namespace leet_test.Microsoft.ArrayStrings.LeetCode
 {
     [TestClass]
     public class LongestPalindromicSubstring_tests

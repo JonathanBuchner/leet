@@ -1,4 +1,4 @@
-﻿using leet.LeetCode.ReverseString;
+﻿using leet.LeetCode.Microsoft.ArrayStrings.ReverseString;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace leet_test.LeetCode

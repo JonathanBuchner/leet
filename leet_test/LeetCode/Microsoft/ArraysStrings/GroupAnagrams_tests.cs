@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using leet.LeetCode.GroupAnagrams;
+using leet.LeetCode.Microsoft.ArrayStrings.GroupAnagrams;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 using System.Collections;
 using leet_test.Helpers;
 
-namespace leet_test.LeetCode
+namespace leet_test.Microsoft.ArrayStrings.LeetCode
 {
     [TestClass]
     public class GroupAnagrams_tests

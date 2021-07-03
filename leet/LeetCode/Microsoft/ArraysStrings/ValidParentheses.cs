@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 
-namespace leet.LeetCode.ValidParentheses
+namespace leet.LeetCode.Microsoft.ArrayStrings.ValidParentheses
 {
     /*
      * Valid Parantheses

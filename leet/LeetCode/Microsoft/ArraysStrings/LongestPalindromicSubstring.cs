@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace leet.LeetCode.LongestPalindromicSubstring
+namespace leet.LeetCode.Microsoft.ArrayStrings.LongestPalindromicSubstring
 {
     public class Solution
     {

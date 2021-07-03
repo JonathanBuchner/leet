@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace leet.LeetCode.StringToInteger
+namespace leet.LeetCode.Microsoft.ArrayStrings.StringToInteger
 {
     /*
      * String to Integer (ATOI)

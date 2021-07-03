@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using leet.LeetCode.StringToInteger;
+using leet.LeetCode.Microsoft.ArrayStrings.StringToInteger;
 
-namespace leet_test.LeetCode
+namespace leet_test.Microsoft.ArrayStrings.LeetCode
 {
     [TestClass]
     public class StringToInteger_tests

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using leet.LeetCode.TwoSum;
+using leet.LeetCode.Microsoft.ArrayStrings.TwoSum;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace leet_test.LeetCode
+namespace leet_test.Microsoft.ArrayStrings.LeetCode
 {
     [TestClass]
     public class TwoSum_tests

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace leet.LeetCode.ValidPalindrome
+namespace leet.LeetCode.Microsoft.ArrayStrings.ValidPalindrome
 {
     /* Valid Palindrome
      * https://leetcode.com/explore/interview/card/microsoft/30/array-and-strings/162/

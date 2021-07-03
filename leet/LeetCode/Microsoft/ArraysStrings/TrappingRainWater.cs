@@ -1,4 +1,4 @@
-namespace leet.LeetCode.TrappingRainWater
+namespace leet.LeetCode.Microsoft.ArrayStrings.TrappingRainWater
 {
     /*
      * Trapping Rain Water

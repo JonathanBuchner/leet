@@ -7,7 +7,7 @@ using System.Text;
  * 
  * https://leetcode.com/explore/interview/card/microsoft/30/array-and-strings/187/
  */
-namespace leet.LeetCode.ReverseString
+namespace leet.LeetCode.Microsoft.ArrayStrings.ReverseString
 {
     public class Solution
     {

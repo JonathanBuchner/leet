@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace leet.LeetCode.TwoSum
+namespace leet.LeetCode.Microsoft.ArrayStrings.TwoSum
 {
     /* Two Sum
     * Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.

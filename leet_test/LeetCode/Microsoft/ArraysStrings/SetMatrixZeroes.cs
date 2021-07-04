@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using leet.LeetCode.Microsoft.ArrayStrings.SetMatrixZeroes;
+using leet_test.Helpers;
 
 namespace leet_test.LeetCode.Microsoft.ArraysStrings
 {
@@ -26,7 +27,7 @@ namespace leet_test.LeetCode.Microsoft.ArraysStrings
 
             sut.SetZeroes(input);
 
-            Assert.AreEqual(expected, input);
+            AssertTwoDemensionalArrays.AreEqual(input, expected);
         }
 
         [TestMethod]
@@ -46,7 +47,7 @@ namespace leet_test.LeetCode.Microsoft.ArraysStrings
 
             sut.SetZeroes(input);
 
-            Assert.AreEqual(expected, input);
+            AssertTwoDemensionalArrays.AreEqual(input, expected);
         }
     }
 }

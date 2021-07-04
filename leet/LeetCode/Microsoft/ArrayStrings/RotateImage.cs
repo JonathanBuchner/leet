@@ -12,6 +12,9 @@ namespace leet.LeetCode.Microsoft.ArrayStrings.RotateImage
      * You have to rotate the image in-place, which means you have to modify the input 2D matrix directly. DO NOT allocate another 2D matrix and do the rotation.
      * 
      * https://leetcode.com/explore/interview/card/microsoft/30/array-and-strings/202/
+     * 
+     * Note
+     * This solution minimizes memory usage.
      */
     public class Solution
     {
@@ -31,5 +34,4 @@ namespace leet.LeetCode.Microsoft.ArrayStrings.RotateImage
             }
         }
     }
-    
 }

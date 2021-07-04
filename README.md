@@ -2,8 +2,8 @@
 
 Personal repository where I practice and design computer complexity problems from  
 - [LeetCode](https://leetcode.com/)
-- [Introduction to Algorithms, Cormen (2009)](https://www.amazon.com/Introduction-Algorithms-Leiserson-published-Hardcover-dp-B008F1DKXU/dp/B008F1DKXU/ref=mt_other?_encoding=UTF8&me=&qid=)
-- [Cracking the coding interview, Gayle Laakmann McDowell. 6th Ed.](https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850/ref=sr_1_1)
+- [Introduction to Algorithms, Cormen (2009, 3rd Ed.)](https://www.amazon.com/Introduction-Algorithms-Leiserson-published-Hardcover-dp-B008F1DKXU/dp/B008F1DKXU/ref=mt_other?_encoding=UTF8&me=&qid=)
+- [Cracking the coding interview, Gayle Laakmann McDowell (2020, 6th Ed.)](https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850/ref=sr_1_1)
 
 ### There is no license for this project; default copyright laws apply. 
 > Without a license, the default copyright laws apply, meaning that the author retains all rights to their source code and no one may reproduce, distribute, or create derivative works from their work. 

@@ -20,6 +20,7 @@ namespace leet.LeetCode.Microsoft.ArrayStrings.SetMatrixZeroes
             var x = 0;
             var y = 0;
             var firstRow = false;
+            var firstColumn = false;
 
             // Mark rows and colums 
             while( y < matrix.Length)
@@ -37,8 +38,15 @@ namespace leet.LeetCode.Microsoft.ArrayStrings.SetMatrixZeroes
                             // Marking first column to represent rows
                             matrix[0][x] = 0;
                         }
-                        //Marking first row to represent columns
-                        matrix[y][0] = 0;
+                        if(x == 0)
+                        {
+                            firstColumn = true;
+                        }
+                        else
+                        {
+                            //Marking first row to represent columns
+                            matrix[y][0] = 0;
+                        }
                     }
                     x++;
                 }
@@ -59,7 +67,7 @@ namespace leet.LeetCode.Microsoft.ArrayStrings.SetMatrixZeroes
             }
 
             //Fill in columns
-            for (var i = 0; i < matrix[0].Length; i++)
+            for (var i = 1; i < matrix[0].Length; i++)
             {
                 if (matrix[0][i] == 0)
                 {
@@ -71,13 +79,22 @@ namespace leet.LeetCode.Microsoft.ArrayStrings.SetMatrixZeroes
             }
 
             // Fill in first row
-            if (firstRow)
+            if(firstRow)
             {
                 for(var i = 0; i <matrix[0].Length; i++)
                 {
                     matrix[0][i] = 0;
                 }
             }
+            // Fill in first column 
+            if (firstColumn)
+            {
+                for (var i = 0; i < matrix.Length; i++)
+                {
+                    matrix[i][0] = 0;
+                }
+            }
+
         }
     }
 }

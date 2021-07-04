@@ -49,5 +49,27 @@ namespace leet_test.LeetCode.Microsoft.ArraysStrings
 
             AssertTwoDemensionalArrays.AreEqual(input, expected);
         }
+
+        [TestMethod]
+        public void Test1_test_extremese()
+        {
+            //[[-4,-2147483648,6,-7,0],[-8,6,-8,-6,0],[2147483647,2,-9,-6,-10]]
+            var input = new int[][] { 
+                new int[] { -4, -2147483648, 6, -7, 0 },
+                new int[] { -8, 6, -8, -6, 0 },
+                new int[] { 2147483647, 2, -9, -6, -10 }
+            };
+            //[[0,0,0,0,0],[0,0,0,0,0],[2147483647,2,-9,-6,0]]
+            var expected = new int[][] {
+                new int[] { 0, 0, 0, 0, 0 },
+                new int[] { 0, 0, 0, 0, 0 },
+                new int[] { 2147483647, 2, -9, -6, 0 }
+            };
+            var sut = new Solution();
+
+            sut.SetZeroes(input);
+
+            AssertTwoDemensionalArrays.AreEqual(input, expected);
+        }
     }
 }

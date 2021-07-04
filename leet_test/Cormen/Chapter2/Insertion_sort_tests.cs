@@ -1,7 +1,7 @@
 ﻿using leet.Cormen.Chapter2;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace leet_test.Corment_tests.Chapter2
+namespace leet_test.Cormen.Chapter2
 {
     [TestClass]
     public class Insertion_sort_tests

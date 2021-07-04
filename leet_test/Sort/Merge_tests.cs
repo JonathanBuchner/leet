@@ -3,10 +3,10 @@ using leet.sort;
 using leet_test.sort_tests.Helpers;
 
 
-namespace leet_test.sort_tests
+namespace leet_test.sort
 {
     [TestClass]
-    public class Bubble_tests
+    public class Merge_tests
     {
         [TestMethod]
         public void TestsCanFail()
@@ -20,9 +20,9 @@ namespace leet_test.sort_tests
         {
             var arr = new int[] { };
 
-            Sort.Bubble(arr);
+            var sorted = Sort.Merge(arr);
 
-            Assert.AreEqual(arr.Length, 0);
+            Assert.AreEqual(sorted.Length, 0);
         }
 
         [TestMethod]
@@ -30,9 +30,9 @@ namespace leet_test.sort_tests
         {
             var arr = new int[] { 1 };
 
-            Sort.Bubble(arr);
+            var sorted = Sort.Merge(arr);
 
-            Assert.AreEqual(arr.Length, 1);
+            Assert.AreEqual(sorted.Length, 1);
         }
 
         [TestMethod]
@@ -41,31 +41,31 @@ namespace leet_test.sort_tests
             var arr = new int[] { 2, 1 };
             var desired = new int[] { 1, 2 };
 
-            Sort.Bubble(arr);
+            var sorted = Sort.Merge(arr);
 
-            CollectionAssert.AreEqual(arr, desired);
+            CollectionAssert.AreEqual(sorted, desired);
         }
 
         [TestMethod]
         public void Can_Sort_With_Length_10()
         {
             var arr = new int[] { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
-            var desired = new int[] { 1, 2, 3, 4, 5, 6, 7, 8 ,9 , 10 };
+            var desired = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
-            Sort.Bubble(arr);
+            var sorted = Sort.Merge(arr);
 
-            CollectionAssert.AreEqual(arr, desired);
+            CollectionAssert.AreEqual(sorted, desired);
         }
 
         [TestMethod]
         public void Can_Sort_With_Length_Complex()
         {
-            var arr = new int[] {99999, 10, 44, -1111, 0,  2, 2, 2, -1 };
-            var desired = new int[] { -1111, -1, 0, 2, 2, 2, 10, 44, 99999 };
+            var arr = new int[] { 99999, 10, 44, -1111, 0, 2, 2, 2, -1 , 5, 6, 7, 8};
+            var desired = new int[] { -1111, -1, 0, 2, 2, 2, 5, 6, 7, 8, 10, 44, 99999 };
 
-            Sort.Bubble(arr);
+            var sorted = Sort.Merge(arr);
 
-            CollectionAssert.AreEqual(arr, desired);
+            CollectionAssert.AreEqual(sorted, desired);
         }
 
         [TestMethod]
@@ -73,9 +73,9 @@ namespace leet_test.sort_tests
         {
             var arr = Test_Utility.Generate_Random_Numbers_In_Int_Array(1000);
 
-            Sort.Bubble(arr);
+            var sorted = Sort.Merge(arr);
 
-            Assert.IsTrue(Test_Utility.CheckIncreasesInValue(arr));
+            Assert.IsTrue(Test_Utility.CheckIncreasesInValue(sorted));
         }
     }
 }

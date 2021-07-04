@@ -17,7 +17,19 @@ namespace leet.LeetCode.Microsoft.ArrayStrings.RotateImage
     {
         public void Rotate(int[][] matrix)
         {
-            throw new NotImplementedException();
+            for(var h = 0; h < matrix.Length / 2; h++)
+            {
+                var s = matrix.Length - 1 - h;
+                for (var i = 0; i + 2 * h < matrix.Length - 1; i++)
+                {
+                    var temp = matrix[s - i][h];
+                    matrix[s - i][h] = matrix[s][s - i];
+                    matrix[s][s - i] = matrix[h + i][s];
+                    matrix[h + i][s] = matrix[h][h + i];
+                    matrix[h][h + i] = temp;
+                }
+            }
         }
     }
+    
 }

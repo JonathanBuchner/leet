@@ -24,9 +24,10 @@ namespace leet_test.LeetCode.Microsoft.ArraysStrings
 
             var actual = sut.SpiralOrder(input);
 
+            Assert.AreEqual(expected.Count, actual.Count, $"Lists are different lengths. Actual: ${actual.Count}");
             for (var i = 0; i < expected.Count; i++)
             {
-                Assert.AreEqual(expected[i], actual[i]);
+                Assert.AreEqual(expected[i], actual[i], $"Actual list: ${actual}");
             }
         }
 
@@ -45,9 +46,115 @@ namespace leet_test.LeetCode.Microsoft.ArraysStrings
 
             var actual = sut.SpiralOrder(input);
 
+            Assert.AreEqual(expected.Count, actual.Count, $"Lists are different lengths. Actual: ${actual.Count}");
             for (var i = 0; i < expected.Count; i++)
             {
-                Assert.AreEqual(expected[i], actual[i]);
+                Assert.AreEqual(expected[i], actual[i], $"Actual list: ${actual}");
+            }
+        }
+
+        [TestMethod]
+        public void Test_Can_return_one_by_two_matrix()
+        {
+            var input = new int[][]
+            {
+                new int[] { 1 },
+                new int[] { 2 }
+                
+            };
+            IList<int> expected = new List<int> { 1, 2 };
+            var sut = new Solution();
+
+            var actual = sut.SpiralOrder(input);
+
+            Assert.AreEqual(expected.Count, actual.Count, $"Lists are different lengths. Actual: ${actual.Count}");
+            for (var i = 0; i < expected.Count; i++)
+            {
+                Assert.AreEqual(expected[i], actual[i], $"Actual list: ${actual}");
+            }
+        }
+
+        [TestMethod]
+        public void Test_Can_return_two_by_two_matrix()
+        {
+            var input = new int[][]
+            {
+                new int[] { 1, 2 },
+                new int[] { 3, 4 },
+            };
+            IList<int> expected = new List<int> { 1, 2, 4, 3 };
+            var sut = new Solution();
+
+            var actual = sut.SpiralOrder(input);
+
+            Assert.AreEqual(expected.Count, actual.Count, $"Lists are different lengths. Actual: ${actual.Count}");
+            for (var i = 0; i < expected.Count; i++)
+            {
+                Assert.AreEqual(expected[i], actual[i], $"Actual list: ${actual}");
+            }
+        }
+
+        [TestMethod]
+        public void Test_Can_return_one_by_four_matrix()
+        {
+            var input = new int[][]
+            {
+                new int[] { 1 },
+                new int[] { 2 },
+                new int[] { 3 },
+                new int[] { 4 },
+            };
+            IList<int> expected = new List<int> { 1, 2, 3, 4 };
+            var sut = new Solution();
+
+            var actual = sut.SpiralOrder(input);
+
+            Assert.AreEqual(expected.Count, actual.Count, $"Lists are different lengths. Actual: ${actual.Count}");
+            for (var i = 0; i < expected.Count; i++)
+            {
+                Assert.AreEqual(expected[i], actual[i], $"Actual list: ${actual}");
+            }
+        }
+
+        [TestMethod]
+        public void Test_Can_return_one_by_five_matrix()
+        {
+            var input = new int[][]
+            {
+                new int[] { 1 },
+                new int[] { 2 },
+                new int[] { 3 },
+                new int[] { 4 },
+                new int[] { 5 },
+            };
+            IList<int> expected = new List<int> { 1, 2, 3, 4, 5 };
+            var sut = new Solution();
+
+            var actual = sut.SpiralOrder(input);
+
+            Assert.AreEqual(expected.Count, actual.Count, $"Lists are different lengths. Actual: ${actual.Count}");
+            for (var i = 0; i < expected.Count; i++)
+            {
+                Assert.AreEqual(expected[i], actual[i], $"Actual list: ${actual}");
+            }
+        }
+
+        [TestMethod]
+        public void Test_Can_return_four_by_one_matrix()
+        {
+            var input = new int[][]
+            {
+                new int[] { 1 , 2, 3, 4},
+            };
+            IList<int> expected = new List<int> { 1, 2, 3, 4 };
+            var sut = new Solution();
+
+            var actual = sut.SpiralOrder(input);
+
+            Assert.AreEqual(expected.Count, actual.Count, $"Lists are different lengths. Actual: ${actual.Count}");
+            for (var i = 0; i < expected.Count; i++)
+            {
+                Assert.AreEqual(expected[i], actual[i], $"Actual list: ${actual}");
             }
         }
     }

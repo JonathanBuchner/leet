@@ -1,10 +1,6 @@
-﻿using leet.LeetCode.Models;
-using leet.LeetCode.Modules.LinkedList;
-using leet_test.Helpers;
+﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using leet.LeetCode.Modules.LinkedList;
 
 namespace leet_test.LeetCode.Modules.LinkedList
 {
@@ -12,68 +8,23 @@ namespace leet_test.LeetCode.Modules.LinkedList
     public class MyLinkedList_tests
     {
         [TestMethod]
-        public void Get_can_return_at_index()
+        public void Example1_Can_pass_leet_code_first_test_case()
         {
-            
-            var head = new LinkedListHelper().CreateSinglyLinkedList(new int[] { 1, 2, 3, 4 });
-            var sut = new MySinglyLinkedList(head);
+            //["MyLinkedList","addAtHead","addAtTail","addAtIndex","get","deleteAtIndex","get"]
+            //[[],[1],[3],[1,2],[1],[1],[1]]
+            var expected = 2;
+            var expected2 = 3;
+            var sut = new MyLinkedList();
 
-            var result1 = sut.Get(1);
-            var result2 = sut.Get(3);
-            var result3 = sut.Get(4);
+            sut.AddAtHead(1);
+            sut.AddAtTail(3);
+            sut.AddAtIndex(1, 2);
+            var actual = sut.Get(1);
+            sut.DeleteAtIndex(1);
+            var actual2 = sut.Get(1);
 
-            Assert.AreEqual(1, result1);
-            Assert.AreEqual(3, result2);
-            Assert.AreEqual(4, result3);
-        }
-
-        [TestMethod]
-        public void AddAtHead_Can_Add()
-        {
-            var head = new LinkedListHelper().CreateSinglyLinkedList(new int[] { 1, 2, 3, 4 });
-            var sut = new MySinglyLinkedList(head);
-
-            sut.AddAtHead(0);
-            var result = sut.Head.Val;
-
-            Assert.AreEqual(0, result);
-        }
-
-        [TestMethod]
-        public void AddAtTail_Can_Add()
-        {
-            ListNode tail;
-            var head = new LinkedListHelper().CreateSinglyLinkedList(new int[] { 1, 2, 3, 4 }, out tail);
-            var sut = new MySinglyLinkedList(head, tail);
-
-            sut.AddAtTail(5);
-            var result = sut.Tail.Val;
-
-            Assert.AreEqual(5, result);
-        }
-
-        [TestMethod]
-        public void AddAtIndex_Can_Add()
-        {
-            var head = new LinkedListHelper().CreateSinglyLinkedList(new int[] { 1, 2, 3, 4 });
-            var sut = new MySinglyLinkedList(head);
-
-            sut.AddAtIndex(3, 10);
-            var result = sut.Get(3);
-
-            Assert.AreEqual(10, result);
-        }
-
-        [TestMethod]
-        public void Can_Delete_At_Index()
-        {
-            var head = new LinkedListHelper().CreateSinglyLinkedList(new int[] { 1, 2, 3, 4 });
-            var sut = new MySinglyLinkedList(head);
-
-            sut.DeleteAtIndex(3);
-            var result = sut.Get(3);
-
-            Assert.AreEqual(4, result);
+            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected2, actual2);
         }
     }
 }

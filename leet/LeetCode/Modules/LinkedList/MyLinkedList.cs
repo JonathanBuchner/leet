@@ -81,7 +81,7 @@ namespace leet.LeetCode.Modules.LinkedList
                 }
                 else if (curr.Next == null)
                 {
-                    throw new IndexOutOfRangeException($"Cannot add node with value ${val} at index {index}.");
+                    throw new IndexOutOfRangeException($"Cannot add node with value {val} at index {index}.");
                 }
                 else
                 {

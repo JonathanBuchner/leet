@@ -136,6 +136,7 @@ namespace leet.LeetCode.Modules.LinkedList
                     Head = Head.Next;
                     Head.Prev = null;
                 }
+                return;
             }
 
             var i = 0;

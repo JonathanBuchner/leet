@@ -122,5 +122,16 @@ namespace leet_test.LeetCode.Modules.LinkedList
             Assert.AreEqual(expected, actual);
             Assert.AreEqual(expected2, actual2);
         }
+
+        [TestMethod]
+        public void TestCase1_Add_Then_Delete()
+        {
+            var sut = new MyLinkedList();
+
+            sut.AddAtHead(1);
+            sut.DeleteAtIndex(0);
+
+            Assert.IsTrue(true);
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace leet_test.LeetCode.Modules.LinkedList
         {
             
             var head = new LinkedListHelper().CreateSinglyLinkedList(new int[] { 1, 2, 3, 4 });
-            var sut = new MyLinkedList(head);
+            var sut = new MySinglyLinkedList(head);
 
             var result1 = sut.Get(1);
             var result2 = sut.Get(3);
@@ -31,7 +31,7 @@ namespace leet_test.LeetCode.Modules.LinkedList
         public void AddAtHead_Can_Add()
         {
             var head = new LinkedListHelper().CreateSinglyLinkedList(new int[] { 1, 2, 3, 4 });
-            var sut = new MyLinkedList(head);
+            var sut = new MySinglyLinkedList(head);
 
             sut.AddAtHead(0);
             var result = sut.Head.Val;
@@ -44,7 +44,7 @@ namespace leet_test.LeetCode.Modules.LinkedList
         {
             ListNode tail;
             var head = new LinkedListHelper().CreateSinglyLinkedList(new int[] { 1, 2, 3, 4 }, out tail);
-            var sut = new MyLinkedList(head, tail);
+            var sut = new MySinglyLinkedList(head, tail);
 
             sut.AddAtTail(5);
             var result = sut.Tail.Val;
@@ -56,7 +56,7 @@ namespace leet_test.LeetCode.Modules.LinkedList
         public void AddAtIndex_Can_Add()
         {
             var head = new LinkedListHelper().CreateSinglyLinkedList(new int[] { 1, 2, 3, 4 });
-            var sut = new MyLinkedList(head);
+            var sut = new MySinglyLinkedList(head);
 
             sut.AddAtIndex(3, 10);
             var result = sut.Get(3);
@@ -68,7 +68,7 @@ namespace leet_test.LeetCode.Modules.LinkedList
         public void Can_Delete_At_Index()
         {
             var head = new LinkedListHelper().CreateSinglyLinkedList(new int[] { 1, 2, 3, 4 });
-            var sut = new MyLinkedList(head);
+            var sut = new MySinglyLinkedList(head);
 
             sut.DeleteAtIndex(3);
             var result = sut.Get(3);

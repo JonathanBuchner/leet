@@ -8,13 +8,13 @@ using System.Transactions;
 
 namespace leet.LeetCode.Modules.LinkedList
 {
-    public class MyLinkedList
+    public class MySinglyLinkedList
     {
         /** Initialize your data structure here. */
         private ListNode _head;
         private ListNode _tail;
 
-        public MyLinkedList(ListNode head, ListNode tail = null)
+        public MySinglyLinkedList(ListNode head, ListNode tail = null)
         {
             _head = head;
             _tail = tail ?? GetTail();

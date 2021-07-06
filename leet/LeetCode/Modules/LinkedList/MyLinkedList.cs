@@ -49,37 +49,67 @@ namespace leet.LeetCode.Modules.LinkedList
         /** Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list. */
         public void AddAtHead(int val)
         {
-            Head = new DoubleListNode(val, null, Head);
+            var node = new DoubleListNode(val, null, Head);
+            
+            if (Head != null)
+            {
+                Head.Prev = node;
+                Head = node;
+            }
+            else
+            {
+                Head = node;
+                Tail = Head;
+            }
         }
 
         /** Append a node of value val to the last element of the linked list. */
         public void AddAtTail(int val)
         {
-            Tail = new DoubleListNode(val, Tail, null);
+            var node =  new DoubleListNode(val, Tail, null);
+            
+            if (node.Prev != null)
+            {
+                Tail.Next = node;
+                Tail = node;
+            }
+            else
+            {
+                Tail = node;
+                Head = Tail;
+            }
         }
 
         /** Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted. */
         public void AddAtIndex(int index, int val)
         {
-            if (index == 0) AddAtHead(val);
+            if (index == 0)
+            {
+                AddAtHead(val);
+                return;
+            }
             
             var i = 0;
             var curr = Head;
 
             while(true)
             {
-                if (i == index)
+                if (i == index - 1)
                 {
                     if (curr.Next == null)
                     {
                         AddAtTail(val);
+                        return;
                     }
                     else
                     {
-                        curr.Next = new DoubleListNode(val, curr, curr.Next);
+                        var node = new DoubleListNode(val, curr, curr.Next);
+                        curr.Next.Prev = node;
+                        curr.Next = node;
+                        return;
                     }
                 }
-                else if (curr.Next == null)
+                else if (curr == null)
                 {
                     throw new IndexOutOfRangeException($"Cannot add node with value {val} at index {index}.");
                 }
@@ -96,8 +126,16 @@ namespace leet.LeetCode.Modules.LinkedList
         {
             if (index == 0)
             {
-                Head = Head.Next;
-                Head.Prev = null;
+                if(Head.Next == null)
+                {
+                    Head = null;
+                    Tail = null;
+                } 
+                    else
+                {
+                    Head = Head.Next;
+                    Head.Prev = null;
+                }
             }
 
             var i = 0;
@@ -105,22 +143,32 @@ namespace leet.LeetCode.Modules.LinkedList
 
             while (true)
             {
-                if (i == index)
+                if (i == index - 1)
                 {
                     if (curr.Next == null)
                     {
-                        Tail = Tail.Prev;
-                        Tail.Next = null;
+                        return;
                     }
                     else
                     {
-                        curr.Prev = curr.Next;
-                        curr.Next = curr.Prev;
+                        var after = curr.Next.Next;
+                        
+                        if (after == null)
+                        {
+                            curr.Next = null;
+                            Tail = curr;
+                        }
+                        else
+                        {
+                            after.Prev = curr;
+                            curr.Next = after;
+                        }
                     }
+                    return;
                 }
                 else if (curr.Next == null)
                 {
-                    throw new IndexOutOfRangeException($"Cannot delete node at index {index}.");
+                    return;
                 }
                 else
                 {

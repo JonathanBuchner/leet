@@ -18,9 +18,9 @@ namespace leet_test.LeetCode.Modules.LinkedList
             var head = new LinkedListHelper().CreateSinglyLinkedList(new int[] { 1, 2, 3, 4 });
             var sut = new MySinglyLinkedList(head);
 
-            var result1 = sut.Get(1);
-            var result2 = sut.Get(3);
-            var result3 = sut.Get(4);
+            var result1 = sut.Get(0);
+            var result2 = sut.Get(2);
+            var result3 = sut.Get(3);
 
             Assert.AreEqual(1, result1);
             Assert.AreEqual(3, result2);
@@ -70,10 +70,10 @@ namespace leet_test.LeetCode.Modules.LinkedList
             var head = new LinkedListHelper().CreateSinglyLinkedList(new int[] { 1, 2, 3, 4 });
             var sut = new MySinglyLinkedList(head);
 
-            sut.DeleteAtIndex(3);
-            var result = sut.Get(3);
+            sut.DeleteAtIndex(1);
+            var result = sut.Get(1);
 
-            Assert.AreEqual(4, result);
+            Assert.AreEqual(3, result);
         }
     }
 }

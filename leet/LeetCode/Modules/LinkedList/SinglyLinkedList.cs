@@ -8,6 +8,13 @@ using System.Transactions;
 
 namespace leet.LeetCode.Modules.LinkedList
 {
+    /***
+     * DO NOT US
+     * 
+     * Was rewritten and passes all tests as double linked list.
+     * 
+     * 
+     * **/
     public class MySinglyLinkedList
     {
         /** Initialize your data structure here. */
@@ -27,7 +34,7 @@ namespace leet.LeetCode.Modules.LinkedList
         /** Get the value of the index-th node in the linked list. If the index is invalid, return -1. */
         public int Get(int index)
         {
-            var pos = 1;
+            var pos = 0;
             var curr = _head;
 
             while(pos < index)
@@ -37,6 +44,21 @@ namespace leet.LeetCode.Modules.LinkedList
             }
 
             return curr.Val;
+        }
+
+        /** Get the value of the index-th node in the linked list. If the index is invalid, return -1. */
+        public ListNode GetNode(int index)
+        {
+            var pos = 0;
+            var curr = _head;
+
+            while (pos < index)
+            {
+                curr = curr.Next;
+                pos++;
+            }
+
+            return curr;
         }
 
         /** Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list. */
@@ -55,9 +77,9 @@ namespace leet.LeetCode.Modules.LinkedList
         /** Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted. */
         public void AddAtIndex(int index, int val)
         {
-            if (index == 1) AddAtHead(val);
+            if (index == 0) AddAtHead(val);
 
-            var pos = 1;
+            var pos = 0;
             var curr = _head;
 
             while (pos < index - 1)
@@ -73,9 +95,9 @@ namespace leet.LeetCode.Modules.LinkedList
         /** Delete the index-th node in the linked list, if the index is valid. */
         public void DeleteAtIndex(int index)
         {
-            if (index == 1) _head = _head.Next;
+            if (index == 0) _head = _head.Next;
 
-            var pos = 1;
+            var pos = 0;
             var curr = _head;
 
             while (pos < index - 1)

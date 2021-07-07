@@ -39,11 +39,11 @@ namespace leet.LeetCode.Modules.LinkedList
 
             while(pos < index)
             {
-                curr = curr.Next;
+                curr = curr.next;
                 pos++;
             }
 
-            return curr.Val;
+            return curr.val;
         }
 
         /** Get the value of the index-th node in the linked list. If the index is invalid, return -1. */
@@ -54,7 +54,7 @@ namespace leet.LeetCode.Modules.LinkedList
 
             while (pos < index)
             {
-                curr = curr.Next;
+                curr = curr.next;
                 pos++;
             }
 
@@ -71,7 +71,7 @@ namespace leet.LeetCode.Modules.LinkedList
         /** Append a node of value val to the last element of the linked list. */
         public void AddAtTail(int val)
         {
-            _tail = _tail.Next = new ListNode(val);
+            _tail = _tail.next = new ListNode(val);
         }
 
         /** Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted. */
@@ -84,38 +84,38 @@ namespace leet.LeetCode.Modules.LinkedList
 
             while (pos < index - 1)
             {
-                curr = curr.Next;
+                curr = curr.next;
                 pos++;
             }
 
-            var insertNode = new ListNode(val, curr.Next.Next);
-            curr.Next = insertNode;
+            var insertNode = new ListNode(val, curr.next.next);
+            curr.next = insertNode;
         }
 
         /** Delete the index-th node in the linked list, if the index is valid. */
         public void DeleteAtIndex(int index)
         {
-            if (index == 0) _head = _head.Next;
+            if (index == 0) _head = _head.next;
 
             var pos = 0;
             var curr = _head;
 
             while (pos < index - 1)
             {
-                curr = curr.Next;
+                curr = curr.next;
                 pos++;
             }
 
-            curr.Next = curr.Next.Next;
+            curr.next = curr.next.next;
         }
 
         private ListNode GetTail()
         {           
             var curr = _head;
 
-            while(curr.Next != null)
+            while(curr.next != null)
             {
-                curr = curr.Next;
+                curr = curr.next;
             }
 
             return curr;

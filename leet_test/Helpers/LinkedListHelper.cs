@@ -22,7 +22,7 @@ namespace leet_test.Helpers
             {
                 for (var i = 1; i < list.Length; i++)
                 {
-                    tail = tail.Next = new ListNode(list[i]);
+                    tail = tail.next = new ListNode(list[i]);
                 }
             }
 

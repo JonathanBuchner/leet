@@ -34,7 +34,7 @@ namespace leet_test.LeetCode.Modules.LinkedList
             var sut = new MySinglyLinkedList(head);
 
             sut.AddAtHead(0);
-            var result = sut.Head.Val;
+            var result = sut.Head.val;
 
             Assert.AreEqual(0, result);
         }
@@ -47,7 +47,7 @@ namespace leet_test.LeetCode.Modules.LinkedList
             var sut = new MySinglyLinkedList(head, tail);
 
             sut.AddAtTail(5);
-            var result = sut.Tail.Val;
+            var result = sut.Tail.val;
 
             Assert.AreEqual(5, result);
         }

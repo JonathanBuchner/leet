@@ -30,14 +30,14 @@ namespace leet.LeetCode.AddTwoNumbers
                 // Get value and and progress list by one if needed.
                 if (l1 != null)
                 {
-                    val1 = l1.Val;
-                    l1 = l1.Next;
+                    val1 = l1.val;
+                    l1 = l1.next;
                 }
 
                 if (l2 != null)
                 {
-                    val2 = l2.Val;
-                    l2 = l2.Next;
+                    val2 = l2.val;
+                    l2 = l2.next;
                 }
 
                 var total = val1 + val2 + carry;
@@ -57,13 +57,13 @@ namespace leet.LeetCode.AddTwoNumbers
                 }
                 else
                 {
-                    tail = tail.Next = new ListNode(total);
+                    tail = tail.next = new ListNode(total);
                 }
 
                 //Lists are empty but there is still a carry, add one.
                 if (l1 == null && l2 == null && carry == 1)
                 {
-                    tail.Next = new ListNode(1);
+                    tail.next = new ListNode(1);
                     //Loop should also be broken
                 }
             }

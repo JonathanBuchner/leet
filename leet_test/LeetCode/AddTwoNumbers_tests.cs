@@ -21,9 +21,9 @@ namespace leet_test.LeetCode
 
             while(expected !=null || actual != null)
             {
-                Assert.AreEqual(expected.Val, actual.Val);
-                expected = expected.Next;
-                actual = actual.Next;
+                Assert.AreEqual(expected.val, actual.val);
+                expected = expected.next;
+                actual = actual.next;
             }
         }
 
@@ -39,9 +39,9 @@ namespace leet_test.LeetCode
 
             while (expected != null || actual != null)
             {
-                Assert.AreEqual(expected.Val, actual.Val);
-                expected = expected.Next;
-                actual = actual.Next;
+                Assert.AreEqual(expected.val, actual.val);
+                expected = expected.next;
+                actual = actual.next;
             }
         }
 
@@ -57,9 +57,9 @@ namespace leet_test.LeetCode
 
             while (expected != null || actual != null)
             {
-                Assert.AreEqual(expected.Val, actual.Val);
-                expected = expected.Next;
-                actual = actual.Next;
+                Assert.AreEqual(expected.val, actual.val);
+                expected = expected.next;
+                actual = actual.next;
             }
         }
 
@@ -77,9 +77,9 @@ namespace leet_test.LeetCode
 
             while (expected != null || actual != null)
             {
-                Assert.AreEqual(expected.Val, actual.Val);
-                expected = expected.Next;
-                actual = actual.Next;
+                Assert.AreEqual(expected.val, actual.val);
+                expected = expected.next;
+                actual = actual.next;
             }
         }
     }

@@ -16,7 +16,7 @@ namespace leet_test.LeetCode.Modules.LinkedList
             list.AddAtTail(2);
             list.AddAtTail(0);
             list.AddAtTail(4);
-            list.Tail.Next = list.GetNode(1);
+            list.Tail.next = list.GetNode(1);
             var expected = true;
             var sut = new Solution();
 
@@ -30,7 +30,7 @@ namespace leet_test.LeetCode.Modules.LinkedList
         {
             var list = new MySinglyLinkedList(new ListNode(1));
             list.AddAtTail(2);
-            list.Tail.Next = list.Head;
+            list.Tail.next = list.Head;
             var expected = true;
             var sut = new Solution();
 

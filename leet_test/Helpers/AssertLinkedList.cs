@@ -14,5 +14,15 @@ namespace leet_test.Helpers
                 actual = actual.next;
             }
         }
+
+        public static void AreEqualValue(ListNode expected, ListNode actual)
+        {
+            while (expected != null && actual != null)
+            {
+                Assert.AreEqual(expected.val, actual.val);
+                expected = expected.next;
+                actual = actual.next;
+            }
+        }
     }
 }

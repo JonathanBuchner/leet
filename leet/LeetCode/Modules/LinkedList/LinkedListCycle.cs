@@ -29,6 +29,14 @@ namespace leet.LeetCode.Modules.LinkedList.LinkedListCycle
             return false;
         }
 
+        /*
+         * Linked List Cycle II 
+         * 
+         * Given a linked list, return the node where the cycle begins. If there is no cycle, return null.
+         * 
+         * https://leetcode.com/explore/learn/card/linked-list/214/two-pointer-technique/1214/
+         */
+
         public ListNode DetectCycle(ListNode head)
         {
             var fast = head;

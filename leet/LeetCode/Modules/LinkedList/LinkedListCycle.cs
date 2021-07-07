@@ -28,5 +28,32 @@ namespace leet.LeetCode.Modules.LinkedList.LinkedListCycle
 
             return false;
         }
+
+        public ListNode DetectCycle(ListNode head)
+        {
+            var fast = head;
+            var slow = head;
+
+            while (fast != null && fast.next != null)
+            {
+                fast = fast.next.next;
+                slow = slow.next;
+
+                if (fast == slow)
+                {
+                    slow = head;
+                    
+                    while(fast != slow)
+                    {
+                        fast = fast.next;
+                        slow = slow.next;
+                    }
+
+                    return slow;
+                }
+            }
+
+            return null;
+        }
     }
 }

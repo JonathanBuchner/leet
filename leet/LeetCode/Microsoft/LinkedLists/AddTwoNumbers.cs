@@ -7,13 +7,15 @@ using System.Runtime.InteropServices;
 using System.Xml.Linq;
 using System.Xml.Schema;
 
-namespace leet.LeetCode.AddTwoNumbers
+namespace leet.LeetCode.Microsoft.LinkedLists.AddTwoNumbers
 {
-    #region Problem
-    //https://leetcode.com/problems/add-two-numbers/
-
-    // You are given two non-empty linked lists representing two non-negative integers.The digits are stored in reverse order, and each of their nodes contains a single digit.Add the two numbers and return the sum as a linked list.
-    #endregion
+    /*
+     * Add Two Numbers
+     * 
+     * You are given two non-empty linked lists representing two non-negative integers.The digits are stored in reverse order, and each of their nodes contains a single digit.Add the two numbers and return the sum as a linked list.
+     * 
+     * https://leetcode.com/problems/add-two-numbers/
+    */
     public class Solution
     {
         public ListNode AddTwoNumbers(ListNode l1, ListNode l2)

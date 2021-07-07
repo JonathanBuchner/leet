@@ -1,10 +1,10 @@
 ﻿using leet.Cormen.Chapter2;
 using leet.LeetCode.Models;
 using leet_test.Helpers;
-using leet.LeetCode.AddTwoNumbers;
+using leet.LeetCode.Microsoft.LinkedLists.AddTwoNumbers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace leet_test.LeetCode
+namespace leet_test.LeetCode.Microsoft.LinkedLists
 {
     [TestClass]
     public class Insertion_sort_tests

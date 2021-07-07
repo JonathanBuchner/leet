@@ -16,7 +16,15 @@ namespace leet.LeetCode.Microsoft.LinkedLists.ReverseLinkedLists
     {
         public ListNode ReverseList(ListNode head)
         {
-            throw new NotImplementedException();
+            ListNode back = null;
+            while(head != null)
+            {
+                var node = new ListNode(head.val, back);
+                back = node;
+                head = head.next;
+            }
+
+            return back;
         }
     }
 }

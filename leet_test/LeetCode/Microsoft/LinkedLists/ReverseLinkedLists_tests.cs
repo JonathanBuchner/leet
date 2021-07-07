@@ -17,7 +17,7 @@ namespace leet_test.LeetCode.Microsoft.LinkedLists
 
             var actual = sut.ReverseList(list);
 
-            AssertLinkedList.AreEqual(expected, actual);
+            AssertLinkedList.AreEqualValue(expected, actual);
         }
 
         [TestMethod]
@@ -30,7 +30,7 @@ namespace leet_test.LeetCode.Microsoft.LinkedLists
 
             var actual = sut.ReverseList(list);
 
-            AssertLinkedList.AreEqual(expected, actual);
+            AssertLinkedList.AreEqualValue(expected, actual);
         }
 
 
@@ -44,7 +44,7 @@ namespace leet_test.LeetCode.Microsoft.LinkedLists
 
             var actual = sut.ReverseList(list);
 
-            AssertLinkedList.AreEqual(expected, actual);
+            AssertLinkedList.AreEqualValue(expected, actual);
         }
     }
 }

@@ -74,63 +74,16 @@ namespace leet.LeetCode.Microsoft.LinkedLists.AddTwoNumbers2
             }
 
 
-            // Get lists at same digit
-            while (i1 > i2)
-            {
-                h1 = h1.next;
-                i1--;
-            }
+            /*
+             * 
+             * 
+             * Need ne implimentation
+             * 
+             * 
+             * 
+             * 
+             */
 
-            while (i2 > i1)
-            {
-                h2 = h2.next;
-                i2--;
-            }
-
-            // While at same digit, add lists.  If greater than 9, add one to l to list, else 0;
-            while (h1 != null)
-            {
-                ListNode node = null;
-                var t = h1.val + h2.val;
-
-                var backchecker = c1;
-                while (backchecker != null && backchecker.val == 1)
-                {
-                    backchecker.val = 2;
-                    backchecker = backchecker.next;
-                }
-
-                if (t > 9)
-                {
-                    node = new ListNode(2, c1);
-                }
-                else if (t == 9)
-                {
-                    node = new ListNode(1, c1);
-                }
-                else
-                {
-                    node = new ListNode(0, c1);
-                }
-
-                c1 = node;
-                i3++;
-                h1 = h1.next;
-                h2 = h2.next;
-            }
-
-            // Add a zero to the end so carry lines up with correct  
-            c1 = new ListNode(0, c1);
-
-            // Reverse additions list
-            ListNode back = null;
-            while (c1 != null)
-            {
-                var node = new ListNode(c1.val, back);
-                back = node;
-                c1 = c1.next;
-            }
-            carry = back;
 
             h1 = l1;
             h2 = l2;

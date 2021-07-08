@@ -17,7 +17,7 @@ namespace leet_test.Helpers
 
         public static void AreEqualValue(ListNode expected, ListNode actual)
         {
-            while (expected != null && actual != null)
+            while (expected != null)
             {
                 Assert.AreEqual(expected.val, actual.val);
                 expected = expected.next;

@@ -18,7 +18,7 @@ namespace leet_test.LeetCode.Microsoft.LinkedLists
 
             var actual = sut.AddTwoNumbers(input1, input2);
 
-            AssertLinkedList.AreEqual(expected, actual);
+            AssertLinkedList.AreEqualValue(expected, actual);
         }
 
         [TestMethod]
@@ -32,7 +32,7 @@ namespace leet_test.LeetCode.Microsoft.LinkedLists
 
             var actual = sut.AddTwoNumbers(input1, input2);
 
-            AssertLinkedList.AreEqual(expected, actual);
+            AssertLinkedList.AreEqualValue(expected, actual);
         }
 
         [TestMethod]
@@ -41,12 +41,12 @@ namespace leet_test.LeetCode.Microsoft.LinkedLists
             var helper = new LinkedListHelper();
             var input1 = helper.CreateSinglyLinkedList(new int[] { 0 });
             var input2 = helper.CreateSinglyLinkedList(new int[] { 0 });
-            var expected = helper.CreateSinglyLinkedList(new int[] { 0});
+            var expected = helper.CreateSinglyLinkedList(new int[] { 0 });
             var sut = new Solution();
 
             var actual = sut.AddTwoNumbers(input1, input2);
 
-            AssertLinkedList.AreEqual(expected, actual);
+            AssertLinkedList.AreEqualValue(expected, actual);
         }
     }
 }

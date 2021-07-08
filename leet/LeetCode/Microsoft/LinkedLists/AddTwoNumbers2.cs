@@ -34,13 +34,14 @@ namespace leet.LeetCode.Microsoft.LinkedLists.AddTwoNumbers2
 
             var len1 = 0;
             var len2 = 0;
-            var i1 = 0;
-            var i2 = 0;
+            int i1;
+            int i2;
             var h1 = l1;
             var h2 = l2;
             ListNode c1 = null;
             var i3 = 1;
             ListNode carry = null;
+            int car = 0;
             ListNode total = null;
             ListNode result = null;
 
@@ -90,32 +91,46 @@ namespace leet.LeetCode.Microsoft.LinkedLists.AddTwoNumbers2
             while (h1 != null)
             {
                 ListNode node = null;
-                if (h1.val + h2.val > 9)
+                var t = h1.val + h2.val;
+
+                var backchecker = c1;
+                while (backchecker != null && backchecker.val == 1)
                 {
-                    node = new ListNode(1);
-                }
-                else
-                {
-                    node = new ListNode(0);
+                    backchecker.val = 2;
+                    backchecker = backchecker.next;
                 }
 
-                if (carry == null)
+                if (t > 9)
                 {
-                    carry = node;
-                    c1 = carry;
+                    node = new ListNode(2, c1);
+                }
+                else if (t == 9)
+                {
+                    node = new ListNode(1, c1);
                 }
                 else
                 {
-                    c1.next = node;
-                    c1 = c1.next;
+                    node = new ListNode(0, c1);
                 }
+
+                c1 = node;
                 i3++;
                 h1 = h1.next;
                 h2 = h2.next;
             }
 
             // Add a zero to the end so carry lines up with correct  
-            c1.next = new ListNode(0);
+            c1 = new ListNode(0, c1);
+
+            // Reverse additions list
+            ListNode back = null;
+            while (c1 != null)
+            {
+                var node = new ListNode(c1.val, back);
+                back = node;
+                c1 = c1.next;
+            }
+            carry = back;
 
             h1 = l1;
             h2 = l2;
@@ -133,16 +148,13 @@ namespace leet.LeetCode.Microsoft.LinkedLists.AddTwoNumbers2
                 var t = 0;
                 if (i3 == k)
                 {
-                    t += c1.val;
+                    t += c1.val > 1 ? 1 : 0;
                     c1 = c1.next;
                     i3--;
                 }
 
-                if (i1 < k && i2 < k && t == 0)
-                {
+                if (i1 < k && i2 < k && t == 0) continue;
 
-                    continue;
-                }
 
                 if (i1 == k)
                 {

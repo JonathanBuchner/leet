@@ -47,6 +47,35 @@ namespace leet_test.LeetCode.Microsoft.LinkedLists
             var actual = sut.AddTwoNumbers(input1, input2);
 
             AssertLinkedList.AreEqualValue(expected, actual);
+
+        }
+
+        [TestMethod]
+        public void Test_Can_add_to_100()
+        {
+            var helper = new LinkedListHelper();
+            var input1 = helper.CreateSinglyLinkedList(new int[] { 1 });
+            var input2 = helper.CreateSinglyLinkedList(new int[] { 9, 9 });
+            var expected = helper.CreateSinglyLinkedList(new int[] { 1, 0, 0 });
+            var sut = new Solution();
+
+            var actual = sut.AddTwoNumbers(input1, input2);
+
+            AssertLinkedList.AreEqualValue(expected, actual);
+        }
+
+        [TestMethod]
+        public void Test_Can_add_one_to_999999_to_make_a_million()
+        {
+            var helper = new LinkedListHelper();
+            var input1 = helper.CreateSinglyLinkedList(new int[] { 1 });
+            var input2 = helper.CreateSinglyLinkedList(new int[] { 9, 9, 9, 9, 9, 9 });
+            var expected = helper.CreateSinglyLinkedList(new int[] { 1, 0, 0, 0, 0, 0, 0 });
+            var sut = new Solution();
+
+            var actual = sut.AddTwoNumbers(input1, input2);
+
+            AssertLinkedList.AreEqualValue(expected, actual);
         }
     }
 }

@@ -15,7 +15,77 @@ namespace leet.LeetCode.Microsoft.ArrayStrings.ReverseWordsInAstring2
     {
         public void ReverseWords(char[] s)
         {
+            var lf = 0;
+            var lb = 0;
+            var rf = s.Length - 1;
+            var rb = s.Length - 1;
+
+            while (lf < rf)
+            {
+                var leftIsSpace = Char.IsWhiteSpace(s[lf]);
+                var rightIsSpace = Char.IsWhiteSpace(s[rf]);
+
+                if (leftIsSpace && rightIsSpace)
+                {
+                    var leftWordL = lf - lb;
+                    var rightWordL = rb - rf;
+                    rf++;
+                    lf--;
+                    
+                    var shorterWord = Math.Min(leftWordL, rightWordL);
+                    for (var i = 0; i < shorterWord; i++)
+                    {
+                        Switch(s, i + lb, i + rf);
+                    }
+
+                    var amount = Math.Abs(leftWordL - rightWordL);
+                    var rightBound = leftWordL > rightWordL ? rf - 1 : rb;
+                    var leftBound = leftWordL > rightWordL ? lb : lf + 1;
+
+                    if (leftWordL != rightWordL)
+                    {
+                        Slide(s, amount, leftBound, rightBound);
+                    }
+                }
+                else if (leftIsSpace)
+                {
+                    rf--;
+                }
+                else if (rightIsSpace)
+                {
+                    lf++;
+                }
+                else
+                {
+                    rf--;
+                    lf++;
+                }
+            }
+        }
+
+        private void Switch(char[] s, int i1, int i2)
+        {
+            var temp = s[i1];
+            s[i1] = s[i2];
+            s[i2] = temp;
+        }
+
+        private void Slide(char[] s, int amt, int leftBound, int rightBound)
+        {
             throw new NotImplementedException();
+
+            char temp = '0';
+            var i = leftBound;
+            var cont = true;    
+
+            while (cont)
+            {
+                var next = i + amt;
+                if (next > rightBound) next = rightBound - next + leftBound;
+                temp = s[next];
+                s[next] = s[i];
+                i = next;
+            }
         }
     }
 }

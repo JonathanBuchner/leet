@@ -1,8 +1,8 @@
 using System;
-using leet.LeetCode.LongestSubstringWithoutRepeatingCharacters;
+using leet.LeetCode.Problems.LongestSubstringWithoutRepeatingCharacters;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace leet_test.LeetCode
+namespace leet_test.LeetCode.Problems
 {
     [TestClass]
     public class LongestSubstringWithoutRepeatingCharacters_tests

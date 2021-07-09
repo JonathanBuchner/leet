@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using leet.LeetCode.Modules.Arrays.In_PlaceOperations.SortArraysByParity;
+using leet.LeetCode.Modules.Arrays.SortArraysByParity;
 
-namespace leet_test.LeetCode.Modules.Arrays.In_PlaceOperations
+namespace leet_test.LeetCode.Modules.Arrays
 {
     [TestClass]
     public class SortArrayByParity_tests

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace leet.LeetCode.Modules.Arrays.In_PlaceOperations.MoveZeros
+namespace leet.LeetCode.Modules.Arrays.MoveZeros
 {
     /*
      * Move Zeroes

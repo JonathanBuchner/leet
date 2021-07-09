@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using leet.LeetCode.Modules.Arrays.Inserting.MergeSortedArrays;
+using leet.LeetCode.Modules.Arrays.MergeSortedArrays;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace leet_test.LeetCode.Modules.Arrays.Inserting
+namespace leet_test.LeetCode.Modules.Arrays
 {
     [TestClass]
     public class MergeSortedArrays_tests

@@ -6,7 +6,7 @@ using System.Collections.Generic;
  * 
  * Given a string s, find the length of the longest substring without repeating characters.
  */
-namespace leet.LeetCode.LongestSubstringWithoutRepeatingCharacters
+namespace leet.LeetCode.Problems.LongestSubstringWithoutRepeatingCharacters
 {
     public class Solution
     {

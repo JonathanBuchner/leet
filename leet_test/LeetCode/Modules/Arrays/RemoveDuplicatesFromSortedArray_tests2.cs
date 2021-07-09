@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using leet.LeetCode.Modules.Arrays.In_PlaceOperations.RemoveDuplicatesFromSortedArray;
+using leet.LeetCode.Modules.Arrays.RemoveDuplicatesFromSortedArray;
 
-namespace leet_test.LeetCode.Modules.Arrays.In_PlaceOperations
+namespace leet_test.LeetCode.Modules.Arrays
 {
     [TestClass]
-    public class RemoveDuplicatesFromSortedArray_tests
+    public class RemoveDuplicatesFromSortedArray_tests2
     { 
         [TestMethod]
         public void Example1_can_return_list_correctly()

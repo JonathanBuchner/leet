@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using leet.LeetCode.Modules.Arrays.In_PlaceOperations.MoveZeros;
+using leet.LeetCode.Modules.Arrays.MoveZeros;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace leet_test.LeetCode.Modules.Arrays.In_PlaceOperations
+namespace leet_test.LeetCode.Modules.Arrays
 {   
     [TestClass]
     public class MoveZeros_tests

@@ -20,7 +20,7 @@ namespace leet.LeetCode.Microsoft.ArrayStrings.ReverseWordsInAstring2
             var rf = s.Length - 1;
             var rb = s.Length - 1;
 
-            while (lf < rf)
+            while (lf <= rf)
             {
                 var leftIsSpace = Char.IsWhiteSpace(s[lf]);
                 var rightIsSpace = Char.IsWhiteSpace(s[rf]);
@@ -32,12 +32,12 @@ namespace leet.LeetCode.Microsoft.ArrayStrings.ReverseWordsInAstring2
                     rf++;
                     lf--;
                     
-                    var shorterWord = Math.Min(leftWordL, rightWordL);
-                    for (var i = 0; i < shorterWord; i++)
-                    {
+                    var shorterWordL = Math.Min(leftWordL, rightWordL);
+                    for (var i = 0; i < shorterWordL; i++)
+                    { 
                         Switch(s, i + lb, i + rf);
                     }
-
+                    
                     var amount = Math.Abs(leftWordL - rightWordL);
                     var rightBound = leftWordL > rightWordL ? rf - 1 : rb;
                     var leftBound = leftWordL > rightWordL ? lb : lf + 1;
@@ -46,6 +46,11 @@ namespace leet.LeetCode.Microsoft.ArrayStrings.ReverseWordsInAstring2
                     {
                         Slide(s, amount, leftBound, rightBound);
                     }
+
+                    lb = lb + rightWordL + 1;
+                    lf = lb;
+                    rb = rb - leftWordL - 1;
+                    rf = rb;
                 }
                 else if (leftIsSpace)
                 {
@@ -72,18 +77,21 @@ namespace leet.LeetCode.Microsoft.ArrayStrings.ReverseWordsInAstring2
 
         private void Slide(char[] s, int amt, int leftBound, int rightBound)
         {
-            var i = leftBound;
-            var cont = true;
+
+            var i = leftBound + amt;
             char prevL = s[leftBound];
 
-            while (cont)
-            {
-                i = i + amt;
-                if (i > rightBound) i = rightBound - i + leftBound;
+            while (true)
+            {  
+                if (i > rightBound) i = i - rightBound + leftBound;
                 var temp = s[i];
                 s[i] = prevL;
                 prevL = temp;
+                if (i == leftBound) break;
+                i = i + amt;
             }
+
+            return;
         }
     }
 }

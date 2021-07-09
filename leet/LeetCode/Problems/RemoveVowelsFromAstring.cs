@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace leet.LeetCode.RemoveVowelsFromAstring
+namespace leet.LeetCode.Problems.RemoveVowelsFromAstring
 {
     public class Solution
     {

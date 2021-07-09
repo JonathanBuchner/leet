@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace leet.LeetCode.Modules.Arrays.Deleting.RemoveDuplicatesFromSortedArray
+namespace leet.LeetCode.Modules.Arrays.RemoveDuplicatesFromSortedArray
 {
     /*
      * Remove Duplicates from Sorted Array

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace leet.LeetCode.Modules.Arrays.Conclusion.HeightChecker
+namespace leet.LeetCode.Modules.Arrays.HeightChecker
 {
     /*
      * Height Checker

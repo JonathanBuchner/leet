@@ -1,15 +1,15 @@
-﻿/*using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using leet.LeetCode.Modules.Arrays.Conclusion.HeightChecker;
+using leet.LeetCode.Modules.Arrays.HeightChecker;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace leet_test.LeetCode.Modules.Arrays.Conclusion
+namespace leet_test.LeetCode.Modules.Arrays
 {
     [TestClass]
     public class HeightsChecker_tests
     {
-        [TestMethod]
+       /* [TestMethod]
         public void Example1_Can_return_indecies_that_are_out_of_line()
         {
             var input = new int[] { 1, 1, 4, 2, 1, 3 };
@@ -43,7 +43,6 @@ namespace leet_test.LeetCode.Modules.Arrays.Conclusion
             var actual = sut.HeightChecker(input);
 
             Assert.AreEqual(expected, actual);
-        }
+        }*/
     }
 }
-*/

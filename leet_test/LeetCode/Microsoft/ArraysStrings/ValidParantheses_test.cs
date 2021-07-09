@@ -4,7 +4,7 @@ using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using leet.LeetCode.Microsoft.ArrayStrings.ValidParentheses;
 
-namespace leet_test.LeetCode.Microsoft.ArrayStrings
+namespace leet_test.LeetCode.Microsoft.ArraysStrings
 {
     [TestClass]
     public class ValidParantheses_test

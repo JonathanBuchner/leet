@@ -4,7 +4,7 @@ using System.Text;
 using leet.LeetCode.Microsoft.ArrayStrings.TwoSum;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace leet_test.LeetCode.Microsoft.ArrayStrings
+namespace leet_test.LeetCode.Microsoft.ArraysStrings
 {
     [TestClass]
     public class TwoSum_tests

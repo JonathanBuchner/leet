@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using leet.LeetCode.Modules.Arrays.In_PlaceOperations.ReplaceElementsWithGreatestElementOnRightSide;
+using leet.LeetCode.Modules.Arrays.ReplaceElementsWithGreatestElementOnRightSide;
 
-namespace leet_test.LeetCode.Modules.Arrays.In_PlaceOperations
+namespace leet_test.LeetCode.Modules.Arrays
 {
     [TestClass]
     public class ReplaceElementsWithGreatestElementOnRightSide_tests

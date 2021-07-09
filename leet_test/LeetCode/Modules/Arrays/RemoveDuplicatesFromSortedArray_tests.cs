@@ -1,8 +1,8 @@
 ﻿using System;
-using leet.LeetCode.Modules.Arrays.Deleting.RemoveDuplicatesFromSortedArray;
+using leet.LeetCode.Modules.Arrays.RemoveDuplicatesFromSortedArray;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace leet_test.LeetCode.Modules.Arrays.Delete
+namespace leet_test.LeetCode.Modules.Arrays
 {
     [TestClass]
     public class RemoveDuplicatesFromSortedArray_tests

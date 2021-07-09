@@ -14,7 +14,7 @@ namespace leet_test.LeetCode.Modules.LinkedList
         [TestMethod]
         public void Get_can_return_at_index()
         {
-            
+
             var head = new LinkedListHelper().CreateSinglyLinkedList(new int[] { 1, 2, 3, 4 });
             var sut = new MySinglyLinkedList(head);
 

@@ -10,7 +10,7 @@ namespace leet.LeetCode.Microsoft.LinkedLists.ReverseLinkedLists
      * 
      * Given the head of a singly linked list, reverse the list, and return the reversed list.
      * 
-     * 
+     * https://leetcode.com/explore/interview/card/microsoft/32/linked-list/169/
      */
     public class Solution
     {

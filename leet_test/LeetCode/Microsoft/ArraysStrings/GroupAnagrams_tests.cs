@@ -7,7 +7,7 @@ using System.Linq;
 using System.Collections;
 using leet_test.Helpers;
 
-namespace leet_test.Microsoft.ArrayStrings.LeetCode
+namespace leet_test.LeetCode.Microsoft.ArrayStrings
 {
     [TestClass]
     public class GroupAnagrams_tests

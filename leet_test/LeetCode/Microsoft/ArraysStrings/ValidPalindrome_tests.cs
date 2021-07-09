@@ -4,7 +4,7 @@ using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using leet.LeetCode.Microsoft.ArrayStrings.ValidPalindrome;
 
-namespace leet_test.Microsoft.ArrayStrings.LeetCode
+namespace leet_test.LeetCode.Microsoft.ArrayStrings
 {
     [TestClass]
     public class ValidPalindrome_tests

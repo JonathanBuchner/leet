@@ -72,19 +72,17 @@ namespace leet.LeetCode.Microsoft.ArrayStrings.ReverseWordsInAstring2
 
         private void Slide(char[] s, int amt, int leftBound, int rightBound)
         {
-            throw new NotImplementedException();
-
-            char temp = '0';
             var i = leftBound;
-            var cont = true;    
+            var cont = true;
+            char prevL = s[leftBound];
 
             while (cont)
             {
-                var next = i + amt;
-                if (next > rightBound) next = rightBound - next + leftBound;
-                temp = s[next];
-                s[next] = s[i];
-                i = next;
+                i = i + amt;
+                if (i > rightBound) i = rightBound - i + leftBound;
+                var temp = s[i];
+                s[i] = prevL;
+                prevL = temp;
             }
         }
     }

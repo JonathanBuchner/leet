@@ -4,7 +4,7 @@ using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using leet.LeetCode.Microsoft.ArrayStrings.TrappingRainWater;
 
-namespace leet_test.Microsoft.ArrayStrings.LeetCode
+namespace leet_test.LeetCode.Microsoft.ArrayStrings
 {
     [TestClass]
     public class TrappingRainwater_tests

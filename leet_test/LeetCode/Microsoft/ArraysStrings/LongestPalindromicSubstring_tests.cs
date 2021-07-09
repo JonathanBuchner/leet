@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using leet.LeetCode.Microsoft.ArrayStrings.LongestPalindromicSubstring;
 using System.Linq;
 
-namespace leet_test.Microsoft.ArrayStrings.LeetCode
+namespace leet_test.LeetCode.Microsoft.ArrayStrings
 {
     [TestClass]
     public class LongestPalindromicSubstring_tests

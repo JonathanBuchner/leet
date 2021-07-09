@@ -1,7 +1,7 @@
 ﻿using leet.LeetCode.Microsoft.ArrayStrings.ReverseString;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace leet_test.Microsoft.ArrayStrings.LeetCode
+namespace leet_test.LeetCode.Microsoft.ArrayStrings
 {
     [TestClass]
     public class ReverseString_tests

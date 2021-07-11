@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Collections.Specialized;
+using System.Linq;
 
 namespace leet.LeetCode.Modules.Arrays.HeightChecker
 {
@@ -19,7 +21,19 @@ namespace leet.LeetCode.Modules.Arrays.HeightChecker
     {
         public int HeightChecker(int[] heights)
         {
-            throw new NotImplementedException();
+            var matches = 0;
+
+            var ordered = new int[heights.Length];
+
+            Array.Copy(heights, ordered, heights.Length);
+            Array.Sort(ordered);
+
+            for (var i = 0; i < heights.Length; i++)
+            {
+                if (heights[i] != ordered[i]) matches++;
+            }
+
+            return matches;
         }
     }
 }

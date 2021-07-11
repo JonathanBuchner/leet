@@ -30,7 +30,10 @@ namespace leet.LeetCode.Modules.Arrays.HeightChecker
 
             for (var i = 0; i < heights.Length; i++)
             {
-                if (heights[i] != ordered[i]) matches++;
+                if (heights[i] != ordered[i])
+                {
+                    matches++;
+                }
             }
 
             return matches;

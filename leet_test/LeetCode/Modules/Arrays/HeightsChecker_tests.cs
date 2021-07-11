@@ -9,7 +9,7 @@ namespace leet_test.LeetCode.Modules.Arrays
     [TestClass]
     public class HeightsChecker_tests
     {
-       /* [TestMethod]
+        [TestMethod]
         public void Example1_Can_return_indecies_that_are_out_of_line()
         {
             var input = new int[] { 1, 1, 4, 2, 1, 3 };
@@ -43,6 +43,6 @@ namespace leet_test.LeetCode.Modules.Arrays
             var actual = sut.HeightChecker(input);
 
             Assert.AreEqual(expected, actual);
-        }*/
+        }
     }
 }

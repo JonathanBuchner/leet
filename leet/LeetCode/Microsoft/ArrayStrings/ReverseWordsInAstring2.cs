@@ -15,6 +15,8 @@ namespace leet.LeetCode.Microsoft.ArrayStrings.ReverseWordsInAstring2
     {
         public void ReverseWords(char[] s)
         {
+            throw new NotImplementedException();
+
             var lf = 0;
             var lb = 0;
             var rf = s.Length - 1;

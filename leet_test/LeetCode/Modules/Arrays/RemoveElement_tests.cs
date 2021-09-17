@@ -29,7 +29,7 @@ namespace leet_test.LeetCode.Modules.Arrays
             var sut = new Solution();
             var remove = 2;
             var input = new int[] { 0, 1, 2, 2, 3, 0, 4, 2 };
-            var expectedArray = new int[] { 0, 1, 4, 0, 3, 0, 4, 2 };
+            var expectedArray = new int[] { 0, 1, 3, 0, 4, 0, 4, 2 };
             var expected = 5;
 
             var actual = sut.RemoveElement(input, remove);
@@ -38,13 +38,13 @@ namespace leet_test.LeetCode.Modules.Arrays
             CollectionAssert.AreEqual(expectedArray, input);
         }
         [TestMethod]
-        public void Test_Can_remove_if_no_duplicate()
+        public void Test1_Can_remove_if_no_duplicate()
         {
             var sut = new Solution();
             var remove = 1;
             var input = new int[] { 2, 3, 4, 5 };
             var expectedArray = new int[] { 2, 3, 4, 5 };
-            var expected = 0;
+            var expected = 4;
 
             var actual = sut.RemoveElement(input, remove);
 

@@ -15,7 +15,20 @@ namespace leet.LeetCode.Modules.Arrays.RemoveElement
     {
         public int RemoveElement(int[] nums, int val)
         {
-            throw new NotImplementedException();
+            var amt = 0;
+            for(var i = 0; i < nums.Length; i++)
+            {
+                if(nums[i] == val)
+                {
+                    amt++;
+                }
+                else
+                {
+                    nums[i - amt] = nums[i];
+                }
+            }
+
+            return nums.Length - amt;
         }
     }
 }

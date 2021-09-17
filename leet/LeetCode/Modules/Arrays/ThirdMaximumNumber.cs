@@ -15,7 +15,38 @@ namespace leet.LeetCode.Modules.Arrays.ThirdMaximumNumber
     {
         public int ThirdMax(int[] nums)
         {
-            throw new NotImplementedException();
+            var list = new List<int>() { nums[0] };
+            var i = 1;
+
+            while(list.Count <= 2 && i < nums.Length)
+            {
+                if(!list.Contains(nums[i]))
+                {
+                    list.Add(nums[i]);
+                }
+
+                i++;
+            }
+
+            list.Sort();
+            if (list.Count == 1) return list[0];
+            if (list.Count == 2) return list[1];
+
+            while (i < nums.Length)
+            {
+                if(nums[i] > list[0])
+                {
+                    if(!list.Contains(nums[i]))
+                    {
+                        list[0] = nums[i];
+                        list.Sort();
+                    }
+                }
+
+                i++;
+            }
+
+            return list[0];
         }
     }
 }

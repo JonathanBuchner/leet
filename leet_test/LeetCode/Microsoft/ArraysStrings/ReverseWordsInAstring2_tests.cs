@@ -15,7 +15,7 @@ namespace leet_test.LeetCode.Microsoft.ArraysStrings
 
             sut.ReverseWords(input);
 
-            Assert.AreEqual(expected, input);
+            CollectionAssert.AreEqual(expected, input);
         }
 
         [TestMethod]
@@ -27,7 +27,7 @@ namespace leet_test.LeetCode.Microsoft.ArraysStrings
 
             sut.ReverseWords(input);
 
-            Assert.AreEqual(expected, input);
+            CollectionAssert.AreEqual(expected, input);
         }
 
         [TestMethod]
@@ -39,7 +39,7 @@ namespace leet_test.LeetCode.Microsoft.ArraysStrings
 
             sut.ReverseWords(input);
 
-            Assert.AreEqual(expected, input);
+            CollectionAssert.AreEqual(expected, input);
         }
 
         [TestMethod]
@@ -51,7 +51,7 @@ namespace leet_test.LeetCode.Microsoft.ArraysStrings
 
             sut.ReverseWords(input);
 
-            Assert.AreEqual(expected, input);
+            CollectionAssert.AreEqual(expected, input);
         }
     }
 }

@@ -13,87 +13,70 @@ namespace leet.LeetCode.Microsoft.ArrayStrings.ReverseWordsInAstring2
      */
     public class Solution
     {
+        private char[] s;
+        private int endIndex;
+
         public void ReverseWords(char[] s)
         {
-            throw new NotImplementedException();
+            this.s = s;
+            endIndex = s.Length - 1;
 
-            var lf = 0;
-            var lb = 0;
-            var rf = s.Length - 1;
-            var rb = s.Length - 1;
+            Run();
+        }
 
-            while (lf <= rf)
+        private void Run()
+        {
+            while (endIndex >= 0)
             {
-                var leftIsSpace = Char.IsWhiteSpace(s[lf]);
-                var rightIsSpace = Char.IsWhiteSpace(s[rf]);
+                var nextWordLastLetterIndex = GetNextWordLength() - 1;
+                if (nextWordLastLetterIndex >= endIndex) return;
 
-                if (leftIsSpace && rightIsSpace)
-                {
-                    var leftWordL = lf - lb;
-                    var rightWordL = rb - rf;
-                    rf++;
-                    lf--;
-                    
-                    var shorterWordL = Math.Min(leftWordL, rightWordL);
-                    for (var i = 0; i < shorterWordL; i++)
-                    { 
-                        Switch(s, i + lb, i + rf);
-                    }
-                    
-                    var amount = Math.Abs(leftWordL - rightWordL);
-                    var rightBound = leftWordL > rightWordL ? rf - 1 : rb;
-                    var leftBound = leftWordL > rightWordL ? lb : lf + 1;
-
-                    if (leftWordL != rightWordL)
-                    {
-                        Slide(s, amount, leftBound, rightBound);
-                    }
-
-                    lb = lb + rightWordL + 1;
-                    lf = lb;
-                    rb = rb - leftWordL - 1;
-                    rf = rb;
-                }
-                else if (leftIsSpace)
-                {
-                    rf--;
-                }
-                else if (rightIsSpace)
-                {
-                    lf++;
-                }
-                else
-                {
-                    rf--;
-                    lf++;
-                }
+                ShiftWord(nextWordLastLetterIndex);
+                CorrectSpaceing();
             }
         }
 
-        private void Switch(char[] s, int i1, int i2)
+        private int GetNextWordLength()
         {
-            var temp = s[i1];
-            s[i1] = s[i2];
-            s[i2] = temp;
+            var counter = 0;
+            
+            while(counter <= endIndex && !Char.IsWhiteSpace(s[counter]))
+            {
+                counter++;
+            }
+
+            return counter;
         }
 
-        private void Slide(char[] s, int amt, int leftBound, int rightBound)
+        private void ShiftWord(int lastLetterIndex)
         {
+            for(var i = lastLetterIndex; i >= 0; i--)
+            {
+                ShiftLettersLeft(i);
+            }
+        }
 
-            var i = leftBound + amt;
-            char prevL = s[leftBound];
+        private void CorrectSpaceing()
+        {
+            if (Char.IsWhiteSpace(s[0]))
+            {
+                ShiftLettersLeft(0);
+            }
+        }
 
-            while (true)
-            {  
-                if (i > rightBound) i = i - rightBound + leftBound;
+        private void ShiftLettersLeft(int startIndex)
+        {
+            var swap = s[startIndex];
+
+            for(var i = endIndex; i >= startIndex; i--)
+            {
                 var temp = s[i];
-                s[i] = prevL;
-                prevL = temp;
-                if (i == leftBound) break;
-                i = i + amt;
+                s[i] = swap;
+                swap = temp;
             }
 
-            return;
+            endIndex--;
         }
+
     }
 }

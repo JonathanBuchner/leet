@@ -18,7 +18,7 @@ namespace leet_test.LeetCode.Modules.Arrays
 
             var actual = sut.FindDisappearedNumbers(input);
 
-            CollectionAssert.AreEqual(expected, actual);
+            CollectionAssert.AreEqual(expected, (List<int>) actual);
         }
 
         [TestMethod]
@@ -30,7 +30,7 @@ namespace leet_test.LeetCode.Modules.Arrays
 
             var actual = sut.FindDisappearedNumbers(input);
 
-            CollectionAssert.AreEqual(expected, actual);
+            CollectionAssert.AreEqual(expected, (List<int>) actual);
         }
     }
 }

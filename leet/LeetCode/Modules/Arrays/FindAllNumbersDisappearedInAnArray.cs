@@ -6,9 +6,26 @@ namespace leet.LeetCode.Modules.Arrays.FindAllNumbersDisappearedInAnArray
 {
     public class Solution
     {
-        public List<int> FindDisappearedNumbers(int[] nums)
+        public IList<int> FindDisappearedNumbers(int[] nums)
         {
-            throw new NotImplementedException();
+            var test = new bool[nums.Length + 1];
+            var list = new List<int>();
+
+            for(var i = 0; i < nums.Length; i++)
+            {
+                test[nums[i]] = true;
+            }
+
+            for (var i = 1; i < test.Length; i++)
+            {
+                if (test[i] == false)
+                {
+                    list.Add(i);
+                }
+            }
+
+            return list;
+
         }
     }
 }

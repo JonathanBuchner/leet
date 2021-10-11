@@ -16,7 +16,22 @@ namespace leet.LeetCode.Microsoft.LinkedLists.ReverseLinkedLists
     {
         public ListNode ReverseList(ListNode head)
         {
-            ListNode back = null;
+            ListNode prev = null;
+            ListNode curr = head;
+            ListNode next;
+
+            while(curr != null)
+            {
+                next = curr.next;
+                curr.next = prev;
+                prev = curr;
+                curr = next;
+            }
+
+            return prev;
+
+
+            /*ListNode back = null;
             while(head != null)
             {
                 var node = new ListNode(head.val, back);
@@ -24,7 +39,7 @@ namespace leet.LeetCode.Microsoft.LinkedLists.ReverseLinkedLists
                 head = head.next;
             }
 
-            return back;
+            return back;*/
         }
     }
 }

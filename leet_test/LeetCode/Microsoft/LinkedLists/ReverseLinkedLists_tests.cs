@@ -35,7 +35,7 @@ namespace leet_test.LeetCode.Microsoft.LinkedLists
 
 
         [TestMethod]
-        public void Example2_Can_handle_list_of_one()
+        public void Example3_Can_handle_list_of_one()
         {
             var helper = new LinkedListHelper();
             var list = helper.CreateSinglyLinkedList(new int[] { 1 });

@@ -18,7 +18,33 @@ namespace leet_test.LeetCode.Microsoft.LinkedLists
 
             var actual = sut.MergeTwoLists(input_l1, input_l2);
 
-            Assert.AreEqual(actual, expected);
+            AssertLinkedList.AreEqualValue(expected, actual);
+        }
+        [TestMethod]
+        public void MergeTwoLists_CanMergeEmptyLists()
+        {
+            var sut = new Solution();
+            var helper_ll = new LinkedListHelper();
+            var input_l1 = helper_ll.CreateSinglyLinkedList(new int[] {  });
+            var input_l2 = helper_ll.CreateSinglyLinkedList(new int[] {  });
+            var expected = helper_ll.CreateSinglyLinkedList(new int[] {  });
+
+            var actual = sut.MergeTwoLists(input_l1, input_l2);
+
+            AssertLinkedList.AreEqualValue(expected, actual);
+        }
+        [TestMethod]
+        public void MergeTwoLists_CanMergeIfAListIsEmpty()
+        {
+            var sut = new Solution();
+            var helper_ll = new LinkedListHelper();
+            var input_l1 = helper_ll.CreateSinglyLinkedList(new int[] { });
+            var input_l2 = helper_ll.CreateSinglyLinkedList(new int[] { 1 });
+            var expected = helper_ll.CreateSinglyLinkedList(new int[] { 1 });
+
+            var actual = sut.MergeTwoLists(input_l1, input_l2);
+
+            AssertLinkedList.AreEqualValue(expected, actual);
         }
     }
 }

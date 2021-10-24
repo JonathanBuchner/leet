@@ -16,7 +16,37 @@ namespace leet.LeetCode.Microsoft.LinkedLists.InteresectionOfTwoLinkedLists
     {
         public ListNode GetIntersectionNode(ListNode headA, ListNode headB)
         {
-            throw new NotImplementedException();
+            headA = ReverseList(headA);
+            headB = ReverseList(headB);
+            ListNode currA = headA;
+            ListNode currB = headB;
+
+            while (currA != null || currB != null)
+            {
+                if (currA == currB)
+                {
+                    return currA;
+                }
+                currA = currA.next;
+                currB = currB.next;
+            }
+
+            return null;
+        }
+        private ListNode ReverseList(ListNode head)
+        {
+            ListNode curr = head;
+            ListNode reverse = null;
+
+            while (curr != null)
+            {
+                var next = curr.next;
+                curr.next = reverse;
+                reverse = curr;
+                curr = next;
+            }
+
+            return reverse;
         }
     }
 }

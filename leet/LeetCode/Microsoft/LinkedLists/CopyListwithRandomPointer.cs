@@ -16,7 +16,40 @@ namespace leet.LeetCode.Microsoft.LinkedLists.CopyListwithRandomPointer
     {
         public Node CopyRandomList(Node head)
         {
-            throw new NotImplementedException();
+            var curr = head;
+            Node headC = null;
+            Node currC = null;
+            var map = new Dictionary<Node, Node>();
+
+            while(curr != null)
+            {
+                var node = new Node(curr.val);
+                map.Add(curr, node);
+
+                if (headC == null)
+                {
+                    currC = headC = node;
+                }
+                else
+                {
+                    currC = currC.next = node;
+                }
+
+                curr = curr.next;
+            }
+
+            curr = head;
+            currC = headC;
+
+            while(curr != null || currC != null)
+            {
+                currC.random = curr.random != null ? map[curr.random] : null;
+
+                curr = curr.next;
+                currC = currC.next;
+            }
+
+            return headC;
         }
     }
 }

@@ -26,14 +26,15 @@ namespace leet.LeetCode.Modules.HashTables.HappyNumber
 
         private bool ReplaceWithSumOfSquare(int n, HashSet<int> set)
         {
-            var total = 0;
-            var nums = n.ToString().ToCharArray();
+            double tot = 0;
 
-            foreach (var num in nums)
+            while(n >= 1)
             {
-                var number = Int32.Parse(num.ToString());
-                total = number * number + total;
+                tot += Math.Pow(n % 10, 2);
+                n = n / 10;
             }
+
+            var total = Convert.ToInt32(tot);
 
             if (total == 1)
             {

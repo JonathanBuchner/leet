@@ -15,7 +15,14 @@ namespace leet.LeetCode.Modules.HashTables.ContainsDuplicate
     {
         public bool ContainsDuplicate(int[] nums)
         {
-            throw new NotImplementedException();
+            var set = new HashSet<int>();
+
+            for(var i = 0; i < nums.Length; i++)
+            {
+                if (!set.Add(nums[i])) return true;
+            }
+
+            return false;
         }
     }
 }

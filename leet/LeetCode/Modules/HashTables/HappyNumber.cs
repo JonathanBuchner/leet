@@ -40,7 +40,7 @@ namespace leet.LeetCode.Modules.HashTables.HappyNumber
             {
                 return true;
             }
-            else if (set.Contains(total))
+            else if (total == 4)
             {
                 return false;
             }

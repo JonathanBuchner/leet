@@ -20,7 +20,34 @@ namespace leet.LeetCode.Modules.HashTables.HappyNumber
     {
         public bool IsHappy(int n)
         {
-            throw new NotImplementedException();
+            var set = new HashSet<int>();
+            return ReplaceWithSumOfSquare(n, set);
+        }
+
+        private bool ReplaceWithSumOfSquare(int n, HashSet<int> set)
+        {
+            var total = 0;
+            var nums = n.ToString().ToCharArray();
+
+            foreach (var num in nums)
+            {
+                var number = Int32.Parse(num.ToString());
+                total = number * number + total;
+            }
+
+            if (total == 1)
+            {
+                return true;
+            }
+            else if (set.Contains(total))
+            {
+                return false;
+            }
+            else
+            {
+                set.Add(total);
+                return ReplaceWithSumOfSquare(total, set);
+            }
         }
     }
 }

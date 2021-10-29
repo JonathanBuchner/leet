@@ -16,23 +16,35 @@ namespace leet.LeetCode.Microsoft.ArrayStrings.TwoSum
     {
         public int[] TwoSum(int[] nums, int target)
         {
-            var dictionary = new Dictionary<int, int>();
-            
+            return SolutionTwo(nums, target);
+        }
+
+        private int SolutionOne(int[] nums, int target)
+        {
+            throw new NotImplementedException();
+        }
+
+        private int[] SolutionTwo(int[] nums, int target)
+        {
+            var result = new int[2];
+            var dict = new Dictionary<int, int>();
+
             for (var i = 0; i < nums.Length; i++)
             {
-                var diff = target - nums[i];
+                if (dict.ContainsKey(nums[i]))
+                {
+                    result[0] = dict[nums[i]];
+                    result[1] = i;
 
-                if (dictionary.ContainsKey(diff))
-                {
-                    return new int[] { dictionary[diff], i };
+                    return result;
                 }
-                else
-                {
-                    dictionary.Add(nums[i], i);
-                }
+
+                var answer = target - nums[i];
+                dict.TryAdd(answer, i);
             }
 
-            throw new Exception("No answer");
+            // This should never be hit based on problem parameters, but added to make sure project builds.    
+            return result;
         }
     }
 }

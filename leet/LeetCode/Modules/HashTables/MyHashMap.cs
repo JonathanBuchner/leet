@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace leet.LeetCode.Modules.HashTables.MyHashMap
 {
+    public class MyHashMap
+    {
+        //Initialize your data structure here.
 
-    public class MyHashMap    {
-        /** Initialize your data structure here. */
-        private List<int,int>[] = new List<int, int>[100];
+        private int[] list = new int[100];
         public MyHashMap()
         {
             for (var i = 0; i < set.Length; i++)
@@ -36,7 +38,7 @@ namespace leet.LeetCode.Modules.HashTables.MyHashMap
             }
         }
 
-        /** Returns true if this set contains the specified element */
+        // Returns true if this set contains the specified element
         public bool Contains(int key)
         {
             var hash = GetHash(key);
@@ -54,3 +56,4 @@ namespace leet.LeetCode.Modules.HashTables.MyHashMap
             return Math.Abs(value % 10);
         }
     }
+}

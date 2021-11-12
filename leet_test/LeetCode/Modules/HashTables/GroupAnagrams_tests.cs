@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using leet.LeetCode.Modules.HashTables.GroupAnagrams;
+using System.Linq;
 
 namespace leet_test.LeetCode.Modules.HashTables
 {
@@ -21,7 +22,21 @@ namespace leet_test.LeetCode.Modules.HashTables
 
             var actual = sut.GroupAnagrams(input);
 
-            Assert.IsFalse(true);
+            foreach(var elist in expected)
+            {
+                var match = false;
+                
+                foreach (var alist in actual)
+                {
+                    if (!alist.Except(elist).ToList().Any() && !elist.Except(alist).ToList().Any())
+                    {
+                        match = true;
+                        break;
+                    }
+                }
+
+                Assert.IsTrue(match);
+            }
         }
     }
 }

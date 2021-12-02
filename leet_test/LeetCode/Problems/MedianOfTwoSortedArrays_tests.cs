@@ -11,7 +11,12 @@ namespace leet_test.LeetCode.Problems
     {
         [TestMethod]
         [DataRow(
-            new int[] { 1,3 }, 
+            new int[] { 1, 2, 3, 4 },
+            new int[] {  },
+            2.5000d)
+        ]
+        [DataRow(
+            new int[] { 1, 3 }, 
             new int[] { 2 },
             2.0000d )
         ]
@@ -31,11 +36,11 @@ namespace leet_test.LeetCode.Problems
             1.0000d)
         ]
         [DataRow(
-            new int[] { 1,},
+            new int[] { 1 },
             new int[] { 2 },
             1.5000d)
         ]
-        public void FindMedianSortedArrays(int[] input_nums1, int[] input_nums2, decimal expected)
+        public void FindMedianSortedArrays(int[] input_nums1, int[] input_nums2, double expected)
         {
             var sut = new Solution();
 

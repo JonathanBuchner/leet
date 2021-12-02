@@ -15,7 +15,51 @@ namespace leet.LeetCode.Problems.ZigzagConversation
     {
         public string Convert(string s, int numRows)
         {
-            throw new NotImplementedException();
+            if (numRows == 0) throw new ArgumentOutOfRangeException("num rows must be at least one");
+            if (numRows == 1) return s;
+            if (numRows > s.Length) return s;
+
+            var rows = new StringBuilder[numRows];
+            for (var i = 0; i < numRows; i++)
+            {
+                rows[i] = new StringBuilder();
+            }
+            var index = 0;
+            var row = 0;
+            var countUp = true;
+
+            while (index < s.Length)
+            {
+                rows[row].Append(s[index]);
+                index++;
+                
+                if (row == 0)
+                {
+                    countUp = true;
+                }
+                else if (row == numRows - 1)
+                {
+                    countUp = false;
+                }
+
+                if (countUp)
+                {
+                    row++;
+                }
+                else
+                {
+                    row--;
+                }
+            }
+
+            var result = new StringBuilder();
+
+            foreach(var entry in rows)
+            {
+                result.Append(entry.ToString());
+            }
+
+            return result.ToString();
         }
     }
 }

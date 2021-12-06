@@ -24,14 +24,13 @@ namespace leet.LeetCode.Problems.ZigzagConversation
             {
                 rows[i] = new StringBuilder();
             }
-            var index = 0;
+
             var row = 0;
             var countUp = true;
 
-            while (index < s.Length)
+            foreach (char c in s)
             {
-                rows[row].Append(s[index]);
-                index++;
+                rows[row].Append(c);
                 
                 if (row == 0)
                 {

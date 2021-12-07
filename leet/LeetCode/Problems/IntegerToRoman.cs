@@ -13,75 +13,88 @@ namespace leet.LeetCode.Problems.IntegerToRoman
      */
     public class Solution
     {
-        StringBuilder sb = new StringBuilder();
         public string IntToRoman(int num)
         {
-            
-
-            while (num >= 1000)
+            StringBuilder sb = new StringBuilder();
+            if (num >= 1000)
             {
-                sb.Append("M");
-                num -= 1000;
+                var mAdditions = num / 1000;
+                sb.Append('M', mAdditions);
+                num -= mAdditions * 1000;
             }
 
-            var hundreds = num / 100 % 10;
-            var tens = num / 10 % 10;
-            var ones = num % 10;
+            if (num >= 900)
+            {
+                sb.Append("CM");
+                num -= 900;
+            }
 
-            Converter(hundreds, 'C', 'D', 'M');
-            Converter(tens, 'X', 'L', 'C');
-            Converter(ones, 'I', 'V', 'X');
+            if (num >= 500)
+            {
+
+                sb.Append('D');
+                num -= 500;
+            }
+            if (num >= 400)
+            {
+                sb.Append("CD");
+                num -= 400;
+            }
+
+            if (num >= 100)
+            {
+                var count = num / 100;
+
+                sb.Append('C', count);
+                num -= count * 100;
+            }
+            if (num >= 90)
+            {
+                sb.Append("XC");
+                num -= 90;
+            }
+
+            if (num >= 50)
+            {
+                sb.Append('L');
+                num -= 50;
+            }
+            if (num >= 40)
+            {
+                sb.Append("XL");
+                num -= 40;
+            }
+
+            if (num >= 10)
+            {
+                var count = num / 10;
+
+                sb.Append('X', count);
+                num -= count * 10;
+            }
+            if (num == 9)
+            {
+                sb.Append("IX");
+                num -= 9;
+            }
+
+            if (num >= 5)
+            {
+                sb.Append('V');
+                num -= 5;
+            }
+            if (num == 4)
+            {
+                sb.Append("IV");
+                num -= 4;
+            }
+
+            if (num >= 1)
+            {
+                sb.Append('I', num);
+            }
 
             return sb.ToString();
-        }
-
-        private void Converter(int num, char first, char five, char ten)
-        {
-         
-            if(num == 0)
-            {
-                // Do Nothing
-            } 
-            else if (num == 1)
-            {
-                sb.Append(first);
-            }
-            else if (num == 2)
-            {
-                sb.Append(first).Append(first);
-            }
-            else if (num == 3)
-            {
-                sb.Append(first).Append(first).Append(first);
-            }
-            else if (num == 4)
-            {
-                sb.Append(first).Append(five);
-            }
-            else if (num == 5)
-            {
-                sb.Append(five);
-            }
-            else if (num == 6)
-            {
-                sb.Append(five).Append(first);
-            }
-            else if (num == 7)
-            {
-                sb.Append(five).Append(first).Append(first);
-            }
-            else if (num == 8)
-            {
-                sb.Append(five).Append(first).Append(first).Append(first);
-            }
-            else if (num == 9)
-            {
-                sb.Append(first).Append(ten);
-            }
-            else
-            {
-                throw new ArgumentOutOfRangeException("Number must be between 0 and 9.");
-            }
         }
     }
 }

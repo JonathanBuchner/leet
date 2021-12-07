@@ -13,19 +13,10 @@ namespace leet.LeetCode.Problems.IntegerToRoman
      */
     public class Solution
     {
-        private StringBuilder sb = new StringBuilder();
-
+        StringBuilder sb = new StringBuilder();
         public string IntToRoman(int num)
         {
-            /*   
-               I             1
-               V             5
-               X             10
-               L             50
-               C             100
-               D             500
-               M             1000
-            */
+            
 
             while (num >= 1000)
             {
@@ -37,50 +28,59 @@ namespace leet.LeetCode.Problems.IntegerToRoman
             var tens = num / 10 % 10;
             var ones = num % 10;
 
-            sb.Append(Converter(hundreds, 'C', 'D', 'M'));
-            sb.Append(Converter(tens, 'X', 'L', 'C'));
-            sb.Append(Converter(ones, 'I', 'V', 'X'));
+            Converter(hundreds, 'C', 'D', 'M');
+            Converter(tens, 'X', 'L', 'C');
+            Converter(ones, 'I', 'V', 'X');
 
             return sb.ToString();
         }
 
-        private string Converter(int num, char first, char five, char ten)
+        private void Converter(int num, char first, char five, char ten)
         {
-            switch(num)
+         
+            if(num == 0)
             {
-                case 0:
-                    return "";
-                
-                case 1:
-                    return first.ToString();
-
-                case 2:
-                    return String.Concat(first, first);
-
-
-                case 3:
-                    return String.Concat(first, first, first); ;
-
-                case 4:
-                    return String.Concat(first, five);
-
-                case 5:
-                    return five.ToString();
-
-                case 6:
-                    return string.Concat(five, first);
-
-                case 7:
-                    return string.Concat(five, first, first);
-
-                case 8:
-                    return string.Concat(five, first, first, first);
-
-                case 9:
-                    return string.Concat(first, ten);
-
-                default:
-                    throw new ArgumentOutOfRangeException("Number must be between 0 and 9.");
+                // Do Nothing
+            } 
+            else if (num == 1)
+            {
+                sb.Append(first);
+            }
+            else if (num == 2)
+            {
+                sb.Append(first).Append(first);
+            }
+            else if (num == 3)
+            {
+                sb.Append(first).Append(first).Append(first);
+            }
+            else if (num == 4)
+            {
+                sb.Append(first).Append(five);
+            }
+            else if (num == 5)
+            {
+                sb.Append(five);
+            }
+            else if (num == 6)
+            {
+                sb.Append(five).Append(first);
+            }
+            else if (num == 7)
+            {
+                sb.Append(five).Append(first).Append(first);
+            }
+            else if (num == 8)
+            {
+                sb.Append(five).Append(first).Append(first).Append(first);
+            }
+            else if (num == 9)
+            {
+                sb.Append(first).Append(ten);
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException("Number must be between 0 and 9.");
             }
         }
     }

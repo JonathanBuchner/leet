@@ -68,5 +68,16 @@ namespace leet_test.LeetCode.Problems
 
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void IntToRoman_huge()
+        {
+            var sut = new Solution();
+            var input = 3994;
+            var expected = "MMMCMXCIV";
+
+            var actual = sut.IntToRoman(input);
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

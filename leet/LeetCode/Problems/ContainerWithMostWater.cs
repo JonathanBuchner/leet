@@ -24,7 +24,6 @@ namespace leet.LeetCode.Problems.ContainerWithMostWater
                 }
             }
 
-
             return area;
         }
 

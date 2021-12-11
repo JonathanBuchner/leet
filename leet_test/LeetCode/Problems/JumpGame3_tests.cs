@@ -39,7 +39,7 @@ namespace leet_test.LeetCode.Problems
             var sut = new Solution();
             var input_arr = new int[] { 3, 0, 2, 1, 2 };
             var input_start = 2;
-            var expected = true;
+            var expected = false;
 
             var actual = sut.CanReach(input_arr, input_start);
 

@@ -13,10 +13,104 @@ namespace leet.LeetCode.Modules.HashTables.ValideSudoku
      */
     public class Solution
     {
+        private char[][] board;
+        private HashSet<char> set;
         public bool IsValidSudoku(char[][] board)
         {
+            this.board = board;
+
+            return CheckRows() && CheckCols() && CheckSquaresThreeByThree(); 
+        }
+
+        private bool CheckRows()
+        {
+            for(var i = 0; i < board.Length; i++)
+            {
+                set = new HashSet<char>();
+                for (var j = 0; j <board[i].Length; j++)
+                {
+                    if(board[i][j] == '.')
+                    {
+                        // Do nothing
+                    }
+                    else if (set.Contains(board[i][j]))
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        set.Add(board[i][j]);
+                    }
+                }
+            }
+
+            return true;
+        }
+
+        private bool CheckCols()
+        {
+            for (var i = 0; i < board.Length; i++)
+            {
+                var set = new HashSet<int>();
+                for (var j = 0; j < board[i].Length; j++)
+                {
+                    if (board[j][i] == '.')
+                    {
+                        // Do nothing
+                    }
+                    else if (set.Contains(board[j][i]))
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        set.Add(board[j][i]);
+                    }
+                }
+            }
+
+            return true;
+        }
+
+        private bool CheckSquaresThreeByThree()
+        { 
+            var minirow = 3;
+            var minicol = 3;
             
-            throw new NotImplementedException();
+            while(minirow <= 9 && minicol <= 9)
+            {
+                set = new HashSet<char>();
+                for(var col = minicol - 3; col < minicol; col++)
+                {
+                    for (var row = minirow - 3; row < minirow; row++)
+                    {
+                        if (board[col][row] == '.')
+                        {
+                            // Do nothing
+                        }
+                        else if (set.Contains(board[col][row]))
+                        {
+                            return false;
+                        }
+                        else
+                        {
+                            set.Add(board[col][row]);
+                        }
+                    }
+                }
+                
+                if(minirow <= 6)
+                {
+                    minirow += 3;
+                }
+                else
+                {
+                    minirow = 3;
+                    minicol += 3;
+                }
+            }
+
+            return true;
         }
     }
 }

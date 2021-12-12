@@ -13,9 +13,28 @@ namespace leet.LeetCode.Problems.PartitionEqualSubsetSum
      */
     public class Solution
     {
+        private int[] nums;
         public bool CanPartition(int[] nums)
         {
-            throw new NotImplementedException();
+            if (nums.Length == 0) return false;
+
+            this.nums = nums;
+
+            return Partition(0, 0);
+        }
+
+        private bool Partition(int index, int total)
+        {
+            if(nums.Length == index)
+            {
+                return total == 0;
+            }
+
+            var add = total + nums[index];
+            var sub = total - nums[index];
+            index++;
+
+            return Partition(index, add) || Partition(index, sub); 
         }
     }
 }

@@ -13,28 +13,42 @@ namespace leet.LeetCode.Problems.PartitionEqualSubsetSum
      */
     public class Solution
     {
-        private int[] nums;
+        private int total;
+        private int subtotal;
+        private bool[][] dynamicProgrammingTable;
         public bool CanPartition(int[] nums)
         {
-            if (nums.Length == 0) return false;
-
-            this.nums = nums;
-
-            return Partition(0, 0);
-        }
-
-        private bool Partition(int index, int total)
-        {
-            if(nums.Length == index)
+            Setup(nums);
+            
+            if (total == 0 || total % 2 != 0) return false;
+            
+            for(var i = 1; i < dynamicProgrammingTable.Length; i++)
             {
-                return total == 0;
+                var curr = nums[i - 1];
+                for(int j = 0; j < dynamicProgrammingTable[i].Length; j++)
+                {
+                    dynamicProgrammingTable[i][j] = j < curr
+                        ? dynamicProgrammingTable[i - 1][j]
+                        : dynamicProgrammingTable[i - 1][j] || dynamicProgrammingTable[i - 1][j - curr];
+
+                }
             }
 
-            var add = total + nums[index];
-            var sub = total - nums[index];
-            index++;
-
-            return Partition(index, add) || Partition(index, sub); 
+            return dynamicProgrammingTable[nums.Length][subtotal];
+        }
+        private void Setup(int[] nums)
+        {
+            foreach (var num in nums)
+            {
+                total += num;
+            }
+            subtotal = total / 2;
+            dynamicProgrammingTable = new bool[nums.Length + 1][];
+            for (var i = 0; i < dynamicProgrammingTable.Length ; i++)
+            {
+                dynamicProgrammingTable[i] = new bool[subtotal + 1];
+            }
+            dynamicProgrammingTable[0][0] = true;
         }
     }
 }

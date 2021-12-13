@@ -15,7 +15,30 @@ namespace leet.LeetCode.Problems.ConsecutiveCharacters
          */
         public int MaxPower(string s)
         {
-            throw new NotImplementedException();
+            if (s.Length == 0)
+            {
+                return 0;
+            }
+
+            var max = 1;
+            var challanger = 1;
+            char curr = s[0]; 
+                
+            for(var i = 1; i < s.Length; i++)
+            {
+                if (curr == s[i])
+                {
+                    challanger++;
+                    max = Math.Max(max, challanger);
+                }
+                else
+                {
+                    curr = s[i];
+                    challanger = 1;
+                }
+            }
+
+            return max;
         }
     }
 }

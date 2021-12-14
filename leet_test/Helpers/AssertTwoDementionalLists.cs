@@ -28,7 +28,7 @@ namespace leet_test.Helpers
                 Assert.IsTrue(passes);
             }
         }
-        public static void AreMatch(List<List<int>> expected, List<List<int>> actual)
+        public static void AreMatch(List<IList<int>> expected, List<IList<int>> actual)
         {
             foreach (var elist in expected)
             {

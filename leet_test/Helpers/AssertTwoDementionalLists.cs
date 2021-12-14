@@ -28,5 +28,23 @@ namespace leet_test.Helpers
                 Assert.IsTrue(passes);
             }
         }
+        public static void AreMatch(List<List<int>> expected, List<List<int>> actual)
+        {
+            foreach (var elist in expected)
+            {
+                var passes = false;
+
+                foreach (var alist in actual)
+                {
+                    if (Enumerable.SequenceEqual(alist.OrderBy(t => t), elist.OrderBy(t => t)))
+                    {
+                        passes = true;
+                        break;
+                    }
+                }
+
+                Assert.IsTrue(passes);
+            }
+        }
     }
 }

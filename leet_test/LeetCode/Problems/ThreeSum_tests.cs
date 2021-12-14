@@ -31,9 +31,7 @@ namespace leet_test.LeetCode.Problems
             var sut = new Solution();
             var input = new int[] {};
             var expected = new List<IList<int>>
-            {
-                new List<int> { },
-            };
+            { };
 
             var actual = sut.ThreeSum(input);
 
@@ -46,6 +44,20 @@ namespace leet_test.LeetCode.Problems
             var input = new int[] { 0 };
             var expected = new List<IList<int>>
             {
+            };
+
+            var actual = sut.ThreeSum(input);
+
+            AssertTwoDementionalLists.AreMatch(expected, (List<IList<int>>)actual);
+        }
+        [TestMethod]
+        public void ThreeSum_Test1()
+        {
+            var sut = new Solution();
+            var input = new int[] { 3, -2, 1, 0 };
+            var expected = new List<IList<int>>
+            {
+
             };
 
             var actual = sut.ThreeSum(input);

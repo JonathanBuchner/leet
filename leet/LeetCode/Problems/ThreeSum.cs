@@ -18,42 +18,58 @@ namespace leet.LeetCode.Problems.ThreeSum
         public IList<IList<int>> ThreeSum(int[] nums)
         {
             var answers = new List<IList<int>>();
-            
+
             if (nums.Length < 3)
             {
                 return answers;
             }
 
-            var twosums = new List<int[]>();
-
+            var doubles = new Dictionary<int, List<int>>();
             var i = 0;
+            
             while(i < nums.Length - 2)
             {
-                var j = i + 1;
-                while (j < nums.Length - 1)
+                var k = i + 1;
+                while ( k < nums.Length - 1)
                 {
-                    var sum = nums[i] + nums[j];
-                    twosums.Add( new int[3] { sum, i, j } );
-                    j++;
+                    doubles.TryAdd(-1 * (nums[i] + nums[k]), new List<int>() { nums[i], nums[k] });
+                    k++;
                 }
-
                 i++;
             }
 
-            foreach (var entry in twosums)
+            var m = 2;
+            var set = new HashSet<List<int>>();
+            
+            while(m < nums.Length)
             {
-                var k = entry[2]+ 1;
-                
-                while (k < nums.Length)
+                var j Math
+                if (doubles.ContainsKey(nums[j]))
                 {
-                    if (entry[0] + nums[k] == 0)
+                    var answer = new List<int>() {doubles[nums[j]][0], doubles[nums[j]][1], nums[j] };
+                    answer.Sort();
+
+                    var same = false;
+                    foreach (var curr in answers)
                     {
-                            var answer = new List<int>() { entry[1], entry[2], k };
-                            answers.Add(answer);
+                        same = true;
+                        for (var l = 0; l < 3; l++)
+                        {
+                            if(curr[l] != answer[l])
+                            {
+                                same = false;
+                                break;
+                            }
+                        }
+                        if (same) { break; }
                     }
 
-                    k++;
+                    if (!same)
+                    {
+                        answers.Add(answer);
+                    }
                 }
+                j++;
             }
 
             return answers;

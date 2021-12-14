@@ -12,6 +12,10 @@ namespace leet_test.Helpers
     {
         public static void AreMatch(IList<IList<string>> expected, IList<IList<string>> actual)
         { 
+            if(expected.Count != actual.Count)
+            {
+                Assert.IsTrue(false, $"Lists are different lengths.  Expected = {expected.Count}.  Actual = {actual.Count}");
+            }
             foreach (var elist in expected)
                 {
                     var passes = false;
@@ -30,6 +34,10 @@ namespace leet_test.Helpers
         }
         public static void AreMatch(List<IList<int>> expected, List<IList<int>> actual)
         {
+            if (expected.Count != actual.Count)
+            {
+                Assert.IsTrue(false, $"Lists are different lengths.  Expected = {expected.Count}.  Actual = {actual.Count}");
+            }
             foreach (var elist in expected)
             {
                 var passes = false;

@@ -24,7 +24,53 @@ namespace leet.LeetCode.Problems.InsertionSortList
     {
         public ListNode InsertionSortList(ListNode head)
         {
-            throw new NotImplementedException();
+            
+            if(head == null && head.next == null)
+            {
+                return head;
+            }
+
+            ListNode result = head;
+            ListNode count = head;
+
+            while (count.next != null)
+            {
+                ListNode move = count.next;
+                ListNode curr = result;
+                ListNode prev = null;
+                
+                while(true)
+                {
+                    if (move.val < curr.val)
+                    {
+                        count.next = count.next.next;
+                        
+                        
+                        if (prev == null)
+                        {
+                            move.next = result;
+                            result = move;
+                        }
+                        else
+                        {
+                            prev.next = move;
+                            move.next = curr;
+                        }
+                        break;
+                    }
+
+                    if(curr == move)
+                    {
+                        count = count.next;
+                        break;
+                    }
+
+                    prev = curr;
+                    curr = curr.next;
+                }
+            }
+
+            return result;
         }
     }
 }

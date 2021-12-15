@@ -38,12 +38,10 @@ namespace leet.LeetCode.Problems.ThreeSum
                 i++;
             }
 
-            var m = 2;
-            var set = new HashSet<List<int>>();
+            var j = 2;
             
-            while(m < nums.Length)
+            while(j < nums.Length)
             {
-                var j Math
                 if (doubles.ContainsKey(nums[j]))
                 {
                     var answer = new List<int>() {doubles[nums[j]][0], doubles[nums[j]][1], nums[j] };

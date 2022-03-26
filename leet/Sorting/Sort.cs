@@ -11,19 +11,17 @@ namespace leet.sort
     {
         public static void Bubble(int[] arr)
         {
-            if (arr.Length <= 1) return;
-
-            int hold;
+            if (arr.Length <= 1) return;                    // 2 operations
             
-            for(int i = 0; i < arr.Length - 1; i++)
+            for(int i = 0; i < arr.Length - 1; i++)         // 2 operations per input
             {
-                for (int j = 0; j < arr.Length - 1; j++)
+                for (int j = 0; j < arr.Length - 1; j++)    // 2 operations per input
                 {
-                    if (arr[j] > arr[j + 1])
+                    if (arr[j] > arr[j + 1])                // 1 operations
                     {
-                        hold = arr[j];
-                        arr[j] = arr[j + 1];
-                        arr[j + 1] = hold;
+                        var hold = arr[j];                  // 1 operations
+                        arr[j] = arr[j + 1];                // 1 operations
+                        arr[j + 1] = hold;                  // 1 operations
                     }
                 }
             }

@@ -1,3 +1,5 @@
+![](./img/100percent.png)
+
 # Leet
 
 Personal repository where I practice and design computer complexity problems.  Problems resources include:  

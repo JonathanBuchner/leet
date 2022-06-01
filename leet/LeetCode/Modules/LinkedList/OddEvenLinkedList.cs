@@ -48,7 +48,7 @@ namespace leet.LeetCode.Modules.LinkedList.OddEvenLinkedList
                 i++;
                 curr = next;
             }
-            even.next = null;
+            //even.next = null;
             curr.next = evenList;
 
             return head;

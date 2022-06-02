@@ -46,7 +46,7 @@ namespace leet.LeetCode.Modules.LinkedList.PalindromeLinkedList
             curr = head;
             ListNode prev = null;
 
-            while(counter <= middle)
+            while(counter < middle)
             {
                 var temp = curr.next;
                 curr.next = prev;

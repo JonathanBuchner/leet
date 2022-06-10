@@ -62,7 +62,7 @@ namespace leet_test.LeetCode.Problems
 
             var actual = sut.ThreeSum(input);
 
-            AssertTwoDementionalLists.AreMatch(expected, (List<IList<int>>)actual);
+            AssertTwoDementionalLists.AreMatch(expected, (List<IList<int>>) actual);
         }
     }
 }

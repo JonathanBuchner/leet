@@ -41,5 +41,21 @@ namespace leet_test.LeetCode.Problems
 
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void TestCase1()
+        {
+            var sut = new Solution();
+            var input = new List<IList<int>>()
+            {
+                new List<int>() { -1 },
+                new List<int>() { 2, 3 },
+                new List<int>() { 1, -1, -3 },
+            };
+            var expected = -1;
+
+            var actual = sut.MinimumTotal(input);
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

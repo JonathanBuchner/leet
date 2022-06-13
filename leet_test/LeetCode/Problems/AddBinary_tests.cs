@@ -22,5 +22,18 @@ namespace leet_test.LeetCode.Problems
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod]
+        public void Example2()
+        {
+            var sut = new Solution();
+            var input_a = "1010";
+            var input_b = "1011";
+            var expected = "10101";
+
+            var actual = sut.AddBinary(input_a, input_b);
+
+            Assert.AreEqual(expected, actual);
+        }
+
     }
 }

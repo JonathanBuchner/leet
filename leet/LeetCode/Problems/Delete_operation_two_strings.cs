@@ -8,34 +8,34 @@ namespace leet.LeetCode.Problems.Delete_operation_two_strings
     {
         public int MinDistance(string word1, string word2)
         {
-            var substring = word1.Length > word2.Length ? word2.Length : word1.Length;
+            var dp = new int[word1.Length, word2.Length];
 
-            while (substring > 0)
+            for(var r = 0; r < word1.Length; r++)
             {
-                var list = new HashSet<string>();
-                var p1 = 0;
-
-                while (p1 + substring <= word1.Length)
+                for (var c = 0; c < word2.Length; c++)
                 {
-                    list.Add(word1.Substring(p1, substring));
-                    p1++;
-                }
-
-                p1 = 0;
-
-                while (p1+substring <= word2.Length)
-                {
-                    if(list.Contains(word2.Substring(p1, substring)))
+                    if (word1[r] == word2[c])
                     {
-                        return (word1.Length - substring) + (word2.Length - substring); 
-                    };
-                    p1++;
+                        if(r > 0 && c > 0)
+                        {
+                            dp[r, c] = dp[r - 1, c - 1] + 1;
+                        }
+                        else
+                        {
+                            dp[r, c] = 1;
+                        }
+                    }
+                    else
+                    {
+                        var t = r > 0 ? dp[r - 1, c] : 0;
+                        var l = c > 0 ? dp[r, c - 1] : 0;
+                        dp[r,c] = t > l ? t : l;
+                    }
                 }
-
-                substring--;
             }
 
-            return word1.Length + word2.Length;
+            var substring = dp[word1.Length - 1, word2.Length - 1];
+            return word1.Length - substring + word2.Length - substring;
         }
     }
 }

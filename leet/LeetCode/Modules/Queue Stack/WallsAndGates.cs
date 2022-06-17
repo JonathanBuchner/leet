@@ -37,7 +37,7 @@ namespace leet.LeetCode.Modules.Queue_Stack.WallsAndGates
             
             for(var i = 0; i < rooms.Length; i++)
             {
-                for (var k = 0; k < rooms.Length; k++)
+                for (var k = 0; k < rooms[0].Length; k++)
                 {
                     if (rooms[i][k] == 0)
                     {

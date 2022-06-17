@@ -18,10 +18,28 @@ namespace leet_test.LeetCode.Modules.Queues_Stacks
                 new char[] {'1', '1', '1', '1', '1'},
                 new char[] {'1', '1', '0', '1', '0'},
                 new char[] {'1', '1', '0', '0', '0'},
-                new char[] {'0', '0', '0', '1', '0'},
+                new char[] {'0', '0', '0', '0', '0'},
 
             };
             var expected = 1;
+
+            var actual = sut.NumIslands(input);
+
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Example2()
+        {
+            var sut = new Solution();
+            var input = new char[][]
+            {
+                new char[] {'1', '1', '1', '1', '1'},
+                new char[] {'1', '1', '0', '0', '0'},
+                new char[] {'0', '0', '1', '0', '0'},
+                new char[] {'0', '0', '0', '1', '1'},
+
+            };
+            var expected = 3;
 
             var actual = sut.NumIslands(input);
 

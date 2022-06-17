@@ -24,7 +24,10 @@ namespace leet_test.LeetCode.Modules.Queues_Stacks
 
             sut.WallsAndGates(input);
 
-            Assert.AreEqual(expected, input);
+            for(var i = 0; i < expected.Length && i < input.Length; i++)
+            {
+                CollectionAssert.AreEqual(expected[i], input[i]);
+            }
         }
     }
 }

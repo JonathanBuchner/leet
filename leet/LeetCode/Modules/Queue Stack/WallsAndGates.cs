@@ -5,6 +5,13 @@ using System.Threading;
 
 namespace leet.LeetCode.Modules.Queue_Stack.WallsAndGates
 {
+    /*
+     * Walls and Gates
+     * 
+     * Fill each empty room with the distance to its nearest gate. If it is impossible to reach a gate, it should be filled with INF.
+     * 
+     * https://leetcode.com/explore/learn/card/queue-stack/231/practical-application-queue/1373/
+     */
     public class Solution
     {
         public void WallsAndGates(int[][] rooms)

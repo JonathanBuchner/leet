@@ -16,6 +16,11 @@ namespace leet.LeetCode.Modules.Queue_Stack.NumberOfIslands
     {
         public int NumIslands(char[][] grid)
         {
+            return DFA(grid);
+        }
+        
+        private int DFA(char[][] grid)
+        {
             var possible = new HashSet<int[]>();
             var queue = new Queue<int[]>();
             var answer = 0;

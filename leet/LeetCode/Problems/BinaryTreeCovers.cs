@@ -1,4 +1,5 @@
-﻿using System;
+﻿using leet.LeetCode.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -17,7 +18,38 @@ namespace leet.LeetCode.Problems.BinaryTreeCovers
     {
         public int MinCameraCover(TreeNode root)
         {
-            throw new NotImplementedException();
+            var answer = CheckNodeForCamera(root);
+            
+            if (answer[0] == 1)
+            {
+                answer[1]++;
+            }
+
+            return answer[1];
+        }
+
+        private int[] CheckNodeForCamera(TreeNode root)
+        {
+            if (root == null)
+            {
+                return new int[] { 0, 0 };
+            }
+
+            var camsL = CheckNodeForCamera(root.left);
+            var camsR = CheckNodeForCamera(root.right);
+
+            if (camsL[0] == 1 || camsR[0] == 1)
+            {
+                return new int[] { 2, camsL[1] + camsR[1] + 1 };
+            }
+            else if (camsL[0] == 2 || camsR[0] == 2)
+            {
+                return new int[] { 0, camsL[1] + camsR[1] };
+            }
+            else
+            {
+                return new int[] { 1, camsL[1] + camsR[1] };
+            }
         }
     }
 }

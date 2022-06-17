@@ -10,11 +10,11 @@ namespace leet_test.LeetCode.Problems
     public class LongestPalindromicSubProblem_test
     {
         [TestMethod]
-        public void Exampe1()
+        public void Example1()
         {
             var sut = new Solution();
             var input = "cabad";
-            var expected = "bab";
+            var expected = "aba";
 
             var actual = sut.LongestPalindrome(input);
 
@@ -22,7 +22,7 @@ namespace leet_test.LeetCode.Problems
         }
 
         [TestMethod]
-        public void Exampe2()
+        public void Example2()
         {
             var sut = new Solution();
             var input = "cbbd";

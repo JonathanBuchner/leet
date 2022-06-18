@@ -21,7 +21,7 @@ namespace leet.LeetCode.Problems.ThreeSum
 
             throw new NotImplementedException();
 
-            var answers = new List<IList<int>>();
+           /* var answers = new List<IList<int>>();
             var list = new List<int>();
 
             if (nums.Length < 3)
@@ -49,7 +49,7 @@ namespace leet.LeetCode.Problems.ThreeSum
                 }
             }
 
-            return answers;
+            return answers;*/
         }
     }
 }

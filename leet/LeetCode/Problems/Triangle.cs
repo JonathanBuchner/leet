@@ -18,8 +18,6 @@ namespace leet.LeetCode.Problems.Triangle
      */
     public class Solution
     {
-        private int lowest;
-        private IList<IList<int>> triangle;
         public int MinimumTotal(IList<IList<int>> triangle)
         {
             for (var t = triangle.Count - 2; t >= 0; t--)

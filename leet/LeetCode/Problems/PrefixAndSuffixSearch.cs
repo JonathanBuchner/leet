@@ -14,48 +14,57 @@ namespace leet.LeetCode.Problems.PrefixAndSuffixSearch
      */
     public class WordFilter
     {
-        private TrieNode prefixes = new TrieNode();
-        private TrieNode suffixes = new TrieNode();
+        private TrieNode suffixprefix = new TrieNode();
 
         public WordFilter(string[] words)
         {
-            for(var index = 0; index < words.Length; index++)
+            for(var i = 0; i < words.Length; i++)
             {
-                var arr = words[index].ToCharArray();
-
-                var cur = prefixes;
-                cur.Indexs.Add(index);
-
-                for(var i = 0; i < arr.Length; i++)
+                var sb = new StringBuilder();
+                sb.Append(words[i]);
+                sb.Insert(0, "{");
+                
+                for(var k = words[i].Length - 1; k >= 0; k--)
                 {
-                    var pos = arr[i] - 'a';
-                    if(cur.Children[pos] == null)
-                    {
-                        cur.Children[pos] = new TrieNode();
-                    }
-                    cur = cur.Children[pos];
-                    cur.Indexs.Add(index);
-                }
+                    sb.Insert(0, words[i][k]);
+                    var current = suffixprefix;
 
-                cur = suffixes;
-                cur.Indexs.Add(index);
-
-                for (var i = arr.Length - 1; i >= 0; i--)
-                {
-                    var pos = arr[i] - 'a';
-                    if (cur.Children[pos] == null)
+                    for(var j = 0; j < sb.Length; j++)
                     {
-                        cur.Children[pos] = new TrieNode();
+                        var pos = sb[j] - 'a';
+                        if (current.Children[pos] == null)
+                        {
+                            current.Children[pos] = new TrieNode();
+                        }
+                        current = current.Children[pos];
+                        current.Indexs.Add(i);
                     }
-                    cur = cur.Children[pos];
-                    cur.Indexs.Add(index);
                 }
             }
         }
 
         public int F(string prefix, string suffix)
         {
+            var search = String.Concat(suffix, "{", prefix);
+            var current = suffixprefix;
+
+            for(var i = 0; i < search.Length; i++)
+            {
+                var pos = search[i] - 'a';
+                if(current.Children[pos] == null)
+                {
+                    return -1;
+                }
+                current = current.Children[pos];
+            }
+
             var answer = -1;
+
+            foreach(var index in current.Indexs)
+            {
+                answer = Math.Max(answer, index);
+            }
+
             return answer;
         }
     }
@@ -65,7 +74,7 @@ namespace leet.LeetCode.Problems.PrefixAndSuffixSearch
         public HashSet<int> Indexs { get; set; }
         public TrieNode()
         {
-            Children = new TrieNode[26];
+            Children = new TrieNode[27];
             Indexs = new HashSet<int>();
         }
     }

@@ -10,7 +10,7 @@ namespace leet.LeetCode.Models
         public HashSet<int> Indexs { get; set; }
         public TrieNode()
         {
-            Children = new TrieNode[26];
+            Children = new TrieNode[27];
             Indexs = new HashSet<int>();
         }
     }

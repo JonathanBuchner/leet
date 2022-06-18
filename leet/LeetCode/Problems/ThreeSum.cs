@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Text;
 
 namespace leet.LeetCode.Problems.ThreeSum
@@ -17,57 +18,35 @@ namespace leet.LeetCode.Problems.ThreeSum
 
         public IList<IList<int>> ThreeSum(int[] nums)
         {
+
+            throw new NotImplementedException();
+
             var answers = new List<IList<int>>();
+            var list = new List<int>();
 
             if (nums.Length < 3)
             {
                 return answers;
             }
 
-            var doubles = new Dictionary<int, List<int>>();
-            var i = 0;
-            
-            while(i < nums.Length - 2)
+            for (var x = 0; x < nums.Length; x++)
             {
+                list.Add(nums[x]);
+            }
+            list.Sort();
+
+            var i = 0;
+            var j = list.Count - 1;
+
+            while (i < j - 1)
+            {
+
                 var k = i + 1;
-                while ( k < nums.Length - 1)
+                while( k < j)
                 {
-                    doubles.TryAdd(-1 * (nums[i] + nums[k]), new List<int>() { nums[i], nums[k] });
+
                     k++;
                 }
-                i++;
-            }
-
-            var j = 2;
-            
-            while(j < nums.Length)
-            {
-                if (doubles.ContainsKey(nums[j]))
-                {
-                    var answer = new List<int>() {doubles[nums[j]][0], doubles[nums[j]][1], nums[j] };
-                    answer.Sort();
-
-                    var same = false;
-                    foreach (var curr in answers)
-                    {
-                        same = true;
-                        for (var l = 0; l < 3; l++)
-                        {
-                            if(curr[l] != answer[l])
-                            {
-                                same = false;
-                                break;
-                            }
-                        }
-                        if (same) { break; }
-                    }
-
-                    if (!same)
-                    {
-                        answers.Add(answer);
-                    }
-                }
-                j++;
             }
 
             return answers;

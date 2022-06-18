@@ -25,11 +25,21 @@ namespace leet.LeetCode.Modules.LinkedList.DoubleLinkedList
 
         public int Get(int index)
         {
-            var counter = 1;
+            var counter = 0;
             var curr = head;
+            
+            if(curr == null)
+            {
+                return -1;
+            }
 
             while (counter < index)
             {
+                if(curr.Next == null)
+                {
+                    return -1;
+                }
+
                 curr = curr.Next;
                 counter++;
             }
@@ -66,16 +76,21 @@ namespace leet.LeetCode.Modules.LinkedList.DoubleLinkedList
 
         public void AddAtIndex(int index, int val)
         {
-            if(index == 1)
+            if(index == 0)
             {
                 AddAtHead(val);
+                return;
+            }
+
+            if(head == null)
+            {
                 return;
             }
 
             var counter = 1;
             var curr = head;
 
-            while(counter < index - 1)
+            while(counter < index)
             {
                 curr = curr.Next;
                 counter++;
@@ -99,16 +114,19 @@ namespace leet.LeetCode.Modules.LinkedList.DoubleLinkedList
 
         public void DeleteAtIndex(int index)
         {
-            if (index == 1)
+            if (index == 0)
             {
                 head = head.Next;
-                head.Prev = null;
+                if (head != null)
+                {
+                    head.Prev = null;
+                }
                 return; 
             }
             var counter = 0;
             var curr = head;
 
-            while (counter < index)
+            while (counter < index - 1)
             {
                 curr = curr.Next;
                 counter++;
@@ -122,13 +140,22 @@ namespace leet.LeetCode.Modules.LinkedList.DoubleLinkedList
 
             if (curr.Next == null)
             {
-                curr.Next = null;
                 tail = curr;
+                curr.Next = null;
                 return;
             }
 
             curr.Next = curr.Next.Next;
-            curr.Next.Prev = curr;
+            
+            if (curr.Next !=  null)
+            {
+                curr.Next.Prev = curr;
+            }
+            else
+            {
+                tail = curr;
+            }
+            
         }
     }
 }

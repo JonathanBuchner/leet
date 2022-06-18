@@ -8,23 +8,27 @@ namespace leet.LeetCode.Problems.MergeSortedArray
     {
         public void Merge(int[] nums1, int m, int[] nums2, int n)
         {
-            throw new NotImplementedException();
+
             /*var i = 0;
             var j = 0;
             var k = -1;
 
-            while (i < m && j < n)
+            while (j < n)
             {
                 if (k == -1)
                 {
-                    if (nums2[k] < nums2[j]) ;
+                    if (nums2[k] < nums2[j])
                     {
                         nums1[i] = nums2[k];
                         k--;
                     }
-                else
+                    else
                     {
-
+                        var temp = nums2[j];
+                        k++;
+                        nums2[k] = nums1[i];
+                        nums1[i] = temp;
+                        j++;
                     }
                 }
                 else if (nums1[i] > nums2[j])
@@ -37,8 +41,22 @@ namespace leet.LeetCode.Problems.MergeSortedArray
                 }
 
                 i++;
+            }
 
-            }*/
-        }
+            var l = i;
+            var o = l + k + 1;
+            while (o > n)
+            {
+                nums1[o] = nums1[l];
+                l++;
+                o++;
+            }
+            while(k > -1)
+            {
+                nums1[i] = 
+
+            }
+
+        }*/
     }
 }

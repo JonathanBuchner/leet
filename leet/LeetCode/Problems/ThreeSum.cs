@@ -18,7 +18,14 @@ namespace leet.LeetCode.Problems.ThreeSum
 
         public IList<IList<int>> ThreeSum(int[] nums)
         {
-            throw new NotImplementedException();
+            var list = new List<int>();
+            foreach(var num in nums)
+            {
+                list.Add(num);
+            }    
+            list.Sort();
+
+
           
         }
     }

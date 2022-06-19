@@ -47,6 +47,7 @@ namespace leet_test.LeetCode.Problems
                 new List<string>() { "baggage","bags","banner" },
                 new List<string>() { "baggage","bags","banner" },
                 new List<string>() { "baggage","bags" },
+                new List<string>() { "bags" },
             };
 
             var actual = sut.SuggestedProducts(input_words, input_search);
@@ -71,6 +72,31 @@ namespace leet_test.LeetCode.Problems
                 new List<string>() { "havana" },
                 new List<string>() { "havana" },
                 new List<string>() { "havana" },
+            };
+
+            var actual = sut.SuggestedProducts(input_words, input_search);
+
+            AssertTwoDementionalLists.AreMatch(expected, actual);
+        }
+
+        [TestMethod]
+        public void TestCase5()
+        {
+            var sut = new Solution();
+            var input_words = new string[]
+            {
+                "havana"
+            };
+            var input_search = "tatiana";
+            var expected = new List<IList<string>>()
+            {
+                 new List<string>(),
+                 new List<string>(),
+                 new List<string>(),
+                 new List<string>(),
+                 new List<string>(),
+                 new List<string>(),
+                 new List<string>(),
             };
 
             var actual = sut.SuggestedProducts(input_words, input_search);

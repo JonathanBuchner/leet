@@ -64,5 +64,34 @@ namespace leet_test.LeetCode.Problems
 
             AssertTwoDementionalLists.AreMatch(expected, (List<IList<int>>) actual);
         }
+        [TestMethod]
+        public void ThreeSum_TestCas47()
+        {
+            var sut = new Solution();
+            var input = new int[] { 0, 0, 0, 0 };
+            var expected = new List<IList<int>>
+            {
+                new List<int> { 0, 0, 0}
+            };
+
+            var actual = sut.ThreeSum(input);
+
+            AssertTwoDementionalLists.AreMatch(expected, (List<IList<int>>)actual);
+        }
+        [TestMethod]
+        public void ThreeSum_TestCas59()
+        {
+            var sut = new Solution();
+            var input = new int[] { -2, 0, 1, 1, 2 };
+            var expected = new List<IList<int>>
+            {
+                new List<int> { -2, 0, 2},
+                new List<int> { -2, 1, 1}
+            };
+
+            var actual = sut.ThreeSum(input);
+
+            AssertTwoDementionalLists.AreMatch(expected, (List<IList<int>>)actual);
+        }
     }
 }

@@ -16,13 +16,12 @@ namespace leet.LeetCode.Modules.Queue_Stack.NumberOfIslands
     {
         public int NumIslands(char[][] grid)
         {
-            return DFA(grid);
+            return BFA(grid);
         }
         
-        private int DFA(char[][] grid)
+        private int BFA(char[][] grid)
         {
-            var possible = new HashSet<int[]>();
-            var queue = new Queue<int[]>();
+            var queue = new LinkedList<int>();
             var answer = 0;
 
             for (var i = 0; i < grid.Length; i++)
@@ -31,50 +30,44 @@ namespace leet.LeetCode.Modules.Queue_Stack.NumberOfIslands
                 {
                     if (grid[i][k] == '1')
                     {
-                        possible.Add(new int[] { i, k });
+                        answer++;
+                        grid[i][k] = '0';
+                        queue.AddFirst(i * grid[i].Length + k);
+
+                        while (queue.Count > 0)
+                        {
+                            var pos = queue.Last();
+                            queue.RemoveLast();
+                            var x = pos / grid[i].Length;
+                            var y = pos % grid[i].Length;
+                            
+
+                            if (x > 0 && grid[x - 1][y] == '1')
+                            {
+                                queue.AddFirst((x - 1) * grid[x].Length + y);
+                                grid[x-1][y] = '0';
+                            }
+                            if (y > 0 && grid[x][y - 1] == '1')
+                            {
+                                queue.AddFirst(x * grid[x].Length + y - 1);
+                                grid[x][y-1] = '0';
+                            }
+                            if (x < grid.Length - 1 && grid[x + 1][y] == '1')
+                            {
+                                queue.AddFirst((x + 1) * grid[x].Length + y);
+                                grid[x+1][y] = '0';
+                            }
+                            if (y < grid[x].Length - 1 && grid[x][y + 1] == '1')
+                            {
+                                queue.AddFirst(x * grid[x].Length + y + 1);
+                                grid[x][y+1] = '0';
+                            }
+                        }
                     }
                 }
             }
 
-            while(possible.Count > 0)
-            { 
-                answer++;
-                var start = possible.First();
-                queue.Enqueue(start);
-
-                while(queue.Count > 0)
-                {
-                    var current = queue.Dequeue();
-                    possible.RemoveWhere(p => p[0] == current[0] && p[1] == current[1]);
-                    grid[current[0]][current[1]] = '2';
-                    UpdateGrid(grid, queue, current);
-                }
-            }
-
             return answer;
-        }
-
-        private void UpdateGrid(char[][] grid, Queue<int[]> queue, int[] pos)
-        {
-            var x = pos[0];
-            var y = pos[1];
-
-            if( x > 0 && grid[x-1][y] == '1')
-            {
-                queue.Enqueue(new int[] { x - 1, y});
-            }
-            if (y > 0 && grid[x][y - 1] == '1')
-            {
-                queue.Enqueue(new int[] { x, y - 1 });
-            }
-            if (x < grid.Length - 1 && grid[x + 1][y] == '1')
-            {
-                queue.Enqueue(new int[] { x + 1, y });
-            }
-            if (y < grid[x].Length - 1 && grid[x][y + 1] == '1')
-            {
-                queue.Enqueue(new int[] { x, y + 1 });
-            }
         }
     }
 }

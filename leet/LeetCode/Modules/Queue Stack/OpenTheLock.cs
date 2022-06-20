@@ -15,7 +15,45 @@ namespace leet.LeetCode.Modules.Queue_Stack.OpenTheLock
     {
         public int OpenLock(string[] deadends, string target)
         {
-            throw new NotImplementedException();
+            var queue = new Queue<string>();
+            var ends = new HashSet<string>();
+            ends.Add("0000");
+            queue.Enqueue("00000");
+
+            foreach(var end in deadends)
+            {
+                ends.Add(end);
+            }
+
+            while(queue.Count > 0)
+            {
+                var num = queue.Dequeue();
+                var wheels = num.Substring(num.Length - 4, 4);
+                var count = Int32.Parse(num.Substring(0, num.Length - 4));
+
+                if(wheels == target)
+                {
+                    return count;
+                }
+                
+                var i = 0;
+                count++;
+
+                while(i < wheels.Length)
+                {
+                    var k = -1;
+                    while(k < 2)
+                    {
+                        var wheel = ((wheels[i] - '0') + k + 10) % 10;
+                        var newWheel = String.Concat(wheels.Substring(0,i), wheel.ToString(), wheels.Substring(i+1));
+                        k += 2;
+                    }
+
+                    i++;
+                }
+            }
+
+            return -1;
         }
     }
 }

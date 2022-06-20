@@ -33,7 +33,7 @@ namespace leet_test.LeetCode.Modules.Queues_Stacks
             {
                "8887","8889","8878","8898","8788","8988","7888","9888"
             };
-            var input_target = "888";
+            var input_target = "8888";
             var expexted = -1;
 
             var actual = sut.OpenLock(input_deadEnds, input_target);
@@ -50,11 +50,11 @@ namespace leet_test.LeetCode.Modules.Queues_Stacks
                 "8888"
             };
             var input_target = "0009";
-            var expexted = 1;
+            var expected = 1;
 
             var actual = sut.OpenLock(input_deadEnds, input_target);
 
-            Assert.AreEqual(expexted, actual);
+            Assert.AreEqual(expected, actual);
         }
     }
 }

@@ -18,11 +18,11 @@ namespace leet_test.LeetCode.Modules.Queues_Stacks
                 "0201","0101","0102","1212","2002"
             };
             var input_target = "0202";
-            var expexted = 6;
+            var expected = 6;
 
             var actual = sut.OpenLock(input_deadEnds, input_target);
 
-            Assert.AreEqual(expexted, actual);
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]

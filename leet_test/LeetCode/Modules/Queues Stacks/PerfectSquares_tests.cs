@@ -32,5 +32,17 @@ namespace leet_test.LeetCode.Modules.Queues_Stacks
 
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void TestCase2()
+        {
+            var sut = new Solution();
+            var input = 1;
+            var expected = 0;
+
+            var actual = sut.NumSquares(input);
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

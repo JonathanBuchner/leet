@@ -38,7 +38,7 @@ namespace leet_test.LeetCode.Modules.Queues_Stacks
         {
             var sut = new Solution();
             var input = 1;
-            var expected = 0;
+            var expected = 1;
 
             var actual = sut.NumSquares(input);
 

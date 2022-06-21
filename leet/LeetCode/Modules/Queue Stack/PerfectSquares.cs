@@ -15,7 +15,7 @@ namespace leet.LeetCode.Modules.Queue_Stack.PerfectSquares
                 var square = i * i;
                 if(n == square)
                 {
-                    return 0;
+                    return 1;
                 }
                 possibleSquare.Add(square);
             }

@@ -12,7 +12,8 @@ namespace leet_test.LeetCode.Problems
             var sut = new Solution();
             var input_nums = new int[]
             {
-                   3,2,1,5,6,4
+                     3,2,1,5,6,4
+                   //1,2,3,4,5,6
             };
             var input_k = 2;
             var expected = 5;

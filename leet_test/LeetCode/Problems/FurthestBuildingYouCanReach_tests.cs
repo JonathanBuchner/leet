@@ -59,5 +59,40 @@ namespace leet_test.LeetCode.Problems
 
             Assert.AreEqual(expected, actual);
         }
+
+
+        [TestMethod]
+        public void TestCase72()
+        {
+            var sut = new Solution();
+            var input_heights = new int[]
+            {
+                4, 2, 7, 6, 9, 14, 12
+            };
+            var input_bricks = 5;
+            var input_ladders = 1;
+            var expected = 4;
+
+            var actual = sut.FurthestBuilding(input_heights, input_bricks, input_ladders);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void TestCase73()
+        {
+            var sut = new Solution();
+            var input_heights = new int[]
+            {
+                1, 2
+            };
+            var input_bricks = 0;
+            var input_ladders = 0;
+            var expected = 0;
+
+            var actual = sut.FurthestBuilding(input_heights, input_bricks, input_ladders);
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

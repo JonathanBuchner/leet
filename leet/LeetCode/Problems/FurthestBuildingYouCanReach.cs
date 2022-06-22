@@ -9,40 +9,35 @@ namespace leet.LeetCode.Problems.FurthestBuildingYouCanReach
     {
         public int FurthestBuilding(int[] heights, int bricks, int ladders)
         {
-            var highests = new List<int>();
-            var furthest = 0;
+            var i = 0;
+            var highestClimbs = new PriorityQueue<int, int>();
             var usedBricks = 0;
 
-            for (var i = 1; i < heights.Length; i++)
+            while(i < heights.Length - 1)
             {
-                var diff = heights[i] - heights[i - 1];
-                
+                var diff = heights[i + 1] - heights[i];
+
                 if (diff > 0)
                 {
-                    highests.Add(diff);
-
-                    if(highests.Count > ladders)
+                    if(highestClimbs.Count < ladders)
                     {
-                        var lowest = highests[0];
-                        for (var k = 1; k < highests.Count; k++)
-                        {
-                            lowest = Math.Min(lowest, highests[k]);
-                        }
-                        highests.Remove(lowest);
+                        highestClimbs.Enqueue(diff, diff);
+                        i++;
+                        continue;
+                    }
 
-                        usedBricks += lowest;
+                    usedBricks += highestClimbs.EnqueueDequeue(diff, diff);
 
-                        if (usedBricks > bricks)
-                        {
-                            break;
-                        }
+                    if (usedBricks > bricks)
+                    {
+                        break;
                     }
                 }
 
-                furthest = i;
+                i++;
             }
 
-            return furthest;
+            return i;
         }
     }
 }

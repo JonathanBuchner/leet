@@ -9,7 +9,7 @@ using leet.LeetCode.Problems.CourseScheduleIII;
 namespace leet_test.LeetCode.Problems
 {
     [TestClass]
-    internal class CourseScheduleIII_test
+    public class CourseScheduleIII_test
     {
         [TestMethod]
         public void Example1()
@@ -37,7 +37,7 @@ namespace leet_test.LeetCode.Problems
             {
                 new int[] { 1,2 },
             };
-            var expected = 3;
+            var expected = 1;
 
             var actual = sut.ScheduleCourse(input_courses);
 
@@ -53,7 +53,24 @@ namespace leet_test.LeetCode.Problems
                 new int[] { 3,2 },
                 new int[] { 4,3 },
             };
-            var expected = 3;
+            var expected = 0;
+
+            var actual = sut.ScheduleCourse(input_courses);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void TestCase30()
+        {
+            var sut = new Solution();
+            var input_courses = new int[][]
+            {
+                new int[] { 5,5 },
+                new int[] { 4,6 },
+                new int[] { 2,6 }
+            };
+            var expected = 2;
 
             var actual = sut.ScheduleCourse(input_courses);
 

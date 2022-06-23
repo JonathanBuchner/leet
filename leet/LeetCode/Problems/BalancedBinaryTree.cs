@@ -57,7 +57,6 @@ namespace leet.LeetCode.Problems
             {
                 answer = false;
             }
-
             return Math.Max(right, left);
         }
     }

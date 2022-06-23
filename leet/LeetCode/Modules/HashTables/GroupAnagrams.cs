@@ -6,6 +6,13 @@ using System.Linq;
 
 namespace leet.LeetCode.Modules.HashTables.GroupAnagrams
 {
+    /*
+     * Group Anagrams
+     * 
+     * Given an array of strings strs, group the anagrams together. You can return the answer in any order.
+     * 
+     * https://leetcode.com/explore/learn/card/hash-table/185/hash_table_design_the_key/1124/
+     */
     public class Solution
     {
         /*

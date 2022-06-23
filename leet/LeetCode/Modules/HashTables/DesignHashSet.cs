@@ -4,6 +4,13 @@ using System.Text;
 
 namespace leet.LeetCode.Modules.HashTables.DesignHashSet
 {
+    /*
+     * Design HashSet
+     * 
+     * Design a HashSet without using any built-in hash table libraries.
+     * 
+     * https://leetcode.com/explore/learn/card/hash-table/182/practical-applications/1139/
+     */
     public class MyHashSet
     {
         /** Initialize your data structure here. */

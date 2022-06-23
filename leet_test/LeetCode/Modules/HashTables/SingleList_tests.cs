@@ -1,4 +1,4 @@
-﻿using leet.LeetCode.Modules.HashTables.SingleList;
+﻿using leet.LeetCode.Modules.HashTables.SingleNumber;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 

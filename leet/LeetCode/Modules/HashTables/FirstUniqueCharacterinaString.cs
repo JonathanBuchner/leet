@@ -4,6 +4,13 @@ using System.Text;
 
 namespace leet.LeetCode.Modules.HashTables.FirstUniqueCharacterinaString
 {
+    /*
+     *  First Unique Character in a String
+     * 
+     * Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.
+     * 
+     * https://leetcode.com/explore/learn/card/hash-table/184/comparison-with-other-data-structures/1120/
+     */
     public class Solution
     {
         public int FirstUniqChar(string s)

@@ -4,6 +4,13 @@ using System.Text;
 
 namespace leet.LeetCode.Modules.Arrays.FindAllNumbersDisappearedInAnArray
 {
+    /*
+     * Find All Numbers Disappeared in an Array
+     * 
+     * Given an array nums of n integers where nums[i] is in the range [1, n], return an array of all the integers in the range [1, n] that do not appear in nums
+     * 
+     * https://leetcode.com/explore/learn/card/fun-with-arrays/523/conclusion/3270/
+     */
     public class Solution
     {
         public IList<int> FindDisappearedNumbers(int[] nums)

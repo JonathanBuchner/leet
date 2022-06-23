@@ -4,6 +4,13 @@ using System.Text;
 
 namespace leet.LeetCode.Modules.Arrays.MaxConsecutiveOnesII
 {
+    /*
+     * Max Consecutive Ones II
+     * 
+     * Given a binary array nums, return the maximum number of consecutive 1's in the array if you can flip at most one 0.
+     * 
+     * https://leetcode.com/explore/learn/card/fun-with-arrays/523/conclusion/3230/
+     */
     public class Solution
     {
         public int FindMaxConsecutiveOnes(int[] nums)

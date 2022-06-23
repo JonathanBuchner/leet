@@ -32,7 +32,7 @@ namespace leet.LeetCode.Modules.BinaryTree.BinaryTreeLevelOrderTraversal
                 return;
             }
 
-            if(lists.Count < level)
+            if(lists.Count <= level)
             {
                 lists.Add(new List<int>());
             }

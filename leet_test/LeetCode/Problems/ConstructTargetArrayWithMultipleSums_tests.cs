@@ -55,5 +55,20 @@ namespace leet_test.LeetCode.Problems
 
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void TestCase7()
+        {
+            var sut = new Solution();
+            var input_target = new int[]
+            {
+                9,9,9
+            };
+            var expected = false;
+
+            var actual = sut.IsPossible(input_target);
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

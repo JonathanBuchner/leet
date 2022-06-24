@@ -23,52 +23,48 @@ Return true if it is possible to construct the target array from arr, otherwise,
     {
         public bool IsPossible(int[] target)
         {
-            Array.Sort(target);
-            var start = new int[target.Length];
-            var queue = new Queue<int[]>();
+            var queue = new PriorityQueue<int, int>();
 
-            for (int i = 0; i < target.Length; i++)
+            var total = 0;
+
+            try
             {
-                start[i] = 1;
+                total = target.Sum();
             }
-            queue.Enqueue(start);
-
-            for(var i = 0; i < target.Length; i++)
+            catch(OverflowException e)
             {
-                var t = target[i];
-                var answers = new Queue<int[]>();
+                return false;
+            }
+            
+            foreach(var num in target)
+            {
+                queue.Enqueue(num, num * -1);
+            }
 
-                while(queue.Count > 0)
+            if(target.Length == 1)
+            {
+                return target[0] == 1;  
+            }
+
+            while(queue.Peek() > 1)
+            {
+                var curr = queue.Dequeue();
+                var rest = total - curr;
+
+                if (rest == 1)
                 {
-                    var q = queue.Dequeue();
-                    var total = q.Sum();
-
-                    if (q[i] == t)
-                    {
-                        answers.Enqueue(q);
-                    }
-                    else if (total > t)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        for (var k = i; k < q.Length; k++)
-                        {
-                            var arr = new int[q.Length];
-                            Array.Copy(q, 0, arr, 0, q.Length);
-                            arr[k] = total;
-                            queue.Enqueue(arr);
-                        }
-                    }
+                    return true;
                 }
 
-                if(answers.Count == 0)
+                var q = curr % rest;
+
+                if(q == 0 || q == curr)
                 {
                     return false;
                 }
 
-                queue = answers;
+                queue.Enqueue(q, q * -1);
+                total = total - curr + q;
             }
 
             return true;

@@ -40,5 +40,20 @@ namespace leet_test.LeetCode.Problems
 
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void TestCase320()
+        {
+            var sut = new Solution();
+            var input_nums = new int[]
+            {
+                3,4,2,3
+            };
+            var expected = false;
+
+            var actual = sut.CheckPossibility(input_nums);
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

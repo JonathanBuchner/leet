@@ -17,7 +17,47 @@ namespace leet.LeetCode.Problems.NonDecreasingArray
     {
         public bool CheckPossibility(int[] nums)
         {
-            throw new NotImplementedException();
+            var changedOne = false;
+
+            for (var i = 0; i < nums.Length - 1; i++)
+            {
+                // 1, 2, 3, 4, 0, 5, 6
+                // 14, 12, 15
+                // 12, 100, 15
+                if (nums[i] > nums[i + 1])
+                {
+                    if (changedOne)
+                    {
+                        return false;
+                    }
+
+                    changedOne = true;
+
+                    if (i < nums.Length - 2 && i > 0)
+                    {
+                        var cantChangeSecond = false;
+                        var cantChangeFirst = false;
+
+
+                        if (nums[i] > nums[i + 2])
+                        {
+                            cantChangeSecond = true;
+                        }
+
+                        if (nums[i - 1 ] > nums[i + 1])
+                        {
+                            cantChangeFirst = true;
+                        }
+
+                        if (cantChangeFirst && cantChangeSecond)
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+
+            return true;
         }
     }
 }

@@ -10,37 +10,35 @@ namespace leet.LeetCode.Problems.MajorityElement
     {
         public int MajorityElement(int[] nums)
         {
-            var dict = new Dictionary<int, int>();
-            var count = 0;
-            var highNum = 0;
 
-            if (nums.Length == 0)
+            int num = Int32.MinValue;
+            int count = 0;
+            for (int i = 0; i < nums.Length; i++)
             {
-                throw new ArgumentException("Array cannot be empty.");
-            }
-
-            foreach (var num in nums)
-            {
-                if (dict.ContainsKey(num))
+                if (count == 0)
                 {
-                    ++dict[num];
+                    num = nums[i];
+                    count = 1;
                 }
                 else
                 {
-                    dict.Add(num, 1);
+                    if (num == nums[i])
+                    {
+                        count++;
+                    }
+                    else
+                    {
+                        count--;
+                        if (count == 0)
+                        {
+                            num = nums[i];
+                            count = 1;
+                        }
+                    }
                 }
             }
 
-            foreach (var entry in dict)
-            {
-                if (entry.Value > count)
-                {
-                    count = entry.Value;
-                    highNum = entry.Key;
-                }
-            }
-
-            return highNum;
+            return num;
         }
     }
 }

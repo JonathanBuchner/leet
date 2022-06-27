@@ -23,5 +23,29 @@ namespace leet_test.LeetCode.Problems
 
             Assert.AreEqual(expected, actual);
         }
+    
+        [TestMethod]
+        public void Example2()
+        {
+            var sut = new Solution();
+            var input_num = "82734";
+            var expected = 8;
+
+            var actual = sut.MinPartitions(input_num);
+
+            Assert.AreEqual(expected, actual);
+        }
+    
+        [TestMethod]
+        public void Example3()
+        {
+            var sut = new Solution();
+            var input_num = "27346209830709182346";
+            var expected = 9;
+
+            var actual = sut.MinPartitions(input_num);
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

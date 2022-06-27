@@ -18,7 +18,19 @@ namespace leet.LeetCode.Problems.PartitionIntoMinimumNumverOfDeciBinaryNumbers
     {
         public int MinPartitions(string n)
         {
-            throw new NotImplementedException();
+            var highest = 0;
+
+            if(n == null)
+            {
+                return highest;
+            }
+
+            foreach (char c in n)
+            {
+                highest = Math.Max(highest, c - '0');
+            }
+
+            return highest;
         }
     }
 }

@@ -10,7 +10,7 @@ namespace leet_test.LeetCode.Problems
     public class MergSortedArray_tests
     {
         [TestMethod]
-        public void CanDoSimpleMerge()
+        public void CanDoSimpleMerge1()
         {
             var sut = new Solution();
             var actual_input_nums1 = new int[]
@@ -30,7 +30,55 @@ namespace leet_test.LeetCode.Problems
 
             sut.Merge(actual_input_nums1, input_m, input_nums2, input_n);
 
-            Assert.AreEqual(expected, actual_input_nums1);
+            CollectionAssert.AreEqual(expected, actual_input_nums1);
+        }
+
+        [TestMethod]
+        public void CanDoSimpleMerge2()
+        {
+            var sut = new Solution();
+            var actual_input_nums1 = new int[]
+            {
+                1
+            };
+            var input_m = 1;
+            var input_nums2 = new int[]
+            {
+                
+            };
+            var input_n = 0;
+            var expected = new int[]
+            {
+                1
+            };
+
+            sut.Merge(actual_input_nums1, input_m, input_nums2, input_n);
+
+            CollectionAssert.AreEqual(expected, actual_input_nums1);
+        }
+
+        [TestMethod]
+        public void CanDoSimpleMerge3()
+        {
+            var sut = new Solution();
+            var actual_input_nums1 = new int[]
+            {
+                0
+            };
+            var input_m = 0;
+            var input_nums2 = new int[]
+            {
+                1
+            };
+            var input_n = 1;
+            var expected = new int[]
+            {
+                1
+            };
+
+            sut.Merge(actual_input_nums1, input_m, input_nums2, input_n);
+
+            CollectionAssert.AreEqual(expected, actual_input_nums1);
         }
     }
 }

@@ -4,60 +4,42 @@ using System.Text;
 
 namespace leet.LeetCode.Problems.MergeSortedArray
 {
+    /*
+     * Merge Sorted Array
+     * 
+     * You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.  Merge nums1 and nums2 into a single array sorted in non-decreasing order.
+     * 
+     * https://leetcode.com/problems/merge-sorted-array/
+     */
     public class Solution
     {
         public void Merge(int[] nums1, int m, int[] nums2, int n)
         {
+            m--;
+            n--;
 
-            /*var i = 0;
-            var j = 0;
-            var k = -1;
-
-            while (j < n)
+            for(var i = nums1.Length - 1; i >= 0; i--)
             {
-                if (k == -1)
+                if (m >= 0 && n >= 0)
                 {
-                    if (nums2[k] < nums2[j])
+                    if (nums1[m] > nums2[n])
                     {
-                        nums1[i] = nums2[k];
-                        k--;
+                        nums1[i] = nums1[m];
+                        m--;
                     }
                     else
                     {
-                        var temp = nums2[j];
-                        k++;
-                        nums2[k] = nums1[i];
-                        nums1[i] = temp;
-                        j++;
+                        nums1[i] = nums2[n];
+                        n--;
                     }
                 }
-                else if (nums1[i] > nums2[j])
+                else if (n >= 0)
                 {
-                    var temp = nums1[i];
-                    nums1[i] = nums2[j];
-                    nums2[j] = temp;
-                    j++;
-                    k++;
+                    nums1[i] = nums2[n];
+                    n--;
                 }
-
-                i++;
+                
             }
-
-            var l = i;
-            var o = l + k + 1;
-            while (o > n)
-            {
-                nums1[o] = nums1[l];
-                l++;
-                o++;
-            }
-            while(k > -1)
-            {
-                nums1[i] = 
-
-            }
-
-        }*/
         }
     }
 }

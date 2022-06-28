@@ -17,7 +17,55 @@ namespace leet.LeetCode.Problems.MinimumDeletionsToMakeCharacterFrequenciesUniqu
     {
         public int MinDeletions(string s)
         {
-            throw new NotImplementedException();
+            var dict = new Dictionary<char, int>();
+            var list = new List<int>();
+
+            if(s == null)
+            {
+                return 0;
+            }
+
+            foreach(var c in s)
+            {
+                if(dict.ContainsKey(c))
+                {
+                    dict[c]++;
+                }
+                else
+                {
+                    dict.Add(c, 1);
+                }
+            }
+
+            foreach(var entry in dict)
+            {
+                list.Add(entry.Value);
+            }
+
+            list.Sort((a, b) => b.CompareTo(a));
+
+            var prev = list[0];
+            var removals = 0;
+
+            for(var i = 1; i < list.Count; i++)
+            {
+                if (prev <= 1)
+                {
+                    removals += list[i];
+                }
+                else if (list[i] >= prev)
+                {
+                    var remove = list[i] - prev + 1;
+                    prev = list[i] - remove;
+                    removals += remove;
+                }
+                else
+                {
+                    prev = list[i];
+                }
+            }
+
+            return removals;
         }
     }
 }

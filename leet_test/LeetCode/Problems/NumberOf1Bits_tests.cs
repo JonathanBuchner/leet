@@ -4,21 +4,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using leet.LeetCode.Problems.ExcelSheetColumnNumber;
+using leet.LeetCode.Problems.NumberOf1Bits;
 
 namespace leet_test.LeetCode.Problems
 {
     [TestClass]
-    public class ExcelSheetColumnNumber_tests
+    public class NumberOf1Bits_tests
     {
         [TestMethod]
         public void Example1()
         {
             var sut = new Solution();
-            var input_title = "A";
-            var expected = 1;
+            uint input = 11;
+            var expected = 3;
 
-            var actual = sut.TitleToNumber(input_title);
+            var actual = sut.HammingWeight(input);
 
             Assert.AreEqual(expected, actual);
         }
@@ -27,10 +27,10 @@ namespace leet_test.LeetCode.Problems
         public void Example2()
         {
             var sut = new Solution();
-            var input_title = "AB";
-            var expected = 28;
+            uint input = 128;
+            var expected = 1;
 
-            var actual = sut.TitleToNumber(input_title);
+            var actual = sut.HammingWeight(input);
 
             Assert.AreEqual(expected, actual);
         }
@@ -39,10 +39,10 @@ namespace leet_test.LeetCode.Problems
         public void Example3()
         {
             var sut = new Solution();
-            var input_title = "ZY";
-            var expected = 701;
+            uint input = 4294967293;
+            var expected = 31;
 
-            var actual = sut.TitleToNumber(input_title);
+            var actual = sut.HammingWeight(input);
 
             Assert.AreEqual(expected, actual);
         }

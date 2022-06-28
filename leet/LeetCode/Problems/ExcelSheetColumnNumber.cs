@@ -17,7 +17,14 @@ namespace leet.LeetCode.Problems.ExcelSheetColumnNumber
     {
         public int TitleToNumber(string columnTitle)
         {
-            throw new NotImplementedException();
+            double total = 0;
+
+            for(var i = 0; i < columnTitle.Length; i++)
+            {
+                total += (columnTitle[i] - 'A' + 1) * Math.Pow(26, columnTitle.Length - i - 1);
+            }
+
+            return Convert.ToInt32(total);
         }
     }
 }

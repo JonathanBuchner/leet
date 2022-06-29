@@ -19,27 +19,31 @@ namespace leet.LeetCode.Problems.QueueReconstructionByHeight
     {
         public int[][] ReconstructQueue(int[][] people)
         {
+            // Line everyone up in the order 
+            // [4,4],[5,2],[5,0],[6,1],[7,1],[7,0]
             Array.Sort(people, 
                 (a,b) => a[0] == b[0]
                     ? b[1].CompareTo(a[1])
                     : a[0].CompareTo(b[0])
                 );
 
-            var dict = new SortedDictionary<int, int>();
+            // Make a list of al the positions in the line
+            var list = new List<int>();
 
             for (var i = 0; i < people.Length; i++)
             {
-                dict.Add(i, i);
+                list.Add(i);
             }
 
+            // Make the final position of each person
             var solution = new int[people.Length][];
+
 
             for (var i = 0; i < people.Length; ++i)
             {
                 var spot = people[i][1];
-                var index = dict.Keys;
-                var test = new SortedList<int, int>() { }.Keys; 
-                set.RemoveAt(index);
+                var index = list[spot];
+                list.Remove(index);
                 solution[index] = people[i]; 
             }
 

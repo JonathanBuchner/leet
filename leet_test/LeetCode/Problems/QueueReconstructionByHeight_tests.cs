@@ -26,6 +26,12 @@ namespace leet_test.LeetCode.Problems
                 new int[] {6, 1 },
                 new int[] {5, 2 },
             };
+            // new int[] {5, 0 },
+            // new int[] {7, 0 }
+            // new int[] {6, 1 },
+            // new int[] {7, 1 },
+            // new int[] {5, 2 },
+            // new int[] {4, 4 }
             var expected = new int[][]
             {
                 new int[] {5, 0 },

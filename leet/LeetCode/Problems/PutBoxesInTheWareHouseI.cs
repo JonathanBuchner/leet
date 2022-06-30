@@ -17,7 +17,29 @@ namespace leet.LeetCode.Problems.PutBoxesInTheWareHouseI
     {
         public int MaxBoxesInWarehouse(int[] boxes, int[] warehouse)
         {
-            throw new NotImplementedException();
+            Array.Sort(boxes);
+            var box = 0;
+
+            var max = Int32.MaxValue;
+            for(var i = 0; i < warehouse.Length; ++i)
+            {
+                max = warehouse[i] = Math.Min(max, warehouse[i]);
+            }
+
+            for(var i = warehouse.Length - 1; i >= 0; --i)
+            {
+                if(boxes[box] <= warehouse[i])
+                {
+                    box++;
+
+                    if(box == boxes.Length)
+                    {
+                        break;
+                    }
+                }
+            }
+
+            return box;
         }
     }
 }

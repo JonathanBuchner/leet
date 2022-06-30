@@ -22,34 +22,32 @@ namespace leet.LeetCode.Modules.LinkedList.OddEvenLinkedList
 
             ListNode curr = head;
             ListNode evens = null;
-            ListNode evenList = null;
-            var i = 0;
+            ListNode evensHead = null;
 
-            while (curr.next != null)
+            while(curr.next != null)
             {
-                ListNode next = curr.next;
-                
-                if (i % 2 == 1)
+                if(evensHead == null)
                 {
-                    if (evenList == null)
-                    {
-                        evens = evenList = curr;
-                    }
-                    else
-                    {
-                        evens = evens.next = curr;
-                    }
+                    evensHead = evens = curr.next;
+                }
+                else 
+                {
+                    evens = evens.next = curr.next;
+                }
+
+                if(curr.next.next != null)
+                {
+                    curr = curr.next = curr.next.next;
+                    evens.next = null;
                 }
                 else
                 {
-                    curr.next = curr.next.next;
+                    evens.next = null;
+                    break;
                 }
-
-                i++;
-                curr = next;
             }
-            even.next = null;
-            curr.next = evenList;
+
+            curr.next = evensHead;
 
             return head;
         }

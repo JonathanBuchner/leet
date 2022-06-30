@@ -4,9 +4,6 @@ using System.Text;
 
 namespace leet.LeetCode.Modules.HashTables.MyHashMap
 {
-
-<<<<<<< HEAD
-=======
     public class MyHashMap
     {
         //Initialize your data structure here.
@@ -94,5 +91,4 @@ namespace leet.LeetCode.Modules.HashTables.MyHashMap
             buckets[hash].Find(x => x[0] == key)[1] = val;
         }
     }
->>>>>>> 78cf7ff63b2cf54ee80e0512bb91eb1e69c66ce8
 }

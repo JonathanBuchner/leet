@@ -17,7 +17,16 @@ namespace leet.LeetCode.Problems.MinimumMovestoEqualArrayElementsII
     {
         public int MinMoves2(int[] nums)
         {
-            throw new NotImplementedException();
+            Array.Sort(nums);
+            var moves = 0;
+            var middle = nums.Length / 2;
+
+            for (var i = 0; i < nums.Length; i++)
+            {
+                moves += Math.Abs(nums[middle] - nums[i]);
+            }
+
+            return moves;
         }
     }
 }

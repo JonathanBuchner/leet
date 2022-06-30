@@ -40,5 +40,21 @@ namespace leet_test.LeetCode.Problems
 
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void TestCase15()
+        {
+            var sut = new Solution();
+            // 0, 0, 1, 6, 8
+            var input_nums = new int[]
+            {
+                1, 0, 0, 8, 6
+            };
+            var expected = 14;
+
+            var actual = sut.MinMoves2(input_nums);
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

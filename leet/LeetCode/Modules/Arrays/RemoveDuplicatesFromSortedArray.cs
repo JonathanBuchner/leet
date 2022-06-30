@@ -6,6 +6,7 @@ namespace leet.LeetCode.Modules.Arrays.RemoveDuplicatesFromSortedArray
 {
     /*
      * Remove Duplicates from Sorted Array
+     * 
      * Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same.
      *  
      * https://leetcode.com/explore/featured/card/fun-with-arrays/526/deleting-items-from-an-array/3248/

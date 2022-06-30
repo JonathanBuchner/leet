@@ -21,35 +21,39 @@ namespace leet.LeetCode.Modules.LinkedList.OddEvenLinkedList
             if (head == null) return head;
 
             ListNode curr = head;
-            ListNode evens = null;
-            ListNode evensHead = null;
+            ListNode odd = curr;
+            ListNode even = null;
+            ListNode evenList = null;
+            ListNode oddList = null;
+            var i = 0;
 
-            while(curr.next != null)
+            while (curr.next != null)
             {
-                if(evensHead == null)
+                ListNode next = curr.next;
+                
+                if (i % 2 == 1)
                 {
-                    evensHead = evens = curr.next;
-                }
-                else 
-                {
-                    evens = evens.next = curr.next;
-                }
-
-                if(curr.next.next != null)
-                {
-                    curr = curr.next = curr.next.next;
-                    evens.next = null;
+                    if (evenList == null)
+                    {
+                        evens = evenList = curr;
+                    }
+                    else
+                    {
+                        evens = evens.next = curr;
+                    }
                 }
                 else
                 {
-                    evens.next = null;
-                    break;
+                    curr.next = curr.next.next;
                 }
+
+                i++;
+                curr = next;
             }
+            even.next = null;
+            curr.next = evenList;
 
-            curr.next = evensHead;
-
-            return head;
+            return evenList;
         }
     }
 }

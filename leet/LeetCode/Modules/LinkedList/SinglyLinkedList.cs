@@ -9,12 +9,12 @@ using System.Transactions;
 namespace leet.LeetCode.Modules.LinkedList
 {
     /***
-     * DO NOT US
+     * DO NOT USE
      * 
      * Was rewritten and passes all tests as double linked list.
      * 
-     * 
-     * **/
+     * https://leetcode.com/explore/learn/card/linked-list/209/singly-linked-list/1298/
+     ***/
     public class MySinglyLinkedList
     {
         /** Initialize your data structure here. */

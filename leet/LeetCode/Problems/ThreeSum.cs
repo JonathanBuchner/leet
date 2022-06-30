@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Text;
 
 namespace leet.LeetCode.Problems.ThreeSum
@@ -17,60 +18,59 @@ namespace leet.LeetCode.Problems.ThreeSum
 
         public IList<IList<int>> ThreeSum(int[] nums)
         {
-            var answers = new List<IList<int>>();
-
-            if (nums.Length < 3)
-            {
-                return answers;
-            }
-
-            var doubles = new Dictionary<int, List<int>>();
-            var i = 0;
+            var result= new List<IList<int>>();
+            var list = new List<int>();
             
-            while(i < nums.Length - 2)
+            foreach(var num in nums)
             {
-                var k = i + 1;
-                while ( k < nums.Length - 1)
-                {
-                    doubles.TryAdd(-1 * (nums[i] + nums[k]), new List<int>() { nums[i], nums[k] });
-                    k++;
-                }
-                i++;
-            }
-
-            var j = 2;
+                list.Add(num);
+            }    
             
-            while(j < nums.Length)
-            {
-                if (doubles.ContainsKey(nums[j]))
-                {
-                    var answer = new List<int>() {doubles[nums[j]][0], doubles[nums[j]][1], nums[j] };
-                    answer.Sort();
+            list.Sort();
 
-                    var same = false;
-                    foreach (var curr in answers)
+            for(var left = 0; left < list.Count - 2 && list[left] <= 0; left++)
+            {
+                var l = left + 1;
+                var r = list.Count - 1;
+
+                while( l < r)
+                {
+                    var total = list[left] + list[l] + list[r];
+
+                    if(total == 0)
                     {
-                        same = true;
-                        for (var l = 0; l < 3; l++)
+                        var isAdd = true;
+                        
+                        foreach(var item in result)
                         {
-                            if(curr[l] != answer[l])
+                            if(
+                                item[0] == list[left] &&
+                                item[1] == list[l] &&
+                                item[2] == list[r]
+                                )
                             {
-                                same = false;
-                                break;
+                                isAdd = false;
                             }
                         }
-                        if (same) { break; }
-                    }
+                        if(isAdd)
+                        {
+                            result.Add(new List<int>() { list[left], list[l], list[r] });
+                        }
 
-                    if (!same)
+                        r--;
+                    }
+                    else if (total > 0)
                     {
-                        answers.Add(answer);
+                        r--;
+                    }
+                    else
+                    {
+                        l++;
                     }
                 }
-                j++;
             }
 
-            return answers;
+            return result;
         }
     }
 }

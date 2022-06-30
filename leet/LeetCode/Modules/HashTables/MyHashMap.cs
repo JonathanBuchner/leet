@@ -4,6 +4,13 @@ using System.Text;
 
 namespace leet.LeetCode.Modules.HashTables.MyHashMap
 {
+    /*
+     * Design HashMap
+     * 
+     * Design a HashMap without using any built-in hash table libraries.
+     * 
+     * https://leetcode.com/explore/learn/card/hash-table/182/practical-applications/1140/
+     */
     public class MyHashMap
     {
         //Initialize your data structure here.
@@ -17,11 +24,11 @@ namespace leet.LeetCode.Modules.HashTables.MyHashMap
         {
             var hash = GetHash(key);
 
-            if(buckets[hash] == null)
+            if (buckets[hash] == null)
             {
                 InitializeBucketWithItem(key, value, hash);
             }
-            else if(Contains(key)) 
+            else if (Contains(key))
             {
                 UpdateItemInBucket(key, value, hash);
             }
@@ -75,7 +82,7 @@ namespace leet.LeetCode.Modules.HashTables.MyHashMap
             return Math.Abs(value % 100);
         }
 
-        
+
         private void InitializeBucketWithItem(int key, int val, int hash)
         {
             buckets[hash] = new List<int[]>() { new int[] { key, val } };

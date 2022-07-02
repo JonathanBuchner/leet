@@ -73,5 +73,47 @@ namespace leet_test.LeetCode.Problems
 
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void TestCase18()
+        {
+            var sut = new Solution();
+            var input_h = 8;
+            var input_w = 5;
+            var input_horizontalCuts = new int[]
+            {
+                5,2,6,3
+            };
+            var input_verticalCuts = new int[]
+            {
+                1,4
+            };
+            var expected = 6;
+
+            var actual = sut.MaxArea(input_h, input_w, input_horizontalCuts, input_verticalCuts);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void TestCase52()
+        {
+            var sut = new Solution();
+            var input_h = 1000000000;
+            var input_w = 1000000000;
+            var input_horizontalCuts = new int[]
+            {
+                2
+            };
+            var input_verticalCuts = new int[]
+            {
+                2
+            };
+            var expected = 81;
+
+            var actual = sut.MaxArea(input_h, input_w, input_horizontalCuts, input_verticalCuts);
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

@@ -19,7 +19,27 @@ namespace leet.LeetCode.Problems.WiggleSequence
     {
         public int WiggleMaxLength(int[] nums)
         {
-              throw new NotImplementedException();
+            if (nums.Length < 2)
+            {
+                return nums.Length;
+            }
+
+            var prevDiff = nums[1] - nums[0];
+            var longest = prevDiff == 0 ? 1 : 2;
+
+            for (var i = 1; i < nums.Length -1; ++i)
+            {
+                var diff = nums[i+1] - nums[i];
+                
+                if((diff > 0 && prevDiff <= 0) || (diff < 0 && prevDiff >= 0))
+                {
+                    longest++;
+                    prevDiff = diff;
+                }
+                
+            }
+
+            return longest;
         }
     }
 }

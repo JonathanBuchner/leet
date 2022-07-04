@@ -28,3 +28,11 @@
 >So this is essentially what NP Completeness is about. These two properties, you can check very quickly, and if you can solve one of these hard problems, you can solve all of them.
 >
 >  We are going to say, you know, finding the best possible solution is this humongous set of possibilities. It's just not possible, and what we're going to do is simply say, okay, we'll find a very, very high quality solution. It's not going to be the best, but it's going to be really close to that.  Okay, so that's the other kind of techniques that we will see in this class, okay?
+
+### Greedy Algorithms
+#### Van Hentenryck Lecture - Knapsack 1 - intuition
+> First, in the next lecture is talk about greedy algorithm. And what you just saw is essentially, a very simple instance of a greedy algorithm. We take the most valuable item first and then the next valuable item that can fit into a knapsack. But there are many, many possible greedy algorithms.
+>
+> So, the key idea on all the greedy algorithms is going to be the same. **You're going to pick one item at a time in a greedy fashion.** And the only thing that's going to differ is the meaning of greedy in every one of these algorithms. Okay?
+>
+> So, in a sense, the main messages today is to show you that in practice there are many different greedy algorithms that you can build. You have to think, you know, creatively. What is the best greedy algorithms that I could get? And some will be better than others in different kinds of instances, okay, so, and, and so you may actually use several of them at the same time. The advantage of this is that they are very easy to use, very easy to design, okay, they can be very, very fast, they give you a first solution, they tell you, okay, you know, now I understand something about this problems. I know that this is at least a baseline, and I have to start doing better than this. They have a lot of issues obviously, okay? So, there is no solution guarantees in general. You don't know much you can improve them, you don't know how good they are. The quality of these heuristics may value from problems to problem, from instances to instances, and so on. And one of the things that I have assumed here is that you can build the solution easily. 

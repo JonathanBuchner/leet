@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 def solve_it(inputData):
-    Location = ""
+    pathHere = "C:\Developer\leet\leet\Coursera\DiscreteOptimization\anyint\solver.py"
+    pathToBinaries = 
     problemName = "AnyInt"
 
     # Write inputData to a temporary file

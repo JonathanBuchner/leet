@@ -1,6 +1,8 @@
 ﻿using leet.Coursera.DiscreteOptimization.anyint;
+using leet.Coursera.DiscreteOptimization.knapsack;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,35 +13,44 @@ namespace leet
     {
         public static string[] problems = new string[]
         {
-            "AnyInt"
+            "AnyInt",
+            "Knapsack"
         };
-        public static string GetProblem(string inLineProblem, string[] args)
+        public static string GetProblemFiles(string filePath, string[] args)
         {
             if (args.Length > 0)
             { 
-                foreach (var prob in problems)
+                if(!File.Exists(filePath))
                 {
-                    if (args[0] == prob)
-                    {
-                        return args[0];
-                    }
+                    throw new ArgumentException($"Cannot finde file {filePath}");
                 }
-                
-                throw new ArgumentException($"{args[0]} does not match a problem on the list.");
+
+                return args [0];
+
             }
             else
             {
-                return inLineProblem;
+                return filePath;
             }
         }
 
-        public static void RunProblem(this string problem)
+        public static void RunProblem(this string filePath, string problem)
         {
+            if (!problems.Contains(problem))
+            {
+                throw new ArgumentException($"Cannot find problem named {problem}");
+            }
+
             switch(problem)
             {
-                case "anyInt":
+                case "AnyInt":
                     
                     new AnyInt();
+                    break;
+
+                case "Knapsack":
+
+                    new Knapsack(filePath).Solve();
                     break;
 
                 default:

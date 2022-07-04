@@ -5,9 +5,13 @@ import os
 from subprocess import Popen, PIPE
 
 def solve_it(input_data):
+    # Variables
+    dllPath = "../../../bin/Debug/netcoreapp6.0/leet.dll"
+    filePath = "../../../Coursera/DiscreteOptimization/knapsack/tmp.data"
+    problemName = "AnyInt"
+    print(input_data);
 
     # Writes the inputData to a temporay file
-
     tmp_file_name = 'tmp.data'
     tmp_file = open(tmp_file_name, 'w')
     tmp_file.write(input_data)
@@ -15,13 +19,13 @@ def solve_it(input_data):
 
     # Runs the command: java Solver -file=tmp.data
 
-    process = Popen(['java', 'Solver', '-file=' + tmp_file_name], stdout=PIPE, universal_newlines=True)
+    process = Popen(['dotnet', dllPath, filePath], stdout=PIPE)
     (stdout, stderr) = process.communicate()
 
     # removes the temporay file
-    os.remove(tmp_file_name)
+    #os.remove(tmp_file_name)
 
-    return stdout.strip()
+    return stdout.strip().decode('ascii')
 
 
 import sys

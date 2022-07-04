@@ -1,4 +1,5 @@
 ﻿using System;
+using leet.Coursera.DiscreteOptimization;
 
 namespace leet
 {
@@ -6,12 +7,14 @@ namespace leet
     {
         public static void Main(string[] args)
         {
-            var problem = "AnyInt";
+            var problem = "Knapsack";
+            var path = "../../../Coursera/DiscreteOptimization/knapsack/tmp.data";
+
 
             OutputDirector
-                .GetProblem(problem, args)
-                .RunProblem();
-            
+                .GetProblemFiles(path, args)
+                .RunProblem(problem);
+
         }
     }
 }

@@ -4,14 +4,14 @@ namespace leet
 {
     public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            SayHello();
-        }
+            var problem = "anyInt";
 
-        public static void SayHello()
-        {
-            Console.WriteLine("Hello World!");
+            OutputDirector
+                .GetProblem(problem, args)
+                .RunProblem();
+            
         }
     }
 }

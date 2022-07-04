@@ -11,7 +11,7 @@ namespace leet
     {
         public static string[] problems = new string[]
         {
-            "anyInt"
+            "AnyInt"
         };
         public static string GetProblem(string inLineProblem, string[] args)
         {

@@ -6,7 +6,7 @@ namespace leet
     {
         public static void Main(string[] args)
         {
-            var problem = "anyInt";
+            var problem = "AnyInt";
 
             OutputDirector
                 .GetProblem(problem, args)

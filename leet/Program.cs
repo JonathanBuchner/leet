@@ -1,17 +1,20 @@
 ﻿using System;
+using leet.Coursera.DiscreteOptimization;
 
 namespace leet
 {
     public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            SayHello();
-        }
+            var problem = "Knapsack";
+            var path = "../../../Coursera/DiscreteOptimization/knapsack/tmp.data";
 
-        public static void SayHello()
-        {
-            Console.WriteLine("Hello World!");
+
+            OutputDirector
+                .GetProblemFiles(path, args)
+                .RunProblem(problem);
+
         }
     }
 }

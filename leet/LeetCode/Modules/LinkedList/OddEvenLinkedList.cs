@@ -29,9 +29,9 @@ namespace leet.LeetCode.Modules.LinkedList.OddEvenLinkedList
 
             while (curr != null)
             {
-                if( i % 2 == 0 )
+                if (i % 2 == 0)
                 {
-                    if(evenList == null)
+                    if (evenList == null)
                     {
                         evenList = even = curr;
                     }
@@ -57,7 +57,7 @@ namespace leet.LeetCode.Modules.LinkedList.OddEvenLinkedList
             }
             odd.next = null;
             even.next = oddList;
-            
+
 
             return evenList;
         }

@@ -4,15 +4,16 @@ using System.Text;
 
 namespace leet.LeetCode.Modules.HashTables.IsomorphicStrings
 {
+    /*
+    * Isomorphic Strings
+    * 
+    * Given two strings s and t, determine if they are isomorphic. Two strings s and t are isomorphic if the characters in s can be replaced to get t.
+    * 
+    * https://leetcode.com/explore/learn/card/hash-table/184/comparison-with-other-data-structures/1117/
+    */
     public class Solution
     {
-        /*
-         * Isomorphic Strings
-         * 
-         * Given two strings s and t, determine if they are isomorphic. Two strings s and t are isomorphic if the characters in s can be replaced to get t.
-         * 
-         * https://leetcode.com/explore/learn/card/hash-table/184/comparison-with-other-data-structures/1117/
-         */
+        
         public bool IsIsomorphic(string s, string t)
         {
             if(s.Length != t.Length)

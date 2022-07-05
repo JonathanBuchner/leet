@@ -4,6 +4,13 @@ using System.Text;
 
 namespace leet.LeetCode.Modules.HashTables.GroupShiftedStrings
 {
+    /*
+     * Group Shifted Strings
+     * 
+     * We can shift a string by shifting each of its letters to its successive letter.
+     * 
+     * https://leetcode.com/explore/learn/card/hash-table/185/hash_table_design_the_key/1125/
+     */
     public class Solution
     {
         public IList<IList<string>> GroupStrings(string[] strings)

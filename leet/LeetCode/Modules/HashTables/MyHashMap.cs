@@ -4,6 +4,13 @@ using System.Text;
 
 namespace leet.LeetCode.Modules.HashTables.MyHashMap
 {
+    /*
+     * Design HashMap
+     * 
+     * Design a HashMap without using any built-in hash table libraries.
+     * 
+     * https://leetcode.com/explore/learn/card/hash-table/182/practical-applications/1140/
+     */
     public class MyHashMap
     {
         //Initialize your data structure here.

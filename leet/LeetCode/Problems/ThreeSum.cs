@@ -18,38 +18,59 @@ namespace leet.LeetCode.Problems.ThreeSum
 
         public IList<IList<int>> ThreeSum(int[] nums)
         {
-
-            throw new NotImplementedException();
-
-            var answers = new List<IList<int>>();
+            var result= new List<IList<int>>();
             var list = new List<int>();
-
-            if (nums.Length < 3)
+            
+            foreach(var num in nums)
             {
-                return answers;
-            }
-
-            for (var x = 0; x < nums.Length; x++)
-            {
-                list.Add(nums[x]);
-            }
+                list.Add(num);
+            }    
+            
             list.Sort();
 
-            var i = 0;
-            var j = list.Count - 1;
-
-            while (i < j - 1)
+            for(var left = 0; left < list.Count - 2 && list[left] <= 0; left++)
             {
+                var l = left + 1;
+                var r = list.Count - 1;
 
-                var k = i + 1;
-                while( k < j)
+                while( l < r)
                 {
+                    var total = list[left] + list[l] + list[r];
 
-                    k++;
+                    if(total == 0)
+                    {
+                        var isAdd = true;
+                        
+                        foreach(var item in result)
+                        {
+                            if(
+                                item[0] == list[left] &&
+                                item[1] == list[l] &&
+                                item[2] == list[r]
+                                )
+                            {
+                                isAdd = false;
+                            }
+                        }
+                        if(isAdd)
+                        {
+                            result.Add(new List<int>() { list[left], list[l], list[r] });
+                        }
+
+                        r--;
+                    }
+                    else if (total > 0)
+                    {
+                        r--;
+                    }
+                    else
+                    {
+                        l++;
+                    }
                 }
             }
 
-            return answers;
+            return result;
         }
     }
 }

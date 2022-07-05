@@ -6,6 +6,14 @@ using System.Threading;
 
 namespace leet.LeetCode.Modules.LinkedList.DoubleLinkedList
 {
+    /*
+     * Design Linked List
+     * 
+     * Design your implementation of the linked list. You can choose to use a singly or doubly linked list.
+     * 
+     * https://leetcode.com/explore/learn/card/linked-list/210/doubly-linked-list/1294/
+     * https://leetcode.com/explore/learn/card/linked-list/210/doubly-linked-list/1297/
+     */
     public class MyLinkedList
     {
         private DoubleListNode head;

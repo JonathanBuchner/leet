@@ -54,7 +54,7 @@ namespace leet.LeetCode.Microsoft.ArrayStrings.StringToInteger
                 if (isNegative) result *= -1;
             }
             
-            catch (OverflowException e)
+            catch (OverflowException)
             {
                 if (isNegative)
                 {
@@ -66,7 +66,7 @@ namespace leet.LeetCode.Microsoft.ArrayStrings.StringToInteger
                 }
             }
 
-            catch (FormatException e)
+            catch (FormatException)
             {
                 result = 0;
             }

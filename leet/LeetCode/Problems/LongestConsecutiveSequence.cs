@@ -17,7 +17,32 @@ namespace leet.LeetCode.Problems.LongestConsecutiveSequence
     {
         public int LongestConsecutive(int[] nums)
         {
-            throw new NotImplementedException();
+            var set = new HashSet<int>();
+            var longest = 0;
+
+            for (var i = 0; i < nums.Length; ++i)
+            {
+                set.Add(nums[i]);
+            }
+
+            for (var i = 0; i < nums.Length; ++i)
+            {
+                if (!set.Contains(nums[i] - 1))
+                {
+                    var curr = 1;
+                    var next = nums[i] + 1;
+
+                    while (set.Contains(next))
+                    {
+                        ++next;
+                        ++curr;
+                    }
+
+                    longest = Math.Max(longest, curr);
+                }
+            }
+
+            return longest;
         }
     }
 }

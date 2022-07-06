@@ -12,27 +12,14 @@ namespace leet.LeetCode.Problems.FibonacciNumber
      * Given n, calculate F(n).
      * 
      * https://leetcode.com/problems/fibonacci-number/
+     * 
+     * Link to https://demonstrations.wolfram.com/GeneralizedFibonacciSequenceAndTheGoldenRatio/
      */
     public class Solution
     {
         public int Fib(int n)
         {
-            var arr = new int[n + 1];
-
-            if (n == 0)
-            {
-                return 0;
-            }
-
-            arr[0] = 0;
-            arr[1] = 1;
-
-            for (var i = 2; i <= n; ++i)
-            {
-                arr[i] = arr[i - 1] + arr[i - 2];
-            }
-
-            return arr[n];
+            return (int)Math.Round(Math.Pow((1 + Math.Sqrt(5)) / 2, n) / Math.Sqrt(5));
         }
     }
 }

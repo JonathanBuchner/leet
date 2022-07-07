@@ -6,6 +6,7 @@ using System.Net.Http.Headers;
 using System.Reflection.Metadata.Ecma335;
 using System.Runtime.Intrinsics.X86;
 using System.Text;
+using System.Transactions;
 
 namespace leet.LeetCode.Microsoft.LongestHappyString
 {
@@ -20,45 +21,45 @@ namespace leet.LeetCode.Microsoft.LongestHappyString
     {
         public string LongestDiverseString(int a, int b, int c)
         {
-            var list = new List<(int, char)>()
+            var list = new List<int[]>()
             {
-                (a, 'a'),
-                (b, 'b'),
-                (c, 'c'),
+                new int[] {a, 'a'},
+                new int[] {b, 'b'},
+                new int[] {c, 'c'},
+
             };
             var sb = new StringBuilder();
-            var prev = 'z';
+            var prev = new int[] { 0, 'z'};
 
-            while (list.Count > 0)
+            while (true)
             {
-                list.Sort((a, b) => a.Item1.CompareTo(b.Item1));
+                list.Sort((a, b) => a[0].CompareTo(b[0]));
+                var diff = 2;
                 var curr = list[list.Count - 1];
 
-                if (curr.Item2 == prev)
+                if (curr[1] == prev[1])
                 {
-                    if(list.Count == 1)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        curr = list[list.Count - 2];
-                    }
+                    curr = list[list.Count - 2];
+                    diff = list[list.Count - 1][0] - list[list.Count - 2][0] > 0 ? 1 : 2;
                 }
 
-                var i = Math.Min(curr.Item1, 2);
-                curr.Item1 -= i;
+
+                if (curr[0] <= 0)
+                {
+                    break;
+                }
+
+                var i = Math.Min(2, Math.Min(curr[0], diff));
+                
+                curr[0] -= i;
 
                 while (i > 0)
                 {
-                    sb.Append(curr.Item2);
+                    sb.Append(Convert.ToChar(curr[1]));
                     i--;
                 }
 
-                
-                list.RemoveAll((a) => a.Item1 == 0);
-
-                prev = curr.Item2;
+                prev = curr;
             }
 
             return sb.ToString();

@@ -19,7 +19,31 @@ namespace leet.LeetCode.Problems.PaintHouse
     {
         public int MinCost(int[][] costs)
         {
-            throw new NotFiniteNumberException();
+            if(costs.Length == 0)
+            {
+                throw new ArgumentException("There must be at least on house.");
+            }
+
+            for (var i = 1; i < costs.Length; ++i)
+            {
+                for(var k = 0; k < costs[i].Length; ++k)
+                {
+                    var previousLowest = Int32.MaxValue;
+
+                    for(var j = 0; j < costs[i].Length; ++j)
+                    {
+                        if(j == k)
+                        {
+                            continue;
+                        }
+                        previousLowest = Math.Min(previousLowest, costs[i-1][j]);
+                    }
+
+                    costs[i][k] += previousLowest;
+                }
+            }
+
+            return costs[costs.Length - 1].Min();
         }
     }
 }

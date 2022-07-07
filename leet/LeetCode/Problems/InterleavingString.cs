@@ -17,7 +17,39 @@ namespace leet.LeetCode.Problems.InterleavingString
     {
         public bool IsInterleave(string s1, string s2, string s3)
         {
-            throw new NotImplementedException();
+            return Interleave(s1, s2, s3, 0, 0, 0);
+        }
+        private bool Interleave(string s1, string s2, string s3, int p1, int p2, int p3)
+        {
+            if (s1.Length + s2.Length != s3.Length)
+            {
+                return false;
+            }
+
+            while (p3 < s3.Length)
+            {
+                if (p1 < s1.Length && s1[p1] == s3[p3] && p2 < s2.Length && s2[p2] == s3[p3])
+                {
+                    ++p3;
+                    return Interleave(s1, s2, s3, p1 + 1, p2, p3) || Interleave(s1, s2, s3, p1, p2 + 1, p3);
+                }
+                else if (p1 < s1.Length && s1[p1] == s3[p3])
+                {
+                    ++p1;
+                }
+                else if (p2 < s2.Length && s2[p2] == s3[p3])
+                {
+                    ++p2;
+                }
+                else
+                {
+                    return false;
+                }
+                    
+                ++p3;
+            }
+
+            return true;
         }
     }
 }

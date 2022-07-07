@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using leet.Coursera.DiscreteOptimization;
 
 namespace leet
 {
@@ -20,9 +21,9 @@ namespace leet
         {
             if (args.Length > 0)
             { 
-                if(!File.Exists(filePath))
+                if(!File.Exists(args[0]))
                 {
-                    throw new ArgumentException($"Cannot finde file {filePath}");
+                    throw new ArgumentException($"Cannot find file {args[0]}.");
                 }
 
                 return args [0];
@@ -50,7 +51,10 @@ namespace leet
 
                 case "Knapsack":
 
-                    new Knapsack(filePath).Solve();
+                    var input_items = ProblemArgumentReader.ReadInts(filePath);
+                    var weight = input_items[0][1];
+                    input_items.RemoveRange(0, 1);
+                    new Knapsack().Solve(input_items, weight).PrintProblem();
                     break;
 
                 default:

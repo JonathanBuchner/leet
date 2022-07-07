@@ -10,11 +10,9 @@ namespace leet
             var problem = "Knapsack";
             var path = "../../../Coursera/DiscreteOptimization/knapsack/tmp.data";
 
-
             OutputDirector
                 .GetProblemFiles(path, args)
                 .RunProblem(problem);
-
         }
     }
 }

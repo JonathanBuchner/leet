@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using leet.LeetCode.Models;
+using leet.LeetCode.Models.NodeRandom;
 
 namespace leet.LeetCode.Microsoft.LinkedLists.CopyListwithRandomPointer
 {

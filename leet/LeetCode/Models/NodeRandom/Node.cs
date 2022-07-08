@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace leet.LeetCode.Models
+namespace leet.LeetCode.Models.NodeRandom
 {
     public class Node
     {

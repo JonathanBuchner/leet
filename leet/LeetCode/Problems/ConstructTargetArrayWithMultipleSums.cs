@@ -31,7 +31,7 @@ Return true if it is possible to construct the target array from arr, otherwise,
             {
                 total = target.Sum();
             }
-            catch(OverflowException e)
+            catch(OverflowException)
             {
                 return false;
             }

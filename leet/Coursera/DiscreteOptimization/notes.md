@@ -29,6 +29,8 @@
 >
 >  We are going to say, you know, finding the best possible solution is this humongous set of possibilities. It's just not possible, and what we're going to do is simply say, okay, we'll find a very, very high quality solution. It's not going to be the best, but it's going to be really close to that.  Okay, so that's the other kind of techniques that we will see in this class, okay?
 
+## Week 2
+
 ### Greedy Algorithms
 #### Van Hentenryck Lecture - Knapsack 1 - intuition
 > First, in the next lecture is talk about greedy algorithm. And what you just saw is essentially, a very simple instance of a greedy algorithm. We take the most valuable item first and then the next valuable item that can fit into a knapsack. But there are many, many possible greedy algorithms.
@@ -37,3 +39,38 @@
 >
 > So, in a sense, the main messages today is to show you that in practice there are many different greedy algorithms that you can build. You have to think, you know, creatively. What is the best greedy algorithms that I could get? And some will be better than others in different kinds of instances, okay, so, and, and so you may actually use several of them at the same time. The advantage of this is that they are very easy to use, very easy to design, okay, they can be very, very fast, they give you a first solution, they tell you, okay, you know, now I understand something about this problems. I know that this is at least a baseline, and I have to start doing better than this. They have a lot of issues obviously, okay? So, there is no solution guarantees in general. You don't know much you can improve them, you don't know how good they are. The quality of these heuristics may value from problems to problem, from instances to instances, and so on. And one of the things that I have assumed here is that you can build the solution easily. 
 
+### Knapsack Modeling
+> The key for actually solving these problems. You have to be able to model them mathematically why, you know, let me give me an example. You talk with industry, you talk to people, they start describing your problem, and you think you understand it, okay? And then you come back with a beautiful solution and tell you you know you can't do this, that's the constraints. But they didn't express it the right way or they forgot to tell you. And essentially you come up with this beautiful algorithm that really doesn't apply in practice.
+
+#### How to model an optimization problem
+> **Choose some decision variables** (Typically encode the result we are intersted in)
+>
+> **Expres the prblem constrains in terms of these variables** (They specify solutions to the problems)
+>
+> **Express the object function** (The objective function specififies the quality of each solution)
+>
+> The result of the aboe three items is an optimization model.  There may be many ways to model and optimization problem.
+
+### Dynamic Programming
+![Dynamic Programming](./img/dynamicprogramming.png)
+
+Basics
+1) Create a table
+2) Fill out the table
+3) Trace back to indentify the items
+
+> And dynamic programming is a very widely used technique, okay. So when it works, it works really well and for various classes of problems it works very well. Particular example is computation on biology, a lot of the sequencing problems can be solved using dynamic programming, but sometimes it doesn't work at all and we'll try to give you intuition why okay? And, and, but this is a very useful technique when it works as I said, okay? So the basic principle is, is very simple. It's a divide and conquer approach, okay? You know, you're going to split the problems in different parts. But the really important thing is that it's a bottom-up computation technique, okay? So if you can do that in a top-down divide and conquer, in a top-down or bottom-up technique. Okay, and dynamic programming is about bottom-up.
+
+#### Recurrence Relations 
+> In mathematics, a recurrence relation is an equation according to which the {\displaystyle n}nth term of a sequence of numbers is equal to some combination of the previous terms.
+> 
+> https://en.wikipedia.org/wiki/Recurrence_relation
+
+#### Richard E Bellman
+> Richard Ernest Bellman (August 26, 1920 – March 19, 1984) was an American applied mathematician, who introduced dynamic programming in 1953, and made important contributions in other fields of mathematics, such as biomathematics. He founded the leading biomathematical journal Mathematical Biosciences.
+>
+> A Bellman equation, also known as a dynamic programming equation, is a necessary condition for optimality associated with the mathematical optimization method known as dynamic programming. Almost any problem which can be solved using optimal control theory can also be solved by analyzing the appropriate Bellman equation. The Bellman equation was first applied to engineering control theory and to other topics in applied mathematics, and subsequently became an important tool in economic theory.
+>
+>https://en.wikipedia.org/wiki/Richard_E._Bellman
+
+### 

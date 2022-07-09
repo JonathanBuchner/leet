@@ -54,11 +54,12 @@
 ### Dynamic Programming
 ![Dynamic Programming](./img/dynamicprogramming.png)
 
-Basics
+Basics (3 Steps)
 1) Create a table
 2) Fill out the table
 3) Trace back to indentify the items
 
+#### Van Hentenryck Lecture
 > And dynamic programming is a very widely used technique, okay. So when it works, it works really well and for various classes of problems it works very well. Particular example is computation on biology, a lot of the sequencing problems can be solved using dynamic programming, but sometimes it doesn't work at all and we'll try to give you intuition why okay? And, and, but this is a very useful technique when it works as I said, okay? So the basic principle is, is very simple. It's a divide and conquer approach, okay? You know, you're going to split the problems in different parts. But the really important thing is that it's a bottom-up computation technique, okay? So if you can do that in a top-down divide and conquer, in a top-down or bottom-up technique. Okay, and dynamic programming is about bottom-up.
 
 #### Recurrence Relations 
@@ -73,4 +74,13 @@ Basics
 >
 >https://en.wikipedia.org/wiki/Richard_E._Bellman
 
-### 
+### Exhaustive Search - Relexation & branch, and bound
+![Depth first branch and bound](./img/depthfirstbranchandbound.png)
+
+Basics (2 Steps)
+- Branch (split into subproblems)
+- Bound (find an optimistic estimate)
+
+#### Van Hentenryck Lecture
+> And the key idea is that the iterative two steps, okay. Branching and bounding. And branching is boring, right? It's like the exhaustive search, except later on I will tell you that there are smart ways to do this. But at this point it's completely boring. You know, it's like, okay, so I take an item and whether I take the item or not, that's what branching is going to be about, okay. It's like in the exhaustive search. But then bounding. Bounding is very different. It's like finding an optimistic evaluation Of what you can do, okay. So in optimization you have to be optimistic, in life as well right, so we want you to be optimistic. In fact, what is the best that I could ever do, okay, if you are maximizing. Or if you are minimizing, how low can be my cost, okay. So that's the kind of optimistic evaluation that we need for actually for bounding, okay. And I'm going to show you how we can get this.
+

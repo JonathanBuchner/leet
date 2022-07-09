@@ -43,9 +43,9 @@ namespace leet_test.Coursera.DiscreteOptimization
 
             var knapsack = sut.Solve(input_items, input_weight);
 
-            Assert.IsTrue(knapsack.Problem.Value >= expected_value);
-            Assert.IsTrue(knapsack.Problem.IsOptimal >= expected_isOptimal);
-            CollectionAssert.AreEqual(expected_items, knapsack.Problem.Selected);
+            Assert.IsTrue(knapsack.P.Value >= expected_value);
+            Assert.IsTrue(knapsack.P.IsOptimal >= expected_isOptimal);
+            CollectionAssert.AreEqual(expected_items, knapsack.P.Selected);
 
         }
 
@@ -81,9 +81,9 @@ namespace leet_test.Coursera.DiscreteOptimization
 
              var knapsack = sut.Solve(input_items, input_weight);
 
-            Assert.IsTrue(knapsack.Problem.Value >= expected_value);
-            Assert.IsTrue(knapsack.Problem.IsOptimal >= expected_isOptimal);
-            CollectionAssert.AreEqual(expected_items, knapsack.Problem.Selected);
+            Assert.IsTrue(knapsack.P.Value >= expected_value);
+            Assert.IsTrue(knapsack.P.IsOptimal >= expected_isOptimal);
+            CollectionAssert.AreEqual(expected_items, knapsack.P.Selected);
 
         }
     }

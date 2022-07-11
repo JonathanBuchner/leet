@@ -17,7 +17,26 @@ namespace leet.LeetCode.Problems.MinCostCLimbingStairs
     {
         public int MinCostClimbingStairs(int[] cost)
         {
-            throw new NotImplementedException();
+            if(cost.Length == 0)
+            {
+                return 0;
+            }
+
+            if(cost.Length == 1)
+            {
+                return cost[0];
+            }
+
+            for(var i = 2; i < cost.Length; ++i)
+            {
+                cost[i] += cost[i - 2] < cost[i - 1] ?
+                    cost[i - 2] :
+                    cost[i - 1];
+            }
+
+            return cost[cost.Length - 2] < cost[cost.Length - 1] ?
+                cost[cost.Length - 2] :
+                cost[cost.Length - 1]; 
         }
     }
 }

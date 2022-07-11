@@ -1,6 +1,7 @@
 ﻿using leet.LeetCode.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,30 @@ namespace leet.LeetCode.Problems.BinaryTreeRightSideView
     {
         public IList<int> RightSideView(TreeNode root)
         {
-            throw new NotImplementedException(); 
+            var rightView = new List<int>();
+            var level = 0;
+
+            Traverse(root, rightView, level);
+
+            return rightView;
+
+        }
+
+        private void Traverse(TreeNode root, IList<int> rightView, int level)
+        {
+            if(root == null)
+            {
+                return;
+            }
+
+            if (rightView.Count <= level)
+            {
+                rightView.Add(root.val);
+            }
+
+            Traverse(root.right, rightView, level + 1);
+            Traverse(root.left, rightView, level + 1);
+
         }
     }
 }

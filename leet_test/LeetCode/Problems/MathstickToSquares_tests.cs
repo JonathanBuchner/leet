@@ -39,5 +39,20 @@ namespace leet_test.LeetCode.Problems
 
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void TestCase101()
+        {
+            var sut = new Solution();
+            var matchsticks = new int[]
+            {
+                9, 3, 3, 3, 2, 4, 4, 1, 5, 5, 6, 6, 7, 2, 9
+            };
+            var expected = false;
+
+            var actual = sut.Makesquare(matchsticks);
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

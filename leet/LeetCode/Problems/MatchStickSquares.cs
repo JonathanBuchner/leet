@@ -19,48 +19,72 @@ namespace leet.LeetCode.Problems.MatchstickToSquares
      */
     public class Solution
     {
-        public bool Makesquare(int[] matchsticks)
-        {
-            var side = matchsticks.Sum() / 4;
-            var queue = new LinkedList<int[]>();
-            Array.Sort(matchsticks, (a, b) => b.CompareTo(a));
+        public List<int> nums;
+        public int[] sums;
+        public int possibleSquareSide;
 
-            if (matchsticks[0] > side)
+        public Solution()
+        {
+            this.sums = new int[4];
+        }
+
+        // Depth First Search function.
+        public bool dfs(int index)
+        {
+
+            // If we have exhausted all our matchsticks, check if all sides of the square are of equal length
+            if (index == this.nums.Count)
             {
-                return false;
+                return sums[0] == sums[1] && sums[1] == sums[2] && sums[2] == sums[3];
             }
 
-            var startingList = new int[5];
-            // First is index, next is each box
+            // Get current matchstick.
+            int element = this.nums[index];
 
-            queue.AddFirst(startingList);
-
-            while (queue.Count > 0)
+            // Try adding it to each of the 4 sides (if possible)
+            for (int i = 0; i < 4; i++)
             {
-                var list = queue.First();
-                queue.RemoveFirst();
-
-                if (list[0] == matchsticks.Length)
+                if (this.sums[i] + element <= this.possibleSquareSide)
                 {
-                    return true;
-                }
-                
-                var value = matchsticks[list[0]];
-
-                for (var i = 1; i < list.Length; ++i)
-                {
-                    if (list[i] + value <= side)
+                    this.sums[i] += element;
+                    if (this.dfs(index + 1))
                     {
-                        var arr = new int[5];
-                        Array.Copy(list, 0, arr, 0, list.Length);
-                        arr[i] += value;
-                        ++arr[0];
-                        queue.AddFirst(arr);
+                        return true;
                     }
+                    this.sums[i] -= element;
                 }
             }
 
             return false;
+        }
+
+        public bool Makesquare(int[] nums)
+        {
+            // Empty matchsticks.
+            if (nums == null || nums.Length == 0)
+            {
+                return false;
+            }
+
+            // Find the perimeter of the square (if at all possible)
+            int L = nums.Length;
+            int perimeter = 0;
+            for (int i = 0; i < L; i++)
+            {
+                perimeter += nums[i];
+            }
+
+            this.possibleSquareSide = perimeter / 4;
+            if (this.possibleSquareSide * 4 != perimeter)
+            {
+                return false;
+            }
+
+            // Convert the array of primitive int to ArrayList (for sorting).
+            this.nums = nums.ToList();
+            this.nums.Sort((a, b) => b.CompareTo(a));
+
+            return this.dfs(0);
         }
     }
 }

@@ -58,5 +58,37 @@ namespace leet_test.LeetCode.Problems
 
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void TestCase27()
+        {
+            var sut = new Solution();
+            var nums = new int[]
+            {
+                100, -1, -100, -1, 100
+            };
+            var steps = 2;
+            var expected = 198;
+
+            var actual = sut.MaxResult(nums, steps);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void TestCase28()
+        {
+            var sut = new Solution();
+            var nums = new int[]
+            {
+                100, -100, -300, -300, -300, -100, 100
+            };
+            var steps = 4;
+            var expected = 0;
+
+            var actual = sut.MaxResult(nums, steps);
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

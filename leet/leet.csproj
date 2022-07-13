@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Coursera\DiscreteOptimization\coloring\" />
     <Folder Include="LeetCode\Modules\Introduction\" />
   </ItemGroup>
 

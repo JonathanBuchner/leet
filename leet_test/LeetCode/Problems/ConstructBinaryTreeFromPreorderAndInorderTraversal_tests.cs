@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using leet.LeetCode.Problems.ConstructBinaryTreeFromPreorderAndInorderTraversal;
+using leet_test.Helpers;
 
 namespace leet_test.LeetCode.Problems
 {
@@ -31,7 +32,7 @@ namespace leet_test.LeetCode.Problems
 
             var actual = sut.BuildTree(preorder, inorder);
 
-            Assert.AreEqual(expected, actual);
+            AssertBinaryTrees.AreEqualValue(expected, actual);
         }
 
 
@@ -55,7 +56,53 @@ namespace leet_test.LeetCode.Problems
 
             var actual = sut.BuildTree(preorder, inorder);
 
-            Assert.AreEqual(expected, actual);
+            AssertBinaryTrees.AreEqualValue(expected, actual);
+        }
+
+        [TestMethod]
+        public void TestCase()
+        {
+            var sut = new Solution();
+            var preorder = new int[]
+            {
+                   1,2
+            };
+            var inorder = new int[]
+            {
+                   1,2
+            };
+            var expected_input = new int?[]
+            {
+                   1, null, 2
+            };
+            var expected = Helpers.BinaryTreeHelper.MakeTree(expected_input);
+
+            var actual = sut.BuildTree(preorder, inorder);
+
+            AssertBinaryTrees.AreEqualValue(expected, actual);
+        }
+
+        [TestMethod]
+        public void TestCase78()
+        {
+            var sut = new Solution();
+            var preorder = new int[]
+            {
+                   1,2,3
+            };
+            var inorder = new int[]
+            {
+                   1, 2, 3
+            };
+            var expected_input = new int?[]
+            {
+                   1, null, 2, null, 3
+            };
+            var expected = Helpers.BinaryTreeHelper.MakeTree(expected_input);
+
+            var actual = sut.BuildTree(preorder, inorder);
+
+            AssertBinaryTrees.AreEqualValue(expected, actual);
         }
     }
 }

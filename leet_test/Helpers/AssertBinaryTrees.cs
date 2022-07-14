@@ -21,7 +21,7 @@ namespace leet_test.Helpers
                 expectedRoot != null && actualRoot == null
                 )
             {
-                Assert.Fail($"Expected is {expectedRoot}.  Actual root {actualRoot}");
+                Assert.Fail($"Expected is {expectedRoot}. Actual root {actualRoot}");
             }
             else
             {

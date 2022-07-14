@@ -16,9 +16,43 @@ namespace leet.LeetCode.Problems.ConstructBinaryTreeFromPreorderAndInorderTraver
      */
     public class Solution
     {
+        private int i = 0;
+
         public TreeNode BuildTree(int[] preorder, int[] inorder)
         {
-            throw new NotImplementedException();
+            if (inorder.Length == 0)
+            {
+                return null;
+            }
+            
+            var dict = new Dictionary<int, int>();
+
+            for (var i = 0; i < inorder.Length; ++i)
+            {
+                dict.Add(inorder[i], i);
+            }
+
+            var node = Build(preorder, 0, preorder.Length - 1, dict); 
+
+            return node;
+        }
+
+        private TreeNode Build(int[] preorder, int left, int right, Dictionary<int, int> dict)
+        {
+            if (left > right)
+            {
+                return null;
+            }
+
+            var val = preorder[i++];
+            var index = dict[val];
+
+            var node = new TreeNode(val);
+
+            node.left = Build(preorder, left, index - 1, dict);
+            node.right = Build(preorder, index + 1, right, dict);
+
+            return node;
         }
     }
 }

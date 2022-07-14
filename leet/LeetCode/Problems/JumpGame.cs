@@ -17,7 +17,33 @@ namespace leet.LeetCode.Problems.JumpGame
     {
         public int MaxResult(int[] nums, int k)
         {
-            throw new NotImplementedException();
+            var dp = new int[nums.Length];
+            dp[0] = nums[0];
+            var skips = 0;
+
+            for(var i = 1; i < nums.Length - 1; ++i)
+            {
+                if(nums[i] >= 0)
+                {
+                    dp[i] = dp[i - 1] + nums[i];
+                    skips = 0;
+
+                    continue;
+                }
+
+                if(skips < k - 1)
+                {
+                    ++skips;
+                    dp[i] = dp[i - skips];
+                }
+                else
+                {
+                    var best = Math.Max(nums[i], nums[i - skips]);
+                    dp[i] = dp[i - 1] + best;
+                }
+            }
+
+            return dp[nums.Length - 2] + nums[nums.Length - 1];
         }
     }
 }

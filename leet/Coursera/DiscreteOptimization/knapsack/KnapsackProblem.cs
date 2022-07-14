@@ -8,7 +8,7 @@ namespace leet.Coursera.DiscreteOptimization.knapsack
 {
     public class KnapsackProblem
     {
-        public int Value { get; set; }
+        public Int64 Value { get; set; }
         public short IsOptimal { get; set; }
         public int[] Selected { get; set; }
         //value, weight

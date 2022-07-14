@@ -6,16 +6,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="LeetCode\Modules\Introduction\**" />
+    <EmbeddedResource Remove="LeetCode\Modules\Introduction\**" />
+    <None Remove="LeetCode\Modules\Introduction\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="Cormen\Chapter2\Insertion_sort.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="System.Collections" Version="4.3.0" />
     <PackageReference Include="System.Collections.NonGeneric" Version="4.3.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="LeetCode\Modules\Introduction\" />
   </ItemGroup>
 
 </Project>

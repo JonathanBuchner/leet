@@ -39,7 +39,7 @@ namespace leet_test.LeetCode.Problems
             var sut = new Solution();
             var grid = new int[][]
             {
-                new int[] { 0, 0, 0, 0, 0, 0, , 0, 0, 0, 0, 0 },
+                new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
             };
             var expect = 0;
 

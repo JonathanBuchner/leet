@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using leet.Coursera.DiscreteOptimization;
+using leet.Coursera.DiscreteOptimization.coloring;
 
 namespace leet
 {
@@ -15,7 +16,8 @@ namespace leet
         public static string[] problems = new string[]
         {
             "AnyInt",
-            "Knapsack"
+            "Knapsack",
+            "Coloring",
         };
         public static string GetProblemFiles(string filePath, string[] args)
         {
@@ -55,6 +57,16 @@ namespace leet
                     var weight = input_items[0][1];
                     input_items.RemoveRange(0, 1);
                     new Knapsack().Solve(input_items, weight).PrintProblem();
+                    break;
+
+                case "Coloring":
+
+                    var graph = ProblemArgumentReader.ReadInts(filePath);
+                    var nodes = graph[0][0];
+                    var edges = graph[0][1];
+                    graph.RemoveRange(0, 1);
+                    var mapColoringProblem = new MapColoringProblem(nodes, edges, graph); 
+                    new MapColoring().Solve(mapColoringProblem).PrintProblem();
                     break;
 
                 default:

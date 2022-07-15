@@ -7,8 +7,8 @@ namespace leet
     {
         public static void Main(string[] args)
         {
-            var problem = "Knapsack";
-            var path = "../../../Coursera/DiscreteOptimization/knapsack/tmp.data";
+            var problem = "Coloring";
+            var path = "../../../Coursera/DiscreteOptimization/coloring/tmp.data";
 
             OutputDirector
                 .GetProblemFiles(path, args)

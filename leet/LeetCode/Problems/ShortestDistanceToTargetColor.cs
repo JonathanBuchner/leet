@@ -17,40 +17,30 @@ namespace leet.LeetCode.Problems.ShortestDistanceToTargetColor
     {
         public IList<int> ShortestDistanceColor(int[] colors, int[][] queries)
         {
+            throw new NotImplementedException();
+
+            var dp = new int[ 3, colors.Length];           
             var list = new List<int>();
+          
+            var i0 = 0;
+            var i1 = 0;
+            var i2 = 0;
 
-            for(var i = 0; i < queries.Length; ++i)
+            for(var i = 0; i < colors.Length; ++i)
             {
-                var start = queries[i][0];
-                var left = start;
-                var right = start;
-                var color = queries[i][1];
-                var diff = -1;
+                var c = colors[i];
 
-                while(left >= 0 || right < colors.Length)
-                {
-                    if(left >= 0)
-                    {
-                        if (colors[left] == color)
-                        {
-                            diff = start - left;
-                            break;
-                        }
-                        --left;
-                    }
 
-                    if(right < colors.Length)
-                    {
-                        if (colors[right] == color)
-                        {
-                            diff = right - start;
-                            break;
-                        }
-                        ++right;
-                    }
-                }
+            }
 
-                list.Add(diff);
+            for (var i = colors.Length; i >= 0; --i)
+            {
+
+            }
+
+            for (var i = 0; i < queries.Length; ++i)
+            {
+                
             }
 
             return list;

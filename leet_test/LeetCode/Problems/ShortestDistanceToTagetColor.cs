@@ -34,7 +34,7 @@ namespace leet_test.LeetCode.Problems
 
             var actual = sut.ShortestDistanceColor(colors, queries);
 
-            Assert.AreEqual(expected, actual);
+            CollectionAssert.AreEqual(expected, (List<int>) actual);
         }
 
         [TestMethod]
@@ -56,7 +56,7 @@ namespace leet_test.LeetCode.Problems
 
             var actual = sut.ShortestDistanceColor(colors, queries);
 
-            Assert.AreEqual(expected, actual);
+            CollectionAssert.AreEqual(expected, (List<int>) actual);
         }
     }
 }

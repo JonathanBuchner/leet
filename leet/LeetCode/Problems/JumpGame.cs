@@ -17,33 +17,29 @@ namespace leet.LeetCode.Problems.JumpGame
     {
         public int MaxResult(int[] nums, int k)
         {
-            var dp = new int[nums.Length];
-            dp[0] = nums[0];
-            var skips = 0;
-
-            for(var i = 1; i < nums.Length - 1; ++i)
+            int score = nums[0];
+            var squares = new LinkedList<int[]>();
+            squares.AddFirst(new int[] { 0, score });
+            var jumps = k;
+            
+            for (int i = 1; i < nums.Length; i++)
             {
-                if(nums[i] >= 0)
+                while (squares.Count > 0 && squares.First.Value[0] < i - jumps)
                 {
-                    dp[i] = dp[i - 1] + nums[i];
-                    skips = 0;
-
-                    continue;
+                    squares.RemoveFirst();
+                }
+                score = squares.First.Value[1]  + nums[i];
+                // pop the smaller value
+                
+                while (squares.Count > 0 && score >= squares.Last.Value[1])
+                {
+                    squares.RemoveLast();
                 }
 
-                if(skips < k - 1)
-                {
-                    ++skips;
-                    dp[i] = dp[i - skips];
-                }
-                else
-                {
-                    var best = Math.Max(nums[i], nums[i - skips]);
-                    dp[i] = dp[i - 1] + best;
-                }
+                squares.AddLast(new int[] { i, score });
             }
 
-            return dp[nums.Length - 2] + nums[nums.Length - 1];
+            return score;
         }
     }
 }

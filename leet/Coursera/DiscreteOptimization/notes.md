@@ -91,6 +91,24 @@ Add "relaxation". Before starting the tree
 #### Van Hentenryck Lecture
 > And the key idea is that the iterative two steps, okay. Branching and bounding. And branching is boring, right? It's like the exhaustive search, except later on I will tell you that there are smart ways to do this. But at this point it's completely boring. You know, it's like, okay, so I take an item and whether I take the item or not, that's what branching is going to be about, okay. It's like in the exhaustive search. But then bounding. Bounding is very different. It's like finding an optimistic evaluation Of what you can do, okay. So in optimization you have to be optimistic, in life as well right, so we want you to be optimistic. In fact, what is the best that I could ever do, okay, if you are maximizing. Or if you are minimizing, how low can be my cost, okay. So that's the kind of optimistic evaluation that we need for actually for bounding, okay. And I'm going to show you how we can get this.
 
+## Week 3 : Introduction to constraint programming
+Goal of lecture is basis to constraint programming
+- Use constrains to reduce the set of values that each variable can take
+    - No feasable, get rid of it
+
+Modeling methodology
+- Convey the structure of the problem as explitcity as possible
+- Express substructures of the problem
+- Give solvers as much information as possible 
+  - e.g. in the 8 Queens problem, you remove the possibilities after placing each queeen.  It's all about reducing the search space.
+- There are often many choices and man of the choice are wrong.
+
+// Need to learn more about
+- The four queens problem
+- The 4 color theorem problem
+
+
+=======
 #### Types of Branch and Bound
 ##### Depth first (DP)
 - Goes Deep
@@ -107,3 +125,4 @@ Add "relaxation". Before starting the tree
 ![Example of limited discrepancy](./img/limiteddescripancy.png)
 - Assume a heuristic and go right whenver the hueristic isn't true
 - 
+

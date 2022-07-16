@@ -12,6 +12,21 @@ namespace leet_test.LeetCode.Problems
     public class JumpGame_tests
     {
         [TestMethod]
+        public void Example0()
+        {
+            var sut = new Solution();
+            var nums = new int[]
+            {
+                1,-2,4,-7,3
+            };
+            var steps = 2;
+            var expected = 8;
+
+            var actual = sut.MaxResult(nums, steps);
+
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
         public void Example1()
         {
             var sut = new Solution();

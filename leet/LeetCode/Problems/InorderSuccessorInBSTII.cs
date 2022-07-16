@@ -1,6 +1,7 @@
 ﻿using leet.LeetCode.Models.NodeParent;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,22 @@ namespace leet.LeetCode.Problems.InorderSuccessorInBSTII
     {
         public Node InorderSuccessor(Node x)
         {
-            throw new NotImplementedException();
+            if (x.right != null)
+            {
+                x = x.right;
+                while (x.left != null)
+                {
+                    x = x.left;
+                }
+                return x;
+            }
+
+            while (x.parent != null && x == x.parent.right)
+            {
+                x = x.parent;
+            }
+
+            return x.parent;
         }
     }
 }

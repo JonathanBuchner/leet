@@ -6,6 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="LeetCode\Modules\Introduction\**" />
+    <EmbeddedResource Remove="LeetCode\Modules\Introduction\**" />
+    <None Remove="LeetCode\Modules\Introduction\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="Cormen\Chapter2\Insertion_sort.cs" />
   </ItemGroup>
 

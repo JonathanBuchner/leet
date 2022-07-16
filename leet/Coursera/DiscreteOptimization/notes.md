@@ -77,9 +77,16 @@ Basics (3 Steps)
 ### Exhaustive Search - Relexation & branch, and bound
 ![Depth first branch and bound](./img/depthfirstbranchandbound.png)
 
-Basics (2 Steps)
+Just Branch and Bound Basics (2 Steps)
 - Branch (split into subproblems)
 - Bound (find an optimistic estimate)
+
+The problem with the above approach is the chance that you will have to explore too much of the tree.  We can improve it by
+
+Add "relaxation". Before starting the tree
+- Sorting the list (in this case max value per weight).
+- Lower the optimistic estimate (in this case, take parts of items; make continous).
+
 
 #### Van Hentenryck Lecture
 > And the key idea is that the iterative two steps, okay. Branching and bounding. And branching is boring, right? It's like the exhaustive search, except later on I will tell you that there are smart ways to do this. But at this point it's completely boring. You know, it's like, okay, so I take an item and whether I take the item or not, that's what branching is going to be about, okay. It's like in the exhaustive search. But then bounding. Bounding is very different. It's like finding an optimistic evaluation Of what you can do, okay. So in optimization you have to be optimistic, in life as well right, so we want you to be optimistic. In fact, what is the best that I could ever do, okay, if you are maximizing. Or if you are minimizing, how low can be my cost, okay. So that's the kind of optimistic evaluation that we need for actually for bounding, okay. And I'm going to show you how we can get this.
@@ -101,4 +108,21 @@ Modeling methodology
 - The 4 color theorem problem
 
 
+=======
+#### Types of Branch and Bound
+##### Depth first (DP)
+- Goes Deep
+- Prune's once it's found a solution
+- Memory is O(n)
+
+##### Best-first (BF)
+![Example best-first tree](./img/bestfirstbranchandbound.png)
+- Goes for best
+- Keeps choosing the best option
+- Possibly the entire tree.
+
+###### Limited discrepancy search (LDS)
+![Example of limited discrepancy](./img/limiteddescripancy.png)
+- Assume a heuristic and go right whenver the hueristic isn't true
+- 
 

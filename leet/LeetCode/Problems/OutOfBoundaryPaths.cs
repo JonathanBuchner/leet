@@ -17,17 +17,7 @@ namespace leet.LeetCode.Problems.OutOfBoundaryPaths
     {
         public int FindPaths(int m, int n, int maxMove, int startRow, int startColumn)
         {
-            // If no squares or jumps
-            if(m == 0 || n == 0 || maxMove == 0)
-            {
-                return 0;
-            }
-
-            // If one square
-            if(m == 1 && n == 1)
-            {
-                return 4;
-            }
+            int mod = 1000000000 + 7;
 
             var score = 0;
             var memo = new int[m, n];
@@ -44,38 +34,38 @@ namespace leet.LeetCode.Problems.OutOfBoundaryPaths
 
                         if (x == 0)
                         {
-                            score += balls;
+                            score = (score + balls) % mod;
                         }
                         else
                         {
-                            temp[x - 1, y] += balls;
+                            temp[x - 1, y] = (temp[x - 1, y] + balls) % mod;
                         }
 
                         if (y == 0)
                         {
-                            score += balls;
+                            score = (score + balls) % mod;
                         }
                         else
                         {
-                            temp[x, y - 1] += balls;
+                            temp[x, y - 1] = (temp[x, y - 1] + balls) % mod;
                         }
 
                         if (x == m - 1)
                         {
-                            score += balls;
+                            score = (score + balls) % mod;
                         }
                         else
                         {
-                            temp[x + 1, y] += balls;
+                            temp[x + 1, y] = (temp[x + 1, y] + balls) % mod;
                         }
 
                         if (y == n - 1)
                         {
-                            score += balls;
+                            score = (score + balls) % mod;
                         }
                         else
                         {
-                            temp[x, y + 1] += balls;
+                            temp[x, y + 1] = (temp[x, y + 1] + balls) % mod;
                         }
 
                     }

@@ -18,25 +18,43 @@ namespace leet.LeetCode.Problems.NumberOfMatchingSubsequences
         public int NumMatchingSubseq(string s, string[] words)
         {
             var answer = 0;
-            var word = new int[words.Length]; 
+            var dict = new Dictionary<string, int>();
 
-            for (var i = 0; i < words.Length; ++i)
+            foreach(var w in words)
             {
-                var x = 0;
-                var y = 0;
-
-                while(x < s.Length)
+                if(dict.ContainsKey(w))
                 {
-                    if (s[x] == words[i][y])
+                    ++dict[w];
+                }
+                else
+                {
+                    dict.Add(w, 1);
+                }
+            }
+
+            var list = new List<string>();
+
+            foreach(var w in dict)
+            {
+                list.Add(w.Key);
+            }
+
+            var word = new int[list.Count];
+
+            for (var i = 0; i < s.Length; ++i)
+            {
+                for(var k = 0; k < list.Count; ++k)
+                {
+                    if (word[k] < list[k].Length && s[i] ==list[k][word[k]])
                     {
-                        ++y;
-                        if (words[i].Length == y)
+                        ++word[k];
+
+                        if(word[k] == list[k].Length)
                         {
-                            ++answer;
-                            break;
+                            answer += dict[list[k]];
                         }
                     }
-                    ++x;
+
                 }
             }
 

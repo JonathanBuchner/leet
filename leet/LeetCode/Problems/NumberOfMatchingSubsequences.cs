@@ -17,7 +17,44 @@ namespace leet.LeetCode.Problems.NumberOfMatchingSubsequences
     {
         public int NumMatchingSubseq(string s, string[] words)
         {
-            throw new NotImplementedException();
+            var answer = 0;
+            var word = new int[words.Length]; 
+
+            for (var i = 0; i < words.Length; ++i)
+            {
+                var x = 0;
+                var y = 0;
+
+                while(x < s.Length)
+                {
+                    if (s[x] == words[i][y])
+                    {
+                        ++y;
+                        if (words[i].Length == y)
+                        {
+                            ++answer;
+                            break;
+                        }
+                    }
+                    ++x;
+                }
+            }
+
+            return answer;
         }
     }
 }
+
+/*var memo = new bool[s.Length + 1, words[i].Length + 1];
+
+for (var x = 1; x < s.Length; ++x)
+{
+    for (var y = 1; y < words[i].Length; ++y)
+    {
+        if (words[i][y] == s[x])
+        {
+            memo[x, y] = true;
+        }
+        else if ()
+                    }
+}*/

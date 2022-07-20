@@ -12,6 +12,8 @@ namespace leet.LeetCode.Problems.NumberOfMatchingSubsequences
      * Given a string s and an array of strings words, return the number of words[i] that is a subsequence of s.
      * 
      * https://leetcode.com/problems/number-of-matching-subsequences/
+     *
+     * NOTE: Need new solution 
      */
     public class Solution
     {
@@ -45,7 +47,7 @@ namespace leet.LeetCode.Problems.NumberOfMatchingSubsequences
             {
                 for(var k = 0; k < list.Count; ++k)
                 {
-                    if (word[k] < list[k].Length && s[i] ==list[k][word[k]])
+                    if (word[k] < list[k].Length && s[i] == list[k][word[k]])
                     {
                         ++word[k];
 

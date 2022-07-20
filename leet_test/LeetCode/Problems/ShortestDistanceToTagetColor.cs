@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using leet.LeetCode.Problems.ShortestDistanceToTargetColor;
 using System.Net.Http.Headers;
 
-namespace leet_test.LeetCode.Problems
+namespace leet_test.LeetCode.Problems.ShortestDistanceToTagetColor
 {
     [TestClass]
     public class ShortestDistanceToTagetColor

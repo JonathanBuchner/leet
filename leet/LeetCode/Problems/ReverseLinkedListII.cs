@@ -1,4 +1,5 @@
-﻿using System;
+﻿using leet.LeetCode.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,32 @@ namespace leet.LeetCode.Problems.ReverseLinkedListII
     {
         public ListNode ReverseBetween(ListNode head, int left, int right)
         {
-            throw new NotImplementedException();
+            ListNode curr = head;
+            ListNode prev = null;
+            ListNode l = null;
+            ListNode r = null;
+            var i = 0;
+
+            while(i < left)
+            {
+                curr = curr.next;
+                ++i;
+            }
+            l = prev = curr;
+            r = curr = curr.next;
+
+            while(curr != null && i <= right)
+            {
+                var next = curr.next;
+                curr.next = prev;
+                prev = curr;
+                curr = next;
+            }
+
+            l.next = prev;
+            r.next = curr;
+
+            return head;
         }
     }
 }

@@ -29,7 +29,7 @@ namespace leet_test.LeetCode.Problems
             };
             var expected = helper.CreateSinglyLinkedList(outputlist);
 
-            var actual = sut.Partition(head, 3);
+            var actual = sut.Partition(head, value);
 
             AssertLinkedList.AreEqualValue(expected, actual);
         }
@@ -51,7 +51,7 @@ namespace leet_test.LeetCode.Problems
             };
             var expected = helper.CreateSinglyLinkedList(outputlist);
 
-            var actual = sut.Partition(head, 3);
+            var actual = sut.Partition(head, value);
 
             AssertLinkedList.AreEqualValue(expected, actual);
         }

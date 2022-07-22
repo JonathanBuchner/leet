@@ -18,7 +18,56 @@ namespace leet.LeetCode.Problems.PartitionList
     {
         public ListNode Partition(ListNode head, int x)
         {
-            throw new NotImplementedException();    
+            if(head == null || head.next == null)
+            {
+                return head;
+            }
+
+            ListNode curr = head;
+            ListNode under = null;
+            ListNode startUnder = null;
+            ListNode equalAbove = null;
+            ListNode startEqualAbove = null;
+
+            while (curr != null)
+            {
+                if(curr.val < x)
+                {
+                    if(under == null)
+                    {
+                        startUnder = under = curr;
+                    }
+                    else
+                    {
+                        under = under.next = curr;
+                    }
+                }
+                else
+                {
+                    if (equalAbove == null)
+                    {
+                        startEqualAbove = equalAbove = curr;
+                    }
+                    else
+                    {
+                        equalAbove = equalAbove.next = curr;
+                    }
+                }
+
+                curr = curr.next;
+            }
+
+            if(under != null)
+            {
+                under.next = startEqualAbove;
+            }
+            
+            if(equalAbove != null)
+            {
+                equalAbove.next = null;
+            }
+            
+            return startUnder ?? startEqualAbove;
         }
     }
 }

@@ -17,7 +17,24 @@ namespace leet.LeetCode.Problems.KInversePairsArray
     {
         public int KInversePairs(int n, int k)
         {
-            throw new NotImplementedException();
+            var mod = 1000000007;
+            var dp = new int[k + 1];
+            
+            for(var i = 1; i <= n; ++i)
+            {
+                var temp = new int[dp.Length];
+                temp[0] = 1;
+
+                for(var l = 1; l <= k; l++)
+                {
+                    var end = k - i >= 0 ? dp[l - i] : 0;
+                    temp[l] = dp[l] + temp[l - 1] - end; 
+                }
+
+                dp = temp;
+            }
+
+            return dp[k];
         }
     }
 }

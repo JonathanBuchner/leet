@@ -4,24 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace leet.LeetCode.Modules.Arrays
+namespace leet.LeetCode.Modules.Arrays.DiagonalTraverse
 {
     /*
      * Diagonal Traverse
      * 
      * Given an m x n matrix mat, return an array of all the elements of the array in a diagonal order.
      * 
-     * https://leetcode.com/explore/learn/card/array-and-string/202/introduction-to-2d-array/1167/
+     * https://leetcode.com/problems/diagonal-traverse/
      */
     public class Solution
     {
         public int[] FindDiagonalOrder(int[][] mat)
         {
-            throw new NotImplementedException();
-
             var arr = new int[mat.Length * mat[0].Length];
             var x = 0;
+            var xmax = mat.Length - 1;
             var y = 0;
+            var ymax = mat[0].Length - 1;
             var i = 0;
             var isUp = true;
 
@@ -31,32 +31,41 @@ namespace leet.LeetCode.Modules.Arrays
 
                 if (isUp)
                 {
-                    if (x == 0 || y == mat[0].Length)
+                    if (y == ymax)
                     {
-                        isUp = false;
-
-                        
+                        x++;
+                        isUp = !isUp;
                     }
-
-                    --x;
-                    ++y;
-
-
-                }
-                else
-                {
-                    if (y == 0)
+                    else if (x == 0)
                     {
-                        isUp = false;
+                        y++;
+                        isUp = !isUp;
+
                     }
                     else
                     {
-                        --y;
+                        x--;
+                        y++;
                     }
-
-                    ++x;
                 }
-
+                else
+                {
+                    if (x == xmax)
+                    {
+                        y++;
+                        isUp = !isUp;
+                    }
+                    else if (y == 0)
+                    {
+                        x++;
+                        isUp = !isUp;
+                    }
+                    else
+                    {
+                        x++;
+                        y--;
+                    }
+                }
                 ++i;
             }
 

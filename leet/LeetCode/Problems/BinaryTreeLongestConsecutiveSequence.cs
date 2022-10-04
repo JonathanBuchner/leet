@@ -34,22 +34,26 @@ namespace leet.LeetCode.Problems.BinaryTreeLongestConsecutiveSequence
 
             if (root.left != null)
             {
-                var streakLeft = 0;
+                var streakLeft = 1;
+                
                 if (root.left.val == root.val +1)
                 {
-                    streakLeft = root.val + 1;
+                    streakLeft = streak + 1;
                 }
+                
                 left = Traverse(root.left, streakLeft);
             }
             
             if (root.right != null)
             {
-                var streakRight = 0;
+                var streakRight = 1;
+                
                 if (root.right.val == root.val + 1)
                 {
-                    streakRight = root.val + 1;
+                    streakRight = streak + 1;
                 }
-                right = Traverse(root.left, streakRight);
+
+                right = Traverse(root.right, streakRight);
             }
 
             return Math.Max(Math.Max(right, left), streak);

@@ -18,35 +18,19 @@ namespace leet.LeetCode.Problems.PathSum
     {
         public bool HasPathSum(TreeNode root, int targetSum)
         {
-
-            return Traverse(root, targetSum, 0);
-
-        }
-
-        private bool Traverse(TreeNode node, int targetSum, int sum)
-        {
-            if (node == null)
+            if (root == null)
             {
                 return false;
             }
 
-            sum += node.val;
+            targetSum -= root.val;
 
-            if (node.left == null && node.right == null)
+            if (root.left == null && root.right == null)
             {
-                Console.WriteLine($"Target = {targetSum} ;  Sum = {sum}.");
-
-                if (sum == targetSum)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return targetSum == 0;
             }
 
-            return Traverse(node.left, targetSum, sum) || Traverse(node.right, targetSum, sum);
+            return HasPathSum(root.left, targetSum) || HasPathSum(root.right, targetSum);
         }
     }
 }

@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace leet.LeetCode.Problems.AddStrings
 {
+    /*
+     * Add strings
+     * 
+     * Given two non-negative integers, num1 and num2 represented as string, return the sum of num1 and num2 as a string.
+     * 
+     * https://leetcode.com/problems/add-strings/
+     */
     public class Solution
     {
         public string AddStrings(string num1, string num2)

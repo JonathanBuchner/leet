@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace leet.LeetCode.Problems.MeetingRoomsII
 {
+    /*
+     * Meeting Rooms
+     * 
+     * Given an array of meeting time intervals where intervals[i] = [starti, endi], determine if a person could attend all meetings.
+     * 
+     * https://leetcode.com/problems/meeting-rooms/
+     */
     public class Solution
     {
         public bool CanAttendMeetings(int[][] intervals)

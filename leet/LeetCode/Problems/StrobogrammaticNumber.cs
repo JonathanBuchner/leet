@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace leet.LeetCode.Problems.StrobogrammaticNumber
 {
+    /*
+     * Strobogrammatic Number
+     * 
+     * Given a string num which represents an integer, return true if num is a strobogrammatic number.  A strobogrammatic number is a number that looks the same when rotated 180 degrees (looked at upside down).
+     * 
+     * https://leetcode.com/problems/strobogrammatic-number/
+     */
     public class Solution
     {
         public bool IsStrobogrammatic(string num)

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace leet.LeetCode.Problems.MinimumTomeToCollectAllApplesInATree
+namespace leet.LeetCode.Problems.MinimumTimeToCollectAllApplesInATree
 {
     /*
      * Minimum Time to Collect All Apples in a Tree

@@ -26,8 +26,6 @@ namespace leet.LeetCode.Problems.FourSum
     {
         public IList<IList<int>> FourSum(int[] nums, int target)
         {
-
-            var dict = new Dictionary
             var solutions = new HashSet<string>();
             var answers = new List<IList<int>>();
 

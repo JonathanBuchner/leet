@@ -17,36 +17,30 @@ namespace leet.LeetCode.Problems.WiggleSort
     {
         public void WiggleSort(int[] nums)
         {
-            Array.Sort(nums);
-
-            if (nums.Length % 2 == 0)
+            for (var i = 0; i < nums.Length - 1; i++)
             {
-                for (var i = 0; i < nums.Length / 2; i++)
+                if (i % 2 == 0)
                 {
-                    if (i % 2 == 1)
+                    if (nums[i] > nums[i + 1])
                     {
-                        var k = nums.Length - i - 1;
-                        var temp = nums[i];
-                        nums[i] = nums[k];
-                        nums[k] = temp;
+                        Swap(nums, i, i + 1);
+                    }
+                }
+                else if (i % 2 == 1)
+                {
+                    if (nums[i] < nums[i + 1])
+                    {
+                        Swap(nums, i, i + 1);
                     }
                 }
             }
-            else
-            {
-                for (var i = 1; i <= nums.Length / 2; i++)
-                {
-                    if (i % 2 == 1)
-                    {
-                        var k = nums.Length - i;
-                        var temp = nums[i];
-                        nums[i] = nums[k];
-                        nums[k] = temp;
-                    }
-                }
-            }
+        }
 
-
+        private void Swap(int[] nums, int l, int r)
+        {
+            var temp = nums[r];
+            nums[r] = nums[l];
+            nums[l] = temp;
         }
     }
 }

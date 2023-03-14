@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace leet.LeetCode.Microsoft.CountGoodNodesInBinaryTree
+namespace leet.LeetCode.Microsoft.TreesGraphs
 {
     /*
      * Count Good Nodes in Binary Tree
@@ -16,19 +16,19 @@ namespace leet.LeetCode.Microsoft.CountGoodNodesInBinaryTree
     {
         public int GoodNodes(TreeNode root)
         {
-            return Traverse(root, Int32.MinValue);
+            return Traverse(root, int.MinValue);
         }
 
         private int Traverse(TreeNode root, int highest)
         {
-            if(root == null)
+            if (root == null)
             {
                 return 0;
             }
 
             var count = 0;
-            
-            if(root.val >= highest)
+
+            if (root.val >= highest)
             {
                 highest = root.val;
                 count++;

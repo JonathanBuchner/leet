@@ -8,7 +8,7 @@ using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Transactions;
 
-namespace leet.LeetCode.Microsoft.LongestHappyString
+namespace leet.LeetCode.Microsoft.TreesGraphs
 {
     /*
       * Longest Happy String
@@ -29,7 +29,7 @@ namespace leet.LeetCode.Microsoft.LongestHappyString
 
             };
             var sb = new StringBuilder();
-            var prev = new int[] { 0, 'z'};
+            var prev = new int[] { 0, 'z' };
 
             while (true)
             {
@@ -50,7 +50,7 @@ namespace leet.LeetCode.Microsoft.LongestHappyString
                 }
 
                 var i = Math.Min(2, Math.Min(curr[0], diff));
-                
+
                 curr[0] -= i;
 
                 while (i > 0)

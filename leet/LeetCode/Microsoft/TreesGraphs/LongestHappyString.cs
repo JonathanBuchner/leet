@@ -8,7 +8,7 @@ using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Transactions;
 
-namespace leet.LeetCode.Microsoft.TreesGraphs
+namespace leet.LeetCode.Microsoft.TreesGraphs.LongestHappyString
 {
     /*
       * Longest Happy String

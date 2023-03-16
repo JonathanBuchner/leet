@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace leet.LeetCode.Microsoft.TreesGraphs
+namespace leet.LeetCode.Microsoft.TreesGraphs.CountGoodNotesBiaryTree
 {
     /*
      * Count Good Nodes in Binary Tree

@@ -35,6 +35,7 @@ namespace leet.LeetCode.Modules.BinaryTree.InorderSuccessorInBST
             {
                 c = root;
 
+
                 if (root.left == null)
                 {
                     return c;

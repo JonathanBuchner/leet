@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using leet.LeetCode.Microsoft.CountGoodNodesInBinaryTree;
+using leet.LeetCode.Microsoft.TreesGraphs.CountGoodNodesBinaryTree;
 using leet_test.Helpers;
 
 namespace leet_test.LeetCode.Microsoft

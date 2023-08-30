@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using leet.LeetCode.Microsoft.LongestHappyString;
+using leet.LeetCode.Microsoft.TreesGraphs.LongestHappyString;
 
 namespace leet_test.LeetCode.Microsoft
 {

@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace leet.LeetCode.Modules.BitManinpulation.Base7
 {
+    /*
+     * Base 7
+     * 
+     * Given an integer num, return a string of its base 7 representation.
+     * 
+     * https://leetcode.com/explore/learn/card/bit-manipulation/670/bit-manipulation-practice/4254/
+     */
     public class Solution
     {
         public string ConvertToBase7(int num)

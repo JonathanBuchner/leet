@@ -12,19 +12,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class ValidWordSquare
-{
-    public static void main(String[] args)
-    {
-        List<String> testinput = new ArrayList<String>(Arrays.asList("abcd","bnrt","crmy","dtye"));
-        var test1 = new Solution().validWordSquare(testinput);
-        System.out.println(test1);
-    }
-}
- 
-
 // In progress
-class Solution {
+class ValidWordSquare {
     public boolean validWordSquare(List<String> words) {
         var r = 0;
         var c = 1;

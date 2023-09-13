@@ -10,7 +10,7 @@
 
 import java.util.HashSet; 
 
-class Solution {
+class LongestPalindrome {
     public int longestPalindrome(String s) {
         var hashset = new HashSet<Character>();
         var length = 0;

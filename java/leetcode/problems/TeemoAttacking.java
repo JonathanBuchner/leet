@@ -9,7 +9,7 @@
  * 
  * https://leetcode.com/problems/teemo-attacking/description/
  */
-class Solution {
+class TeemoAttacking {
     public int findPoisonedDuration(int[] timeSeries, int duration) {
         var total = 0;
         

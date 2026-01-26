@@ -8,9 +8,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace leet_test.Helpers
 {
-    public static class AssertTwoDementionalLists
+    public static class AssertTwoDementionalLists<T>
     {
-        public static void AreMatch(IList<IList<string>> expected, IList<IList<string>> actual)
+        public static void AreMatch(IList<IList<T>> expected, IList<IList<T>> actual)
         { 
             if(expected.Count != actual.Count)
             {

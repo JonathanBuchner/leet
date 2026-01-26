@@ -23,7 +23,7 @@ namespace leet_test.LeetCode.Problems
 
             var actual = sut.ThreeSum(input);
 
-            AssertTwoDementionalLists.AreMatch(expected, (List<IList<int>>) actual);
+            AssertTwoDementionalLists<int>.AreMatch(expected, (List<IList<int>>) actual);
         }
         [TestMethod]
         public void ThreeSum_Example2()
@@ -35,7 +35,7 @@ namespace leet_test.LeetCode.Problems
 
             var actual = sut.ThreeSum(input);
 
-            AssertTwoDementionalLists.AreMatch(expected, (List<IList<int>>)actual);
+            AssertTwoDementionalLists<int>.AreMatch(expected, (List<IList<int>>)actual);
         }
         [TestMethod]
         public void ThreeSum_Example3()
@@ -48,7 +48,7 @@ namespace leet_test.LeetCode.Problems
 
             var actual = sut.ThreeSum(input);
 
-            AssertTwoDementionalLists.AreMatch(expected, (List<IList<int>>)actual);
+            AssertTwoDementionalLists<int>.AreMatch(expected, (List<IList<int>>)actual);
         }
         [TestMethod]
         public void ThreeSum_Test1()
@@ -62,7 +62,7 @@ namespace leet_test.LeetCode.Problems
 
             var actual = sut.ThreeSum(input);
 
-            AssertTwoDementionalLists.AreMatch(expected, (List<IList<int>>) actual);
+            AssertTwoDementionalLists<int>.AreMatch(expected, (List<IList<int>>) actual);
         }
         [TestMethod]
         public void ThreeSum_TestCas47()
@@ -76,7 +76,7 @@ namespace leet_test.LeetCode.Problems
 
             var actual = sut.ThreeSum(input);
 
-            AssertTwoDementionalLists.AreMatch(expected, (List<IList<int>>)actual);
+            AssertTwoDementionalLists<int>.AreMatch(expected, (List<IList<int>>)actual);
         }
         [TestMethod]
         public void ThreeSum_TestCas59()
@@ -91,7 +91,7 @@ namespace leet_test.LeetCode.Problems
 
             var actual = sut.ThreeSum(input);
 
-            AssertTwoDementionalLists.AreMatch(expected, (List<IList<int>>)actual);
+            AssertTwoDementionalLists<int>.AreMatch(expected, (List<IList<int>>)actual);
         }
     }
 }

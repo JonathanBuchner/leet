@@ -26,7 +26,7 @@ namespace leet_test.LeetCode.Microsoft.ArraysStrings
 
             var actual = sut.GroupAnagrams(input);
 
-            AssertTwoDementionalLists.AreMatch(expected, actual);
+            AssertTwoDementionalLists<string>.AreMatch(expected, actual);
         }
 
         [TestMethod]
@@ -41,7 +41,7 @@ namespace leet_test.LeetCode.Microsoft.ArraysStrings
 
             var actual = sut.GroupAnagrams(input);
 
-            AssertTwoDementionalLists.AreMatch(expected, actual);
+            AssertTwoDementionalLists<string>.AreMatch(expected, actual);
         }
 
         [TestMethod]
@@ -56,7 +56,7 @@ namespace leet_test.LeetCode.Microsoft.ArraysStrings
 
             var actual = sut.GroupAnagrams(input);
 
-            AssertTwoDementionalLists.AreMatch(expected, actual);
+            AssertTwoDementionalLists<string>.AreMatch(expected, actual);
         }
     }
 }

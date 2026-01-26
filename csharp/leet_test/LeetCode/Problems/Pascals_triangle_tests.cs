@@ -33,7 +33,7 @@ namespace leet_test.LeetCode.Problems
 
             var actual = sut.Generate(input);
 
-            AssertTwoDementionalLists.AreMatch(expected, (List<IList<int>>) actual);
+            AssertTwoDementionalLists<int>.AreMatch(expected, (List<IList<int>>) actual);
         }
 
         [TestMethod]
@@ -48,7 +48,7 @@ namespace leet_test.LeetCode.Problems
 
             var actual = sut.Generate(input);
 
-            AssertTwoDementionalLists.AreMatch(expected, (List<IList<int>>) actual);
+            AssertTwoDementionalLists<int>.AreMatch(expected, (List<IList<int>>) actual);
         }
     }
 }

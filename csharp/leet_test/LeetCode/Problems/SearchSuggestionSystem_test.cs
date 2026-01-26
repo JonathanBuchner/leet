@@ -30,7 +30,7 @@ namespace leet_test.LeetCode.Problems
 
             var actual = sut.SuggestedProducts(input_words, input_search);
 
-            AssertTwoDementionalLists.AreMatch(expected, actual);
+            AssertTwoDementionalLists<string>.AreMatch(expected, actual);
         }
 
         [TestMethod]
@@ -52,7 +52,7 @@ namespace leet_test.LeetCode.Problems
 
             var actual = sut.SuggestedProducts(input_words, input_search);
 
-            AssertTwoDementionalLists.AreMatch(expected, actual);
+            AssertTwoDementionalLists<string>.AreMatch(expected, actual);
         }
 
         [TestMethod]
@@ -76,7 +76,7 @@ namespace leet_test.LeetCode.Problems
 
             var actual = sut.SuggestedProducts(input_words, input_search);
 
-            AssertTwoDementionalLists.AreMatch(expected, actual);
+            AssertTwoDementionalLists<string>.AreMatch(expected, actual);
         }
 
         [TestMethod]
@@ -101,7 +101,7 @@ namespace leet_test.LeetCode.Problems
 
             var actual = sut.SuggestedProducts(input_words, input_search);
 
-            AssertTwoDementionalLists.AreMatch(expected, actual);
+            AssertTwoDementionalLists<string>.AreMatch(expected, actual);
         }
     }
 }

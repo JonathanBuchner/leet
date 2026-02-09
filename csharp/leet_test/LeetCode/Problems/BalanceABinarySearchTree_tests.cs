@@ -14,13 +14,13 @@ namespace leet_test.LeetCode.Problems
         {
             yield return (
                 BinaryTreeHelper.MakeTree(new int?[] { 1, null, 2, null, 3, null, 4, null, null }),
-                BinaryTreeHelper.MakeTree(new int?[] { 2, 1, 3, null, null, null, 4 })
+                BinaryTreeHelper.MakeTree(new int?[] { 3, 2, 4, 1 })
             );
 
             yield return (
                 BinaryTreeHelper.MakeTree(new int?[] { 2, 1, 3 }),
                 BinaryTreeHelper.MakeTree(new int?[] { 2, 1, 3 })
-            );  
+            );
         }
 
 

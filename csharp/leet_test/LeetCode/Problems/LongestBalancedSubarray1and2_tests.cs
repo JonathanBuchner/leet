@@ -5,12 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using leet.LeetCode.Problems.LongestBalancedSubarray;
-
 namespace leet_test.LeetCode.Problems
 {
     [TestClass]
-    public class LongestBalancedSubarry1_tests
+    public class LongestBalancedSubarray1and2_tests
     {
         private static IEnumerable<(int[] input, int expected)> cases()
         {
@@ -39,7 +37,18 @@ namespace leet_test.LeetCode.Problems
         [DynamicData(nameof(cases), DynamicDataSourceType.Method)]
         public void LongestBalancedSubarry1_test123(int[] input, int expected)
         {
-            var SUT = new Solution();
+            var SUT = new leet.LeetCode.Problems.LongestBalancedSubarray.Solution();
+
+            var actual = SUT.LongestBalanced(input);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [DataTestMethod]
+        [DynamicData(nameof(cases), DynamicDataSourceType.Method)]
+        public void LongestBalancedSubarry2_test123(int[] input, int expected)
+        {
+            var SUT = new leet.LeetCode.Problems.LongestBalancedSubarray2.Solution();
 
             var actual = SUT.LongestBalanced(input);
 

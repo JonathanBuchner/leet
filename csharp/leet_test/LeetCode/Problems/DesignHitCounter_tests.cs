@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.Tracing;
-using leet.LeetCode.ProblemsDesign.HitCounter;
+using leet.LeetCode.ProblemsDesign.DesignHitCounter;
 
 namespace leet_test.LeetCode.Problems
 {

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using leet.LeetCode.Problems.LongestBalancedSubstring1;
+using Microsoft.VisualStudio.TestPlatform.ObjectModel;
 
 namespace leet_test.LeetCode.Problems
 {
@@ -28,6 +29,12 @@ namespace leet_test.LeetCode.Problems
             // Test Case 3: Example 3 handle odd number
             yield return (
                     "aba",
+                    2
+                );
+
+            // Test Case 3: Example 3 handle odd number
+            yield return (
+                    "kl",
                     2
                 );
 

@@ -22,7 +22,19 @@ namespace leet_test.LeetCode.Problems
                 },
                 18,
                 4
-           );
+            );
+
+            yield return (
+
+               new int[][]
+               {
+                    [7,2,9],
+                    [1,5,0],
+                    [2,6,6]
+               },
+               20,
+               6
+            );
         }
 
         [DataTestMethod]

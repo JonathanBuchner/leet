@@ -25,6 +25,28 @@ namespace leet_test.LeetCode.Problems
                     [24,12],[8,6]
                 }
             );
+
+            yield return (
+                new int[][]
+                {
+                    [12345],[2],[1]
+                },
+                new int[][]
+                {
+                   [2],[0],[0]
+                }
+            );
+
+            yield return (
+                new int[][]
+                {
+                   [3,2,5],[6,4,3],[6,3,1]
+                },
+                new int[][]
+                {
+                   [615,7095,7776],[6480,9720,615],[6480,615,1845]
+                }
+            );
         }
 
         [DataTestMethod]

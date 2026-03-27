@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,23 +16,13 @@ namespace leet.LeetCode.Problems.MatrixSimilarityAfterCyclicShifts
             if (mat.Length == 0)
                 return true;
             
-
-            // Cycle copy
-            for (var i = 0; i < mat.Length; i++)
+            for (var n = 0; n < mat.Length; n++)
             {
-                if (!Cycles(mat[i], k))
-                    return false;
-            }
-
-            return true;
-        }
-
-        private bool Cycles(int[] matRow, int k)
-        {
-            for (var i = 0; i < matRow.Length; i++)
-            {
-                if (matRow[i] != matRow[(i + k) % matRow.Length])
-                    return false;
+                for (var m = 0; m < mat[n].Length; m++)
+                {
+                    if (mat[n][m] != mat[n][(m + k) % mat[n].Length])
+                        return false;
+                }
             }
 
             return true;

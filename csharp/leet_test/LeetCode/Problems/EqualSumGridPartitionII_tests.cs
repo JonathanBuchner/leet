@@ -27,8 +27,33 @@ namespace leet_test.LeetCode.Problems
                 {
                     [1,2],[3,4]
                 },
+                true
+            );
+
+            yield return (
+                new int[][]
+                {
+                    [1,2,4],[2,3,5]
+                },
                 false
             );
+
+            yield return (
+                new int[][]
+                {
+                    [10930],[96950],[100000]
+                },
+                false
+            );
+
+           // Stopped at this test case
+           // yield return (
+           //    new int[][]
+           //    {
+           //         [10930],[96950],[100000]
+           //    },
+           //    false
+           //);
         }
 
         [DataTestMethod]

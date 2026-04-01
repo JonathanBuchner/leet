@@ -11,7 +11,7 @@ namespace leet_test.LeetCode.Problems
     [TestClass]
     public class RobotCollisions_tests
     {
-        private static IEnumerable<((int[] positions, int[] healths, string directions), int[] expected)> cases()
+        private static IEnumerable<((int[] positions, int[] healths, string directions), List<int> expected)> cases()
         {
             yield return (
                 (
@@ -19,7 +19,7 @@ namespace leet_test.LeetCode.Problems
                     new int[] { 2, 17, 9, 15, 10 },
                     "RRRRR"
                 ),
-                new int[] { 2, 17, 9, 15, 10 }     
+                new List<int>() { 2, 17, 9, 15, 10 }     
             );
 
             yield return (
@@ -28,7 +28,7 @@ namespace leet_test.LeetCode.Problems
                     new int[] { 10, 10, 15, 12 },
                     "RLRL"
                 ),
-                new int[] { 14 }
+                new List<int>() { 14 }
             );
 
             yield return (
@@ -37,19 +37,22 @@ namespace leet_test.LeetCode.Problems
                     new int[] { 10, 10, 11, 11 },
                     "RLRL"
                 ),
-                new int[] { }
+                new List<int>() { }
             );
         }
 
         [DataTestMethod]
         [DynamicData(nameof(cases), DynamicDataSourceType.Method)]
-        public void RobotCollisions_basic_tests((int[] positions, int[] healths, string directions) input, int[] expected)
+        public void RobotCollisions_basic_tests((int[] positions, int[] healths, string directions) input, List<int> expected)
         {
             var SUT = new Solution();
 
             var actual = SUT.SurvivedRobotsHealths(input.positions, input.healths, input.directions);
 
-            Assert.AreEqual(expected, actual);
+            for (var i = 0; i < expected.Count; i++)
+            {
+                Assert.AreEqual(expected[i], actual[i]);
+            }
         }
     }
 }

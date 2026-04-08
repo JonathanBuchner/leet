@@ -39,7 +39,7 @@ namespace leet_test.LeetCode.Problems
 
             var actual = SUT.MaximumAmount(coins);
 
-            Assert.AreEqual(actual, expected);
+            Assert.AreEqual(expected, actual);
         }
     }
 }

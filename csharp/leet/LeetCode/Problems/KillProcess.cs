@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,6 +12,7 @@ namespace leet.LeetCode.Problems.KillProcess
      * 
      * https://leetcode.com/problems/kill-process/
      */
+    // using System.Runtime.CompilerServices;
     public class Solution
     {
         public class Process
@@ -27,19 +29,20 @@ namespace leet.LeetCode.Problems.KillProcess
             }
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveOptimization)]
         public IList<int> KillProcess(IList<int> pid, IList<int> ppid, int kill)
         {
             var dict = new Dictionary<int, Process>();
             dict.Add(0, new Process(0, -1)); 
             
-            // Create a process node for each entry and add to dictionary
+            // Create a process node for each entry and add to node dictionary
             for (var i = 0; i < pid.Count; i++)
             {
                 var new_process = new Process(pid[i], ppid[i]);
                 dict.Add(pid[i], new_process);
             }
 
-            // Connect children to parents; i.e. set Children list
+            // Connect children to parents; i.e. set Children list for each node
             for (var i = 0; i < pid.Count; i++)
             {
                 var child = dict[pid[i]];
@@ -50,9 +53,7 @@ namespace leet.LeetCode.Problems.KillProcess
             // Ready killing off children
             var result = new List<int>();        
             var queue = new Queue<Process>();
-
-            var victum = dict[kill];
-            queue.Enqueue(victum);
+            queue.Enqueue(dict[kill]);
 
             while (queue.Count > 0)
             {

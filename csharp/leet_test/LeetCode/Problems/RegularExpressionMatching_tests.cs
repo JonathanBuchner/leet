@@ -96,7 +96,7 @@ namespace leet_test.LeetCode.Problems
 
             yield return (
               "c",
-              "a*a*a*ca*a*a",
+              "a*a*a*ca*a*a*",
               true
               );
 
@@ -115,7 +115,7 @@ namespace leet_test.LeetCode.Problems
             yield return (
              "aaa",
              "*a*c*a",
-             true
+             false
              );
 
             yield return (

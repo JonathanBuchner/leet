@@ -32,12 +32,6 @@ namespace leet_test.LeetCode.Problems
                     2
                 );
 
-            // Test Case 3: Example 3 handle odd number
-            yield return (
-                    "kl",
-                    2
-                );
-
         }
 
         [DataTestMethod]

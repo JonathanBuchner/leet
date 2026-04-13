@@ -30,6 +30,24 @@ namespace leet_test.LeetCode.Problems
                1,
                "coding"
            );
+
+          yield return (
+               "",
+               1,
+               ""
+           );
+
+           yield return (
+              "a ",
+              2,
+              "a"
+          );
+
+          yield return (
+              "iveo    eed   l t    olc",
+              4,
+              "i love leetcod"
+          );
         }
 
         [DataTestMethod]

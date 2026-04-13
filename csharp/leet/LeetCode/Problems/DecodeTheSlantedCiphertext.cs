@@ -10,7 +10,25 @@ namespace leet.LeetCode.Problems.DecodeTheSlantedCiphertext
     {
         public string DecodeCiphertext(string encodedText, int rows)
         {
-            throw new NotImplementedException("Waiting to add tests");
+            if (encodedText.Length == 0)
+            {
+                return "";
+            }
+
+            var cols = encodedText.Length / rows;
+            var result = new StringBuilder();
+
+            for (var i = 0; i < cols; i++)
+            {
+                var start = i;
+                while (start < encodedText.Length)
+                {
+                    result.Append(encodedText[start]);
+                    start += cols + 1;
+                }
+            }
+
+            return result.ToString().TrimEnd();
         }
     }
 }

@@ -15,7 +15,21 @@ namespace leet.LeetCode.Problems.ShortestDistanceToTargetStringInACircularArray
     {
         public int ClosestTarget(string[] words, string target, int startIndex)
         {
-            throw new NotImplementedException("hey");
+            var result = -1;
+
+            var left_index = startIndex + words.Length;
+            var right_index = startIndex;
+            
+            while (left_index + 1 > right_index)
+            {
+                if (words[left_index % words.Length] == target || words[right_index % words.Length] == target)
+                    return right_index - startIndex;
+
+                left_index--;
+                right_index++;
+            }
+
+            return result;
         }
     }
 }

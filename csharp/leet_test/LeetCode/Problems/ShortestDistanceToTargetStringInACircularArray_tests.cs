@@ -35,6 +35,13 @@ namespace leet_test.LeetCode.Problems
                  0,
                  -1
                  );
+
+            yield return (
+                    ["hsdqinnoha", "mqhskgeqzr", "zemkwvqrww", "zemkwvqrww", "daljcrktje", "fghofclnwp", "djwdworyka", "cxfpybanhd", "fghofclnwp", "fghofclnwp"],
+                    "zemkwvqrww",
+                    8,
+                    4
+                );
         }
 
         [DataTestMethod]

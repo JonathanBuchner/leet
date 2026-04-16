@@ -25,6 +25,12 @@ namespace leet_test.LeetCode.Problems
                [0, 1, 2, 3],
                [-1, -1, -1, -1]
                );
+
+            yield return (
+              [6, 12, 17, 9, 16, 7, 6],
+              [5, 6, 0, 4],
+              [-1, 1, 1, -1]
+              );
         }
 
 
@@ -36,7 +42,35 @@ namespace leet_test.LeetCode.Problems
 
             var actual = SUT.SolveQueries(nums, queries);
 
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected.Length, actual.Count);
+            for (var i = 0; i < expected.Length; i++)
+            {
+                Assert.AreEqual(expected[i], actual[i]);
+            }
+        }
+
+        private static IEnumerable<(int[] nums, int[] queries, int[] expected)> practice_cases()
+        {
+            yield return (
+              [6, 12, 17, 9, 16, 7, 6],
+              [6, 0],
+              [1, 1]
+              );
+        }
+
+        [DataTestMethod]
+        [DynamicData(nameof(practice_cases), DynamicDataSourceType.Method)]
+        public void ClosestEqualElementQueries_practice_tests(int[] nums, int[] queries, int[] expected)
+        {
+            var SUT = new Solution();
+
+            var actual = SUT.SolveQueries(nums, queries);
+
+            Assert.AreEqual(expected.Length, actual.Count);
+            for (var i = 0; i < expected.Length; i++)
+            {
+                Assert.AreEqual(expected[i], actual[i]);
+            }
         }
     }
 }

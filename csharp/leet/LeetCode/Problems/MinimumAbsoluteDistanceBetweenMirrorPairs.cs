@@ -33,15 +33,15 @@ namespace leet.LeetCode.Problems.MinimumAbsoluteDistanceBetweenMirrorPairs
 
         private int ReverseNumbers(int num)
         {
-            var str = num.ToString();
-            var sb = new StringBuilder();
+            var result = 0;
 
-            for (var i = str.Length - 1; i >= 0; i--)
+            while (num > 0)
             {
-                sb.Append(str[i]);
+                result = result * 10 + num % 10; 
+                num /= 10;
             }
 
-            return Int32.Parse(sb.ToString());
+            return result;
         }
     }
 }

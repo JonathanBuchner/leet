@@ -15,7 +15,20 @@ namespace leet.LeetCode.Problems.MirrorDistanceOfAnInteger
     {
         public int MirrorDistance(int n)
         {
-            throw new NotImplementedException("Waiting for tests");
+            return Math.Abs(n - ReverseInt(n));
+        }
+
+        private int ReverseInt(int num)
+        {
+            var result = 0;
+            
+            while (num != 0)
+            {
+                result = result * 10 + num % 10;
+                num /= 10;
+            }
+
+            return result;
         }
     }
 }

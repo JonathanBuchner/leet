@@ -13,7 +13,7 @@ namespace leet_test.LeetCode.Problems
     {
         private static IEnumerable<(int i, int expected)> basic_cases()
         {
-            yield return (28, 27);
+            yield return (25, 27);
             yield return (10, 9);
             yield return (7, 0);
         }
